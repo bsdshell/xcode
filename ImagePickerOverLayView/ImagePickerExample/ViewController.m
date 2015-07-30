@@ -73,6 +73,8 @@
         self.overlayView = nil;
     }
     self.imagePickerController = imagePickerController;
+    
+    
 }
 
 
