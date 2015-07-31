@@ -18,34 +18,16 @@
 @synthesize imagePickerController = _imagePickerController;
 @synthesize capturedImages = _capturedImages;
 @synthesize cancelButton = _cancelButton;
-@synthesize toolbar = _toolbar;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIBarButtonItem* cancelImageButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelImageButton:)];
-    
-    //translucent toolbar
-    self.navigationController.toolbar.barStyle = UIBarStyleBlack;
-    self.navigationController.toolbar.tintColor = nil;
-    self.navigationController.toolbar.translucent = YES;
-    
-    //Center UIBarButtonItem
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *flexibleSpaceRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
-    self.toolbarItems = [NSMutableArray arrayWithObjects:flexibleSpaceLeft, cancelImageButtonItem, flexibleSpaceRight, nil];
-    [self.navigationController setToolbarHidden:NO];
-    
-    [self.overlayView addSubview:self.toolbar];
-    
     self.capturedImages = [[NSMutableArray alloc] init];
     
     self.view.backgroundColor = [UIColor clearColor];
     
     self.overlayView = [[UIView alloc]initWithFrame:self.view.bounds];
     
-
     self.cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(10, 320, 60, 30)];
     self.cancelButton.backgroundColor = [UIColor redColor];
     [self.cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -59,11 +41,9 @@
     [self.cameraButton addTarget:self action:@selector(takePicture:) forControlEvents:UIControlEventTouchUpInside];
     [self.overlayView addSubview:self.cameraButton];
     
-    
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.modalPresentationStyle = UIModalPresentationCurrentContext;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
     
     if (imagePickerController.sourceType == UIImagePickerControllerSourceTypeCamera){
 
@@ -73,14 +53,10 @@
         self.overlayView = nil;
     }
     self.imagePickerController = imagePickerController;
-    
-    
 }
 
-
 // The method have to pass (id)sender as parameter in order to work:)
-- (void)takePicture:(id)sender
-{
+- (void)takePicture:(id)sender{
     NSLog(@"takePicture()");
     [self.imagePickerController takePicture];
 }
@@ -97,8 +73,7 @@
 #pragma mark - UIImagePickerControllerDelegate
 
 // This method is called when an image has been chosen from the library or taken from the camera.
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     [self.capturedImages addObject:image];
 }
