@@ -11,9 +11,13 @@
 @interface ViewController : UIViewController<NSURLConnectionDelegate>
 {
     NSMutableData* _receivedData;
+    NSString* _fileName;
 }
 
 @property(nonatomic, retain)NSMutableData* receivedData;
+@property(nonatomic, retain)NSString* fileName;;
+
+-(NSMutableURLRequest*)sendRequest:(NSData*)nsData fileName:(NSString*)fileName;
 
 @end
 
@@ -21,5 +25,7 @@
 
 -(id) initWithFrame:(CGRect)frame;
 -(void) clickMe:(id) sender;
+
+
 
 @end
