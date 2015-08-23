@@ -21,20 +21,20 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    // create ViewController doing nothing
-    ViewController* viewController = [[ViewController alloc]init];
-    
-
-    // create simple text label
-    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 300, 300)];
-    [myLabel setTextColor:[UIColor redColor]];
-    [myLabel setBackgroundColor:[UIColor clearColor]];
-    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
-    [myLabel setText:@"Supper Simple Application"];
-    
-    [self.window addSubview:myLabel];
-    
-    [self.window setRootViewController:viewController];
+//    // create ViewController doing nothing
+//    ViewController* viewController = [[ViewController alloc]init];
+//    
+//
+//    // create simple text label
+//    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 300, 300)];
+//    [myLabel setTextColor:[UIColor redColor]];
+//    [myLabel setBackgroundColor:[UIColor clearColor]];
+//    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+//    [myLabel setText:@"Supper Simple Application"];
+//    
+//    [self.window addSubview:myLabel];
+//    
+//    [self.window setRootViewController:viewController];
     
     [self.window makeKeyAndVisible];
 

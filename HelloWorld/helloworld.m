@@ -2,9 +2,9 @@
 
 //=============================================================================
 //How to compile:
-//Assume helloworld.m is in the current directory
+//Assume HelloWorld.m is in the current directory
 //=============================================================================
-//clang -fobjc-arc -framework Foundation helloworld.m
+//clang -fobjc-arc -framework Foundation HelloWorld.m
 //=============================================================================
 int main(int argc, const char* argv[])
 {
