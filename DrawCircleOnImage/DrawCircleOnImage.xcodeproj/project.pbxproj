@@ -19,7 +19,6 @@
 		4E395624191A0D65002F73AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E39560C191A0D65002F73AB /* UIKit.framework */; };
 		4E39562C191A0D65002F73AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E39562A191A0D65002F73AB /* InfoPlist.strings */; };
 		4E39562E191A0D65002F73AB /* EmptyApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */; };
-		4E395644191A1E70002F73AB /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E395643191A1E70002F73AB /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,7 +231,6 @@
 			files = (
 				4E395613191A0D65002F73AB /* InfoPlist.strings in Resources */,
 				4E39561B191A0D65002F73AB /* Images.xcassets in Resources */,
-				4E395644191A1E70002F73AB /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +447,7 @@
 				4E395633191A0D65002F73AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "DrawCircleOnImageTests" */ = {
 			isa = XCConfigurationList;
@@ -457,6 +456,7 @@
 				4E395636191A0D65002F73AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

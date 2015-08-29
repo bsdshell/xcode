@@ -18,7 +18,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.window.bounds];
-    imageView.image=[UIImage imageNamed:@"image.png"];
+    imageView.image=[UIImage imageNamed:@"myimage.jpg"];
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
     CGFloat leftX = 100.0f;
     CGFloat leftY = 100.0f;
