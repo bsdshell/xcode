@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    UILabel* _label;
+}
+@property(nonatomic, retain)UILabel* label;
 
 @end
 

@@ -36,6 +36,7 @@
 @end
 
 @implementation ViewController
+@synthesize label = _label;
 
 - (void)viewDidLoad
 {
@@ -43,7 +44,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //cool
     MyButton* mybut;
-    mybut = [MyButton buttonWithType:UIBarStyleDefault];
+    mybut = [MyButton buttonWithType:UIButtonTypeSystem];
     CGRect frame;
     frame = CGRectMake(100, 100, 100, 50);
     mybut.frame = frame;
@@ -54,10 +55,31 @@
     self.view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:mybut];
     
+    
+    // create simple text label
+     self.label= [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 300, 300)];
+    [self.label setTextColor:[UIColor yellowColor]];
+    [self.label setBackgroundColor:[UIColor clearColor]];
+    [self.label setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+    [self.label setText:@"OneClickApp"];
+    [self.view addSubview:self.label];
+    
 }
 -(void) clickMe:(id) sender
 {
-    NSLog(@"click me");
+    NSLog(@"Add label");
+    
+    [self.label removeFromSuperview];
+    
+    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 30, 300, 300)];
+    myLabel.numberOfLines = 0;
+    [myLabel setTextColor:[UIColor yellowColor]];
+    [myLabel setBackgroundColor:[UIColor clearColor]];
+    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
+    [myLabel setText:@"Remove old label and add new label \n with removeFromSuperView  \n myLabel.numberOfLines = 0;"];
+    
+    [self.view addSubview:myLabel];
+
 }
 
 - (void)viewDidUnload
