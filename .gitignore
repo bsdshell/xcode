@@ -20,6 +20,7 @@ DerivedData
 *.DS_Store
 *.xcbkptlist
 *.log
+*.out
 
 # CocoaPods
 #
