@@ -14,7 +14,7 @@
 		<string>https://github.com/bsdshell/xcode.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SimpleApp/SimpleApp.xcodeproj</string>
+	<string>OneButtonApp/SimpleApp.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9ACC560FEBF9F951C1BA486CD9A88B0A6FFD12E7</key>

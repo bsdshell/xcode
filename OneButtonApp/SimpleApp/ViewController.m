@@ -43,7 +43,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     //cool
     MyButton* mybut;
-    mybut = [MyButton buttonWithType:UIBarStyleDefault];
+    mybut = [MyButton buttonWithType:UIButtonTypeSystem];
     CGRect frame;
     frame = CGRectMake(100, 100, 100, 50);
     mybut.frame = frame;
