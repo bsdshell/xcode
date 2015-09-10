@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    CAShapeLayer* _shapeLayer;
+}
 
+@property(nonatomic, retain)CAShapeLayer* shaperLayer;
 @end
 
 @interface MyButton: UIButton
