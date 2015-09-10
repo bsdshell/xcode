@@ -17,8 +17,6 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
 
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.window.bounds];
-    imageView.image=[UIImage imageNamed:@"myimage.jpg"];
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
     CGFloat leftX = 100.0f;
     CGFloat leftY = 100.0f;
@@ -35,9 +33,8 @@
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     [circleLayer setStrokeColor:CGColorCreate(colorSpace, component)];
     [circleLayer setLineWidth:1.0f];
-    [circleLayer setFillColor:[[UIColor grayColor] CGColor]];
-    [[imageView layer] addSublayer:circleLayer];
-    [self.window addSubview:imageView];
+    [circleLayer setFillColor:[[UIColor brownColor] CGColor]];
+    [self.window.layer addSublayer:circleLayer];
     
     [self.window makeKeyAndVisible];
     return YES;
