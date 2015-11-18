@@ -33,16 +33,12 @@
 
 @implementation ViewController
 @synthesize shaperLayer = _shapeLayer;
+@synthesize rectLayer = _rectLayer;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self drawCircle:CGPointMake(100, 250) radius:50];
-    
-    for (id familyName in [UIFont familyNames]) {
-        NSLog(@"%@", familyName);
-        for (id fontName in [UIFont fontNamesForFamilyName:familyName]) NSLog(@"  %@", fontName);
-    }
+    self.view.backgroundColor = [UIColor grayColor];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -54,11 +50,22 @@
         
         CGPoint touchXY = [touch locationInView:touch.view];
         
+        CGFloat radius = 10;
+        [self drawCircle:touchXY radius:radius];
         if(CGPathContainsPoint(_shapeLayer.path, NULL, touchXY, FALSE)){
             NSLog(@"inside the  circle x=[%f] y=[%f]", touchXY.x, touchXY.y);
         }else{
             NSLog(@"outside the circle x=[%f] y=[%f]", touchXY.x, touchXY.y);
         }
+        
+        if(CGPathContainsPoint(_rectLayer.path, NULL, touchXY, FALSE)){
+            NSLog(@"inside the  rectangle x=[%f] y=[%f]", touchXY.x, touchXY.y);
+        }else{
+            NSLog(@"outside the rectangle x=[%f] y=[%f]", touchXY.x, touchXY.y);
+        }
+
+        
+        
         NSLog(@"---------------------------------------");
     }
 }
@@ -87,6 +94,29 @@
     _shapeLayer.fillColor = [[UIColor yellowColor] CGColor];
     _shapeLayer.lineWidth = 1.0;
     [self.view.layer addSublayer:_shapeLayer];
+}
+
+// draw rectangle
+-(CAShapeLayer*)drawRectangle:(CGPoint) location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight{
+    CAShapeLayer* shapeLayer = [CAShapeLayer layer];
+    UIBezierPath* path = [UIBezierPath bezierPath];
+    
+    // start point
+    [path moveToPoint:CGPointMake(location.x - semiWidth, location.y - semiHeight)];
+    
+    // draw lines
+    [path addLineToPoint:CGPointMake(location.x + semiWidth, location.y - semiHeight)];
+    [path addLineToPoint:CGPointMake(location.x + semiWidth, location.y + semiHeight)];
+    [path addLineToPoint:CGPointMake(location.x - semiWidth, location.y + semiHeight)];
+    [path addLineToPoint:CGPointMake(location.x - semiWidth, location.y - semiHeight)];
+    //[path closePath];
+    
+    shapeLayer.path = [path CGPath];
+    
+    shapeLayer.strokeColor = [[UIColor yellowColor] CGColor];
+    shapeLayer.fillColor = [[UIColor blackColor] CGColor];
+    shapeLayer.lineWidth = 1.0;
+    return shapeLayer;
 }
 
 -(void) clickMe:(id)sender

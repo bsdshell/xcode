@@ -38,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
+
     [self drawCircle:CGPointMake(100, 250) radius:50];
     self.rectLayer = [self drawRectangle:CGPointMake(150, 300) semiWidth:50 semiHeight:80];
     [self.view.layer addSublayer:self.rectLayer];
