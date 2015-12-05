@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "SubClass.h"
 
 @interface EmptyAppTests : XCTestCase
 
@@ -28,9 +27,6 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    
-    SubClass* sub = [[SubClass alloc]init];
-    XCTAssert([[sub myStr] isEqualToString:@"super"]);
     XCTAssert(YES, @"Pass");
 }
 

@@ -8,9 +8,15 @@
 //=============================================================================
 
 @interface TestClass : NSObject
-    +(void)classOrInstanceMethod;
-    -(void)classOrInstanceMethod;
-    -(id)init;
+{
+    NSString* _mystr;
+}
+
+@property(nonatomic)NSString* mystr;
+
++(void)classOrInstanceMethod;
+-(void)classOrInstanceMethod;
+-(id)init;
 @end
 
 
@@ -26,6 +32,7 @@
     NSLog(@"%s", __PRETTY_FUNCTION__); 
     if(self = [super init])
     {
+        _mystr = @"set me";
         return self;
     }
     return nil;
@@ -53,7 +60,6 @@
     TestClass* __autoreleasing * byRef;
 }
 @end
-
 
 int main(int argc, const char* argv[])
 {
@@ -151,4 +157,40 @@ int main(int argc, const char* argv[])
     else{
         NSLog(@"str4 != str5"); 
     }
+
+
+    int depth = 3;
+    int height = 3;
+    int width  = 2;
+
+    int*** array3d = (int***)malloc(depth*sizeof(int**));
+    for(int d=0; d<depth; d++){ 
+        array3d[d] = (int**)malloc(height*sizeof(int*));
+        for(int i=0; i<height; i++){
+            array3d[d][i] = (int*)malloc(width*sizeof(int));
+        }
+    } 
+
+    int c = 0;
+    for(int d=0; d<depth; d++){ 
+        for(int h=0; h<height; h++){
+            for(int w=0; w<width; w++){
+                array3d[d][h][w] = c;
+                c++;
+            }
+        }
+    }
+    for(int d=0; d<depth; d++){ 
+        for(int h=0; h<height; h++){
+            for(int w=0; w<width; w++){
+                printf("[%d]", array3d[d][h][w]); 
+            }
+            printf("\n"); 
+        }
+        printf("\n"); 
+    }
+    for(int d=0; d<depth; d++)
+        for(int h=0; h<height; h++)
+            free(array3d[d][h]);
+
 }

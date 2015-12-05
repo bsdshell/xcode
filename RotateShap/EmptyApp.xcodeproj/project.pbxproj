@@ -12,10 +12,7 @@
 		4E269B551B68C84F00A3B22B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B541B68C84F00A3B22B /* ViewController.m */; };
 		4E269B5A1B68C84F00A3B22B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E269B591B68C84F00A3B22B /* Images.xcassets */; };
 		4E269B691B68C84F00A3B22B /* EmptyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B681B68C84F00A3B22B /* EmptyAppTests.m */; };
-		4EAFD6551C07D98E00B46C4C /* SUClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAFD6541C07D98E00B46C4C /* SUClass.m */; };
-		4EAFD6581C07D9E000B46C4C /* SubClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAFD6571C07D9E000B46C4C /* SubClass.m */; };
-		4ED0A2B71C12535400842CA0 /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0A2B61C12535400842CA0 /* NewViewController.m */; };
-		4ED0A2BA1C12643900842CA0 /* MyLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0A2B91C12643900842CA0 /* MyLib.m */; };
+		4EAFD65B1C0A6DB600B46C4C /* MyLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EAFD65A1C0A6DB600B46C4C /* MyLib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,14 +37,8 @@
 		4E269B621B68C84F00A3B22B /* EmptyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmptyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E269B671B68C84F00A3B22B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E269B681B68C84F00A3B22B /* EmptyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyAppTests.m; sourceTree = "<group>"; };
-		4EAFD6531C07D98E00B46C4C /* SUClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUClass.h; sourceTree = "<group>"; };
-		4EAFD6541C07D98E00B46C4C /* SUClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUClass.m; sourceTree = "<group>"; };
-		4EAFD6561C07D9E000B46C4C /* SubClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubClass.h; sourceTree = "<group>"; };
-		4EAFD6571C07D9E000B46C4C /* SubClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubClass.m; sourceTree = "<group>"; };
-		4ED0A2B51C12535400842CA0 /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
-		4ED0A2B61C12535400842CA0 /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
-		4ED0A2B81C12643900842CA0 /* MyLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyLib.h; path = ../../../MyAppLib/MyLib/MyLib/MyLib.h; sourceTree = "<group>"; };
-		4ED0A2B91C12643900842CA0 /* MyLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyLib.m; path = ../../../MyAppLib/MyLib/MyLib/MyLib.m; sourceTree = "<group>"; };
+		4EAFD6591C0A6DB600B46C4C /* MyLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyLib.h; path = ../../../MyAppLib/MyLib/MyLib/MyLib.h; sourceTree = "<group>"; };
+		4EAFD65A1C0A6DB600B46C4C /* MyLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyLib.m; path = ../../../MyAppLib/MyLib/MyLib/MyLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,18 +80,12 @@
 		4E269B4B1B68C84F00A3B22B /* EmptyApp */ = {
 			isa = PBXGroup;
 			children = (
-				4ED0A2B81C12643900842CA0 /* MyLib.h */,
-				4ED0A2B91C12643900842CA0 /* MyLib.m */,
+				4EAFD6591C0A6DB600B46C4C /* MyLib.h */,
+				4EAFD65A1C0A6DB600B46C4C /* MyLib.m */,
 				4E269B501B68C84F00A3B22B /* AppDelegate.h */,
 				4E269B511B68C84F00A3B22B /* AppDelegate.m */,
-				4ED0A2B51C12535400842CA0 /* NewViewController.h */,
-				4ED0A2B61C12535400842CA0 /* NewViewController.m */,
 				4E269B531B68C84F00A3B22B /* ViewController.h */,
 				4E269B541B68C84F00A3B22B /* ViewController.m */,
-				4EAFD6531C07D98E00B46C4C /* SUClass.h */,
-				4EAFD6541C07D98E00B46C4C /* SUClass.m */,
-				4EAFD6561C07D9E000B46C4C /* SubClass.h */,
-				4EAFD6571C07D9E000B46C4C /* SubClass.m */,
 				4E269B591B68C84F00A3B22B /* Images.xcassets */,
 				4E269B4C1B68C84F00A3B22B /* Supporting Files */,
 			);
@@ -231,13 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED0A2BA1C12643900842CA0 /* MyLib.m in Sources */,
 				4E269B551B68C84F00A3B22B /* ViewController.m in Sources */,
-				4EAFD6581C07D9E000B46C4C /* SubClass.m in Sources */,
 				4E269B521B68C84F00A3B22B /* AppDelegate.m in Sources */,
-				4ED0A2B71C12535400842CA0 /* NewViewController.m in Sources */,
-				4EAFD6551C07D98E00B46C4C /* SUClass.m in Sources */,
 				4E269B4F1B68C84F00A3B22B /* main.m in Sources */,
+				4EAFD65B1C0A6DB600B46C4C /* MyLib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

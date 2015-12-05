@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "MyLib.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,8 @@
     _radians = 0.0;
     _rad = 3.141516/2;
     _matrix = CGAffineTransformIdentity;
+    _point = CGPointMake(120, 120);
+
     
     self.imageView = [[UIImageView alloc]initWithFrame:self.window.bounds];
     self.imageView.image=[UIImage imageNamed:@"myimage.jpg"];
@@ -35,15 +38,15 @@
     [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
     [myLabel setText:@"Supper Simple Application"];
     
-    CAShapeLayer* layerCircle = [self drawCircle:CGPointMake(100, 100) radius:60];
-    [self.imageView.layer addSublayer:layerCircle];
+    _layerCircle = [self drawCircle:CGPointMake(100, 100) radius:100];
+    [self.imageView.layer addSublayer:_layerCircle];
     
     // draw oval
     CAShapeLayer* layerOval = [self drawOval:CGPointMake(200, 100) semimajor:40 semiminor:20];
     [self.imageView.layer addSublayer:layerOval];
     
     // draw rectangle
-    _layerRect = [self drawRectangle:CGPointMake(100, 100) semiWidth:100 semiHeight:100];
+    _layerRect = [self drawRectangle:_point semiWidth:10 semiHeight:10];
     [self.imageView.layer addSublayer:_layerRect];
     
     
@@ -114,21 +117,44 @@
 }
 
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+-(CGAffineTransform)rotateCenter:(CGAffineTransform) matrix  center:(CGPoint)center{
+    CGAffineTransform  translate = CGAffineTransformTranslate(CGAffineTransformIdentity, -center.x, -center.y);
+    matrix = CGAffineTransformConcat(matrix, translate);
+    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(3.1415/2);
+    matrix = CGAffineTransformConcat(matrix, rotateTransform);
+    
+    CGAffineTransform mat = CGAffineTransformMakeTranslation(center.x, center.y);
+    matrix = CGAffineTransformConcat(matrix, mat);
+    return matrix;
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"%s", __PRETTY_FUNCTION__);
     UITouch* touch = [touches anyObject];
     if(touch != nil){
-         CGAffineTransform  tran = CGAffineTransformTranslate(CGAffineTransformIdentity, -100, -100);
-        _matrix = CGAffineTransformConcat(_matrix, tran);
-        [_layerRect setAffineTransform:_matrix];
-        
-        CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(_rad);
-        _m2 = CGAffineTransformConcat(_matrix, rotateTransform);
-        
-        CGAffineTransform translate = CGAffineTransformTranslate(CGAffineTransformIdentity, 100, 100);
-        _matrix = CGAffineTransformConcat(_matrix, translate);
-        [_layerRect setAffineTransform:_matrix];
 
+        //CGAffineTransform mat;
+        _matrix = [self rotateCenter:_matrix center:_point];
+        //_point = CGPointApplyAffineTransform(_point, _matrix);
+  //       CGAffineTransform  tran = CGAffineTransformTranslate(CGAffineTransformIdentity, -100, -100);
+//        _matrix = CGAffineTransformConcat(_matrix, tran);
+//        CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(_rad);
+//        _matrix = CGAffineTransformConcat(_matrix, rotateTransform);
+//        
+//        CGAffineTransform m3 = CGAffineTransformMakeTranslation(100, 100);
+//        _matrix = CGAffineTransformConcat(_matrix, m3);
+        
+//        [_layerRect setAffineTransform:_matrix];
+        
+//        NSNumber *rotationAtStart = [_layerRect valueForKeyPath:@"transform.rotation"];
+//        CATransform3D myRotationTransform = CATransform3DRotate(_layerRect.transform, 0.1, 0.0, 0.0, 1.0);
+//        //_layerRect.transform = myRotationTransform;
+//        [_layerRect setAffineTransform:_matrix];
+//        CABasicAnimation* myAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+//        myAnimation.duration = 1.0;
+//        myAnimation.fromValue = rotationAtStart;
+//        myAnimation.toValue = [NSNumber numberWithFloat:([rotationAtStart floatValue] + 0.1)];
+//        [_layerRect addAnimation:myAnimation forKey:@"transform.rotation"];
     }
 }
 
@@ -138,6 +164,10 @@
         CGPoint currXY = [touch locationInView:touch.view];
         NSString* mytext = [NSString stringWithFormat:@"[%.01f][%.01f]", currXY.x, currXY.y];
 
+//        _radians = _radians + 0.05;
+//        CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(_radians);
+//        _m2 = CGAffineTransformConcat(_matrix, rotateTransform);
+//        [_layerRect setAffineTransform:_m2];
         
         
 //        CGAffineTransform iden2 = CGAffineTransformIdentity;
@@ -154,32 +184,25 @@
     if(touch != nil){
         CGPoint touchXY = [touch locationInView:touch.view];
         NSString* mytext = [NSString stringWithFormat:@"[%.01f][%.01f]", touchXY.x, touchXY.y];
-        CGAffineTransform m3 = CGAffineTransformMakeTranslation(100, 100);
-        _matrix = CGAffineTransformConcat(_m2, m3);
+//        CGAffineTransform m3 = CGAffineTransformMakeTranslation(100, 100);
+//        _matrix = CGAffineTransformConcat(_m2, m3);
         [_layerRect setAffineTransform:_matrix];
     }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end
