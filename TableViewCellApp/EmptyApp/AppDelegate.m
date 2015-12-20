@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 #import "MyTableViewController.h"
 
 @interface AppDelegate ()
@@ -23,7 +22,6 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor grayColor];
     
-    ViewController* viewController = [[ViewController alloc]init];
     MyTableViewController* tableViewController = [[MyTableViewController alloc]initWithStyle:UITableViewStylePlain];
     
     

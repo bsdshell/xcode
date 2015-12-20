@@ -1,45 +1,21 @@
 //
 //  AppDelegate.m
-//  EmptyApp
+//  SingleView
 //
-//  Created by cat on 7/29/15.
+//  Created by cat on 12/17/15.
 //  Copyright (c) 2015 myxcode. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
-#import "MyTableViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
-
 @implementation AppDelegate
-@synthesize navigationController = _navigationController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor grayColor];
-    
-    ViewController* viewController = [[ViewController alloc]init];
-    MyTableViewController* tableViewController = [[MyTableViewController alloc]initWithStyle:UITableViewStylePlain];
-    
-    
-    //[self.window addSubview:viewController.view];
-    
-    //[self.window setRootViewController:viewController];
-    [self.window setRootViewController:tableViewController];
-
-    //self.navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
-    //[self.navigationController pushViewController:viewController animated:YES];
-    [self.navigationController pushViewController:tableViewController animated:YES];
-    
-    
-    
-    [self.window makeKeyAndVisible];
-
     // Override point for customization after application launch.
     return YES;
 }

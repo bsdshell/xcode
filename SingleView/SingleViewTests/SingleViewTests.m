@@ -1,19 +1,19 @@
 //
-//  EmptyAppTests.m
-//  EmptyAppTests
+//  SingleViewTests.m
+//  SingleViewTests
 //
-//  Created by cat on 7/29/15.
+//  Created by cat on 12/17/15.
 //  Copyright (c) 2015 myxcode. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface EmptyAppTests : XCTestCase
+@interface SingleViewTests : XCTestCase
 
 @end
 
-@implementation EmptyAppTests
+@implementation SingleViewTests
 
 - (void)setUp {
     [super setUp];
@@ -27,7 +27,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    
+    XCTAssert(YES, @"Pass");
 }
 
 - (void)testPerformanceExample {

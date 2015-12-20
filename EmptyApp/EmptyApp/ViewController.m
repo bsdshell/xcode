@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "NewViewController.h"
 #import "AppDelegate.h"
+#import "MyViewController.h"
 
 @interface ViewController ()
 
@@ -16,11 +16,12 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
     AppDelegate* appdelegate  = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    self.navigationItem.hidesBackButton = NO;
+    self.navigationItem.title = @"Home";
     
     UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
     CGRect frame = CGRectMake(100, 100, 200, 50);
@@ -31,7 +32,6 @@
     [mybut.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
     [mybut setBackgroundColor:[UIColor brownColor]];
     [self.view addSubview:mybut];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,12 +39,33 @@
     // Dispose of any resources that can be recreated.
     
 }
--(void)startClick:(id) sender
-{
+
+-(void)startClick:(id) sender{
     NSLog(@"click me");
-    NewViewController* newViewController = [[NewViewController alloc]init];
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    appDelegate.window.rootViewController = newViewController;
+    
+    AppDelegate* appDelegate = [[UIApplication sharedApplication]delegate];
+    
+    NSArray* array = [[UIApplication sharedApplication] windows];
+    for (UIWindow* window in array) {
+        NSLog(@"window: %@", window.description);
+        if(window.rootViewController == nil){
+            NSLog(@"this is null window");
+        }
+    }
+    
+    
+    MyViewController* myViewController = [[MyViewController alloc]init];
+    //[self.navigationController pushViewController:myViewController animated:YES];
+    
+    //UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:myViewController];
+    
+    //[appDelegate.navigationController pushViewController:myViewController animated:YES];
+    [appDelegate.window addSubview:myViewController.view];
+    //[appDelegate.window setRootViewController:myViewController];
+    
+    //[appDelegate.navigationController pushViewController:[nav view] animated:YES];
+    
+    //[appDelegate.navigationController pushViewController:myViewController animated:YES];
 }
 
 @end

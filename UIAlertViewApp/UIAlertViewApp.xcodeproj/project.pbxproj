@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E14DA711C26244300215103 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E14DA701C26244300215103 /* MyTableViewController.m */; };
 		4E269B4F1B68C84F00A3B22B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B4E1B68C84F00A3B22B /* main.m */; };
 		4E269B521B68C84F00A3B22B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B511B68C84F00A3B22B /* AppDelegate.m */; };
 		4E269B551B68C84F00A3B22B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B541B68C84F00A3B22B /* ViewController.m */; };
 		4E269B5A1B68C84F00A3B22B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E269B591B68C84F00A3B22B /* Images.xcassets */; };
 		4E269B691B68C84F00A3B22B /* EmptyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B681B68C84F00A3B22B /* EmptyAppTests.m */; };
-		4ECDDE281C249B2F004E1128 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECDDE271C249B2F004E1128 /* MyViewController.m */; };
 		4ED0A2BA1C12643900842CA0 /* MyLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED0A2B91C12643900842CA0 /* MyLib.m */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E14DA6F1C26244300215103 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
-		4E14DA701C26244300215103 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
-		4E269B491B68C84F00A3B22B /* EmptyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmptyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E269B491B68C84F00A3B22B /* UIAlertViewApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIAlertViewApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E269B4D1B68C84F00A3B22B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E269B4E1B68C84F00A3B22B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E269B501B68C84F00A3B22B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -38,11 +34,9 @@
 		4E269B531B68C84F00A3B22B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4E269B541B68C84F00A3B22B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E269B591B68C84F00A3B22B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E269B621B68C84F00A3B22B /* EmptyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmptyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E269B621B68C84F00A3B22B /* UIAlertViewAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAlertViewAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E269B671B68C84F00A3B22B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E269B681B68C84F00A3B22B /* EmptyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyAppTests.m; sourceTree = "<group>"; };
-		4ECDDE261C249B2F004E1128 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
-		4ECDDE271C249B2F004E1128 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		4ED0A2B81C12643900842CA0 /* MyLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyLib.h; path = ../../../MyAppLib/MyLib/MyLib/MyLib.h; sourceTree = "<group>"; };
 		4ED0A2B91C12643900842CA0 /* MyLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyLib.m; path = ../../../MyAppLib/MyLib/MyLib/MyLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,8 +71,8 @@
 		4E269B4A1B68C84F00A3B22B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E269B491B68C84F00A3B22B /* EmptyApp.app */,
-				4E269B621B68C84F00A3B22B /* EmptyAppTests.xctest */,
+				4E269B491B68C84F00A3B22B /* UIAlertViewApp.app */,
+				4E269B621B68C84F00A3B22B /* UIAlertViewAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,10 +84,6 @@
 				4ED0A2B91C12643900842CA0 /* MyLib.m */,
 				4E269B501B68C84F00A3B22B /* AppDelegate.h */,
 				4E269B511B68C84F00A3B22B /* AppDelegate.m */,
-				4E14DA6F1C26244300215103 /* MyTableViewController.h */,
-				4E14DA701C26244300215103 /* MyTableViewController.m */,
-				4ECDDE261C249B2F004E1128 /* MyViewController.h */,
-				4ECDDE271C249B2F004E1128 /* MyViewController.m */,
 				4E269B531B68C84F00A3B22B /* ViewController.h */,
 				4E269B541B68C84F00A3B22B /* ViewController.m */,
 				4E269B591B68C84F00A3B22B /* Images.xcassets */,
@@ -131,9 +121,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E269B481B68C84F00A3B22B /* EmptyApp */ = {
+		4E269B481B68C84F00A3B22B /* UIAlertViewApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E269B6C1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "EmptyApp" */;
+			buildConfigurationList = 4E269B6C1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "UIAlertViewApp" */;
 			buildPhases = (
 				4E269B451B68C84F00A3B22B /* Sources */,
 				4E269B461B68C84F00A3B22B /* Frameworks */,
@@ -143,14 +133,14 @@
 			);
 			dependencies = (
 			);
-			name = EmptyApp;
+			name = UIAlertViewApp;
 			productName = EmptyApp;
-			productReference = 4E269B491B68C84F00A3B22B /* EmptyApp.app */;
+			productReference = 4E269B491B68C84F00A3B22B /* UIAlertViewApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E269B611B68C84F00A3B22B /* EmptyAppTests */ = {
+		4E269B611B68C84F00A3B22B /* UIAlertViewAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E269B6F1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "EmptyAppTests" */;
+			buildConfigurationList = 4E269B6F1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "UIAlertViewAppTests" */;
 			buildPhases = (
 				4E269B5E1B68C84F00A3B22B /* Sources */,
 				4E269B5F1B68C84F00A3B22B /* Frameworks */,
@@ -161,9 +151,9 @@
 			dependencies = (
 				4E269B641B68C84F00A3B22B /* PBXTargetDependency */,
 			);
-			name = EmptyAppTests;
+			name = UIAlertViewAppTests;
 			productName = EmptyAppTests;
-			productReference = 4E269B621B68C84F00A3B22B /* EmptyAppTests.xctest */;
+			productReference = 4E269B621B68C84F00A3B22B /* UIAlertViewAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E269B441B68C84F00A3B22B /* Build configuration list for PBXProject "EmptyApp" */;
+			buildConfigurationList = 4E269B441B68C84F00A3B22B /* Build configuration list for PBXProject "UIAlertViewApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -197,8 +187,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E269B481B68C84F00A3B22B /* EmptyApp */,
-				4E269B611B68C84F00A3B22B /* EmptyAppTests */,
+				4E269B481B68C84F00A3B22B /* UIAlertViewApp */,
+				4E269B611B68C84F00A3B22B /* UIAlertViewAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,9 +219,7 @@
 				4ED0A2BA1C12643900842CA0 /* MyLib.m in Sources */,
 				4E269B551B68C84F00A3B22B /* ViewController.m in Sources */,
 				4E269B521B68C84F00A3B22B /* AppDelegate.m in Sources */,
-				4E14DA711C26244300215103 /* MyTableViewController.m in Sources */,
 				4E269B4F1B68C84F00A3B22B /* main.m in Sources */,
-				4ECDDE281C249B2F004E1128 /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +236,7 @@
 /* Begin PBXTargetDependency section */
 		4E269B641B68C84F00A3B22B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4E269B481B68C84F00A3B22B /* EmptyApp */;
+			target = 4E269B481B68C84F00A3B22B /* UIAlertViewApp */;
 			targetProxy = 4E269B631B68C84F00A3B22B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -336,7 +324,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EmptyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UIAlertViewApp;
 			};
 			name = Debug;
 		};
@@ -346,7 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EmptyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UIAlertViewApp;
 			};
 			name = Release;
 		};
@@ -364,7 +352,7 @@
 				);
 				INFOPLIST_FILE = EmptyAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UIAlertViewAppTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmptyApp.app/EmptyApp";
 			};
 			name = Debug;
@@ -379,7 +367,7 @@
 				);
 				INFOPLIST_FILE = EmptyAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UIAlertViewAppTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmptyApp.app/EmptyApp";
 			};
 			name = Release;
@@ -387,7 +375,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E269B441B68C84F00A3B22B /* Build configuration list for PBXProject "EmptyApp" */ = {
+		4E269B441B68C84F00A3B22B /* Build configuration list for PBXProject "UIAlertViewApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E269B6A1B68C84F00A3B22B /* Debug */,
@@ -396,7 +384,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E269B6C1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "EmptyApp" */ = {
+		4E269B6C1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "UIAlertViewApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E269B6D1B68C84F00A3B22B /* Debug */,
@@ -405,7 +393,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E269B6F1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "EmptyAppTests" */ = {
+		4E269B6F1B68C84F00A3B22B /* Build configuration list for PBXNativeTarget "UIAlertViewAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E269B701B68C84F00A3B22B /* Debug */,

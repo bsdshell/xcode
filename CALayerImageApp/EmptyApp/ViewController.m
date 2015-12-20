@@ -37,9 +37,6 @@
     aLayer1.contents = (id)backgroundImage1.CGImage;
     aLayer1.frame = startFrame1;
     [self.view.layer addSublayer:aLayer1];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

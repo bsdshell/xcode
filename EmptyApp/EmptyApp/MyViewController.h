@@ -1,13 +1,13 @@
 //
-//  NewViewController.h
+//  MyViewController.h
 //  EmptyApp
 //
-//  Created by cat on 12/4/15.
+//  Created by cat on 12/18/15.
 //  Copyright (c) 2015 myxcode. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface NewViewController : UIViewController
+@interface MyViewController : UIViewController
 
 @end

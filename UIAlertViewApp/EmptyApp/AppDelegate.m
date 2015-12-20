@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "MyTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,28 +20,33 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor grayColor];
+    self.window.backgroundColor = [UIColor whiteColor];
     
+    // create ViewController doing nothing
     ViewController* viewController = [[ViewController alloc]init];
-    MyTableViewController* tableViewController = [[MyTableViewController alloc]initWithStyle:UITableViewStylePlain];
+    [self.window addSubview:viewController.view];
+    
+//    [self.navigationController pushViewController:viewController animated:YES];
+    self.navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
     
     
-    //[self.window addSubview:viewController.view];
-    
-    //[self.window setRootViewController:viewController];
-    [self.window setRootViewController:tableViewController];
-
-    //self.navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
-    //[self.navigationController pushViewController:viewController animated:YES];
-    [self.navigationController pushViewController:tableViewController animated:YES];
-    
-    
+    // create simple text label
+//    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 400, 300)];
+//    [myLabel setTextColor:[UIColor redColor]];
+//    [myLabel setBackgroundColor:[UIColor clearColor]];
+//    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+//    [myLabel setText:@"Supper Simple Application"];
+//    
+//    
+//    [self.window addSubview:myLabel];
     
     [self.window makeKeyAndVisible];
 
     // Override point for customization after application launch.
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
