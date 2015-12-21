@@ -35,21 +35,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *CellIdentifier = @"Cell432";
     //[tableView setSeparatorColor:[UIColor clearColor]];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewStylePlain reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = @"My Cell";
-    
-    
+    if([indexPath section] == 0 && [indexPath row] == 0){
+        cell.textLabel.text = @"Section 0 Row 0";
+    }else if([indexPath section] == 0 && [indexPath row] == 1){
+        cell.textLabel.text = @"Section 1Row 1";
+    }
     return cell;
 }
 
