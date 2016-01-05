@@ -1,19 +1,19 @@
 //
-//  EmptyAppTests.m
-//  EmptyAppTests
+//  AppUIAlertTests.m
+//  AppUIAlertTests
 //
-//  Created by cat on 7/29/15.
-//  Copyright (c) 2015 myxcode. All rights reserved.
+//  Created by cat on 1/4/16.
+//  Copyright (c) 2016 myxcode. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface EmptyAppTests : XCTestCase
+@interface AppUIAlertTests : XCTestCase
 
 @end
 
-@implementation EmptyAppTests
+@implementation AppUIAlertTests
 
 - (void)setUp {
     [super setUp];
@@ -27,7 +27,7 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    
+    XCTAssert(YES, @"Pass");
 }
 
 - (void)testPerformanceExample {

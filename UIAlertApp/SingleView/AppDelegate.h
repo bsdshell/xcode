@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AppDelegate.h
 //  SingleView
 //
 //  Created by cat on 12/17/15.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) UIWindow *window;
 
--(void)sendImageButton:(id)sender;
 
 @end
 

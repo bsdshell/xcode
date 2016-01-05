@@ -37,7 +37,7 @@
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil
                                                                    message:nil
-                                                            preferredStyle:UIAlertActionStyleDefault];
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     
     UIAlertAction* encryptedPhotoImageAction = [UIAlertAction actionWithTitle:@"Click Option 1" style:UIAlertActionStyleDefault

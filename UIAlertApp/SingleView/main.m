@@ -1,8 +1,8 @@
 //
 //  main.m
-//  EmptyApp
+//  SingleView
 //
-//  Created by cat on 7/29/15.
+//  Created by cat on 12/17/15.
 //  Copyright (c) 2015 myxcode. All rights reserved.
 //
 

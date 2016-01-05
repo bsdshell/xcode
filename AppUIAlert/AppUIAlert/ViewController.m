@@ -1,9 +1,9 @@
 //
 //  ViewController.m
-//  SingleView
+//  AppUIAlert
 //
-//  Created by cat on 12/17/15.
-//  Copyright (c) 2015 myxcode. All rights reserved.
+//  Created by cat on 1/4/16.
+//  Copyright (c) 2016 myxcode. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -17,22 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
-    CGRect frame = CGRectMake(100, 100, 200, 50);
-    mybut.frame = frame;
-    [mybut addTarget:self action:@selector(startClick:) forControlEvents:UIControlEventTouchUpInside];
-    [mybut setTitle:@"Switch Controller" forState:(UIControlState) UIControlStateNormal];
-    [mybut setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-    [mybut.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
-    [mybut setBackgroundColor:[UIColor brownColor]];
-    [self.view addSubview:mybut];
-
-    
-}
-
--(void)startClick:(id) sender
-{
-    NSLog(@"click me");
     
     
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:nil
@@ -40,20 +24,20 @@
                                                             preferredStyle:UIAlertActionStyleDefault];
     
     
-    UIAlertAction* encryptedPhotoImageAction = [UIAlertAction actionWithTitle:@"Click Option 1" style:UIAlertActionStyleDefault
+    UIAlertAction* encryptedPhotoImageAction = [UIAlertAction actionWithTitle:@"Send encrypted Images" style:UIAlertActionStyleDefault
                                                                       handler:^(UIAlertAction * action) {
                                                                           [self sendImageButton:@"option1"];
-                                                                          NSLog(@"Click Option 1 Yes?");
+                                                                          NSLog(@"send encrypted images");
                                                                       }];
     
     
     [alert addAction:encryptedPhotoImageAction];
     
     
-    UIAlertAction* decryptedPhotoImageAction = [UIAlertAction actionWithTitle:@"Click Opiton 2" style:UIAlertActionStyleDefault
+    UIAlertAction* decryptedPhotoImageAction = [UIAlertAction actionWithTitle:@"Send decrypted Images" style:UIAlertActionStyleDefault
                                                                       handler:^(UIAlertAction * action) {
                                                                           [self sendImageButton:@"option2"];
-                                                                          NSLog(@"Click Option 2 Yes?");
+                                                                          NSLog(@"send decrypted images");
                                                                       }];
     
     
@@ -62,7 +46,6 @@
     [self presentViewController:alert animated:YES completion:nil];
     
 }
-
 -(void)sendImageButton:(id)sender
 {
     NSString* selectOption = (NSString*)sender;

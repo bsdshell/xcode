@@ -1,52 +1,24 @@
 //
 //  AppDelegate.m
-//  EmptyApp
+//  AppUIAlert
 //
-//  Created by cat on 7/29/15.
-//  Copyright (c) 2015 myxcode. All rights reserved.
+//  Created by cat on 1/4/16.
+//  Copyright (c) 2016 myxcode. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
-
 @implementation AppDelegate
-@synthesize navigationController = _navigationController;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    
-    // create ViewController doing nothing
-    ViewController* viewController = [[ViewController alloc]init];
-    [self.window addSubview:viewController.view];
-    
-//    [self.navigationController pushViewController:viewController animated:YES];
-    self.navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
-    
-    
-    // create simple text label
-//    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 400, 300)];
-//    [myLabel setTextColor:[UIColor redColor]];
-//    [myLabel setBackgroundColor:[UIColor clearColor]];
-//    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
-//    [myLabel setText:@"Supper Simple Application"];
-//    
-//    
-//    [self.window addSubview:myLabel];
-    
-    [self.window makeKeyAndVisible];
-
     // Override point for customization after application launch.
     return YES;
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
