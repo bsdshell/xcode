@@ -7,16 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface MyClass : NSObject<NSCoding>{
     NSString* _name;
     int       _age;
     NSArray* _nsarray;
+    CAShapeLayer* _circleLayer;
+
 }
 
 @property(nonatomic, retain)NSString* name;
 @property(nonatomic)int age;
 @property(nonatomic, retain)NSMutableArray* muarray;
 @property(nonatomic, retain)NSArray* nsarray;
+@property(nonatomic, retain)CAShapeLayer* circleLayer;
 
 @end

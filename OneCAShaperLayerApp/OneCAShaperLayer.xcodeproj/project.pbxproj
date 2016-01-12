@@ -32,23 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E395605191A0D65002F73AB /* DrawCircleOnImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawCircleOnImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E395605191A0D65002F73AB /* OneCAShaperLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneCAShaperLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E395608191A0D65002F73AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E39560A191A0D65002F73AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4E39560C191A0D65002F73AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4E395610191A0D65002F73AB /* DrawCircleOnImage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawCircleOnImage-Info.plist"; sourceTree = "<group>"; };
+		4E395610191A0D65002F73AB /* OneCAShaperLayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShaperLayer-Info.plist"; sourceTree = "<group>"; };
 		4E395612191A0D65002F73AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E395614191A0D65002F73AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4E395616191A0D65002F73AB /* DrawCircleOnImage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DrawCircleOnImage-Prefix.pch"; sourceTree = "<group>"; };
+		4E395616191A0D65002F73AB /* OneCAShaperLayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneCAShaperLayer-Prefix.pch"; sourceTree = "<group>"; };
 		4E395617191A0D65002F73AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E395618191A0D65002F73AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4E39561A191A0D65002F73AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E395620191A0D65002F73AB /* DrawCircleOnImageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawCircleOnImageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E395620191A0D65002F73AB /* OneCAShaperLayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneCAShaperLayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E395621191A0D65002F73AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4E395629191A0D65002F73AB /* DrawCircleOnImageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DrawCircleOnImageTests-Info.plist"; sourceTree = "<group>"; };
+		4E395629191A0D65002F73AB /* OneCAShaperLayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShaperLayerTests-Info.plist"; sourceTree = "<group>"; };
 		4E39562B191A0D65002F73AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyApplicationTests.m; sourceTree = "<group>"; };
-		4E395643191A1E70002F73AB /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../Downloads/image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +88,8 @@
 		4E395606191A0D65002F73AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E395605191A0D65002F73AB /* DrawCircleOnImage.app */,
-				4E395620191A0D65002F73AB /* DrawCircleOnImageTests.xctest */,
+				4E395605191A0D65002F73AB /* OneCAShaperLayer.app */,
+				4E395620191A0D65002F73AB /* OneCAShaperLayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,10 +119,10 @@
 		4E39560F191A0D65002F73AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E395610191A0D65002F73AB /* DrawCircleOnImage-Info.plist */,
+				4E395610191A0D65002F73AB /* OneCAShaperLayer-Info.plist */,
 				4E395611191A0D65002F73AB /* InfoPlist.strings */,
 				4E395614191A0D65002F73AB /* main.m */,
-				4E395616191A0D65002F73AB /* DrawCircleOnImage-Prefix.pch */,
+				4E395616191A0D65002F73AB /* OneCAShaperLayer-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -140,7 +139,7 @@
 		4E395628191A0D65002F73AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E395629191A0D65002F73AB /* DrawCircleOnImageTests-Info.plist */,
+				4E395629191A0D65002F73AB /* OneCAShaperLayerTests-Info.plist */,
 				4E39562A191A0D65002F73AB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -149,7 +148,6 @@
 		4E395640191A1764002F73AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E395643191A1E70002F73AB /* image.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -157,9 +155,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E395604191A0D65002F73AB /* DrawCircleOnImage */ = {
+		4E395604191A0D65002F73AB /* OneCAShaperLayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "DrawCircleOnImage" */;
+			buildConfigurationList = 4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperLayer" */;
 			buildPhases = (
 				4E395601191A0D65002F73AB /* Sources */,
 				4E395602191A0D65002F73AB /* Frameworks */,
@@ -169,14 +167,14 @@
 			);
 			dependencies = (
 			);
-			name = DrawCircleOnImage;
+			name = OneCAShaperLayer;
 			productName = EmptyApplication;
-			productReference = 4E395605191A0D65002F73AB /* DrawCircleOnImage.app */;
+			productReference = 4E395605191A0D65002F73AB /* OneCAShaperLayer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E39561F191A0D65002F73AB /* DrawCircleOnImageTests */ = {
+		4E39561F191A0D65002F73AB /* OneCAShaperLayerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "DrawCircleOnImageTests" */;
+			buildConfigurationList = 4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperLayerTests" */;
 			buildPhases = (
 				4E39561C191A0D65002F73AB /* Sources */,
 				4E39561D191A0D65002F73AB /* Frameworks */,
@@ -187,9 +185,9 @@
 			dependencies = (
 				4E395626191A0D65002F73AB /* PBXTargetDependency */,
 			);
-			name = DrawCircleOnImageTests;
+			name = OneCAShaperLayerTests;
 			productName = EmptyApplicationTests;
-			productReference = 4E395620191A0D65002F73AB /* DrawCircleOnImageTests.xctest */;
+			productReference = 4E395620191A0D65002F73AB /* OneCAShaperLayerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E395600191A0D65002F73AB /* Build configuration list for PBXProject "DrawCircleOnImage" */;
+			buildConfigurationList = 4E395600191A0D65002F73AB /* Build configuration list for PBXProject "OneCAShaperLayer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,8 +216,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E395604191A0D65002F73AB /* DrawCircleOnImage */,
-				4E39561F191A0D65002F73AB /* DrawCircleOnImageTests */,
+				4E395604191A0D65002F73AB /* OneCAShaperLayer */,
+				4E39561F191A0D65002F73AB /* OneCAShaperLayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +265,7 @@
 /* Begin PBXTargetDependency section */
 		4E395626191A0D65002F73AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4E395604191A0D65002F73AB /* DrawCircleOnImage */;
+			target = 4E395604191A0D65002F73AB /* OneCAShaperLayer */;
 			targetProxy = 4E395625191A0D65002F73AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -368,9 +366,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EmptyApplication/DrawCircleOnImage-Prefix.pch";
-				INFOPLIST_FILE = "EmptyApplication/DrawCircleOnImage-Info.plist";
-				PRODUCT_NAME = DrawCircleOnImage;
+				GCC_PREFIX_HEADER = "EmptyApplication/OneCAShaperLayer-Prefix.pch";
+				INFOPLIST_FILE = "EmptyApplication/OneCAShaperLayer-Info.plist";
+				PRODUCT_NAME = OneCAShaperLayer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -381,9 +379,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EmptyApplication/DrawCircleOnImage-Prefix.pch";
-				INFOPLIST_FILE = "EmptyApplication/DrawCircleOnImage-Info.plist";
-				PRODUCT_NAME = DrawCircleOnImage;
+				GCC_PREFIX_HEADER = "EmptyApplication/OneCAShaperLayer-Prefix.pch";
+				INFOPLIST_FILE = "EmptyApplication/OneCAShaperLayer-Info.plist";
+				PRODUCT_NAME = OneCAShaperLayer;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -403,8 +401,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "EmptyApplicationTests/DrawCircleOnImageTests-Info.plist";
-				PRODUCT_NAME = DrawCircleOnImageTests;
+				INFOPLIST_FILE = "EmptyApplicationTests/OneCAShaperLayerTests-Info.plist";
+				PRODUCT_NAME = OneCAShaperLayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -421,8 +419,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EmptyApplication/EmptyApplication-Prefix.pch";
-				INFOPLIST_FILE = "EmptyApplicationTests/DrawCircleOnImageTests-Info.plist";
-				PRODUCT_NAME = DrawCircleOnImageTests;
+				INFOPLIST_FILE = "EmptyApplicationTests/OneCAShaperLayerTests-Info.plist";
+				PRODUCT_NAME = OneCAShaperLayerTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -431,7 +429,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E395600191A0D65002F73AB /* Build configuration list for PBXProject "DrawCircleOnImage" */ = {
+		4E395600191A0D65002F73AB /* Build configuration list for PBXProject "OneCAShaperLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E39562F191A0D65002F73AB /* Debug */,
@@ -440,7 +438,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "DrawCircleOnImage" */ = {
+		4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperLayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E395632191A0D65002F73AB /* Debug */,
@@ -449,7 +447,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "DrawCircleOnImageTests" */ = {
+		4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperLayerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E395635191A0D65002F73AB /* Debug */,
