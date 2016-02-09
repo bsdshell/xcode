@@ -1,47 +1,34 @@
 //
 //  AppDelegate.m
-//  EmptyApplication
+//  tut1
 //
-//  Created by cat on 5/6/14.
-//  Copyright (c) 2014 searchBarDemo. All rights reserved.
+//  Created by aa aa on 12-06-16.
+//  Copyright (c) 2012 asdfk. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
-
-// searchkey: CALayer example and draw one circle, color component
 @implementation AppDelegate
+
+@synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
     self.window.backgroundColor = [UIColor whiteColor];
-
-    CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    CGFloat leftX = 100.0f;
-    CGFloat leftY = 100.0f;
-    CGFloat Width = 200.0f;
-    CGFloat Height = 200.0f;
-    UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(leftX, leftY, Width, Height)];
-    [circleLayer setPath:[path CGPath]];
     
-    CGFloat component[4];
-    component[0] = 100.0;
-    component[1] = 1.0;
-    component[2] = 2.0;
-    component[3] = 2.0;
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    [circleLayer setStrokeColor:CGColorCreate(colorSpace, component)];
-    [circleLayer setLineWidth:1.0f];
-    [circleLayer setFillColor:[[UIColor brownColor] CGColor]];
-    [self.window.layer addSublayer:circleLayer];
+    
+    ViewController* viewController = [[ViewController alloc]init];
+    [self.window setRootViewController:viewController];
     
     [self.window makeKeyAndVisible];
+    
+    // Override point for customization after application launch.
     return YES;
 }
-
+							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

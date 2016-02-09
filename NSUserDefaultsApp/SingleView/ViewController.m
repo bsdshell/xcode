@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MyLib.h"
 #import "MyClass.h"
+#import "SubClass.h"
 
 @interface ViewController ()
 
@@ -45,7 +46,36 @@
     
     CALayer* circleLayer = person.circleLayer;
     
+    //[self.view.layer addSublayer:circleLayer];
+    [self subClass];
+}
+// searchkey: add subclass to NSUserDefaults  
+-(void)subClass{
+    NSUserDefaults* defaultUser = [NSUserDefaults standardUserDefaults];
+    SubClass* subclass = [[SubClass alloc]init];
+    [subclass setName:@"cool name"];
+    [subclass setAge:100];
+    
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:subclass];
+    
+    [defaultUser setObject:data forKey:@"person"];
+    [defaultUser synchronize];
+    
+    NSData* undata = [defaultUser objectForKey:@"person"];
+    
+    SubClass* person = [NSKeyedUnarchiver unarchiveObjectWithData:undata];
+    
+    for(NSArray* arr in person.nsarray){
+        NSLog(@"person.nsarray=[%@]", arr);
+    }
+    
+    NSLog(@"person.name=[%@]", person.name);
+    NSLog(@"person.age=[%u]", person.age);
+    
+    CALayer* circleLayer = person.circleLayer;
+    
     [self.view.layer addSublayer:circleLayer];
+    
 }
 
 - (void)didReceiveMemoryWarning {

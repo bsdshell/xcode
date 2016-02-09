@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "MyClass.h"
+#import "SubClass.h"
 
 @interface SingleViewTests : XCTestCase
 
@@ -32,6 +33,7 @@
 }
 
 -(void)testEncode{
+    
     NSUserDefaults* defaultUser = [NSUserDefaults standardUserDefaults];
     MyClass* c = [[MyClass alloc]init];
     [c setName:@"cool name"];
@@ -52,10 +54,11 @@
     
     NSLog(@"person.name=[%@]", person.name);
     NSLog(@"person.age=[%u]", person.age);
+
+
 }
 
 - (void)testArray{
-    
     NSUserDefaults* defaultUser = [NSUserDefaults standardUserDefaults];
     NSMutableArray* array = [NSMutableArray arrayWithCapacity:2];
     [array addObject:@"1"];

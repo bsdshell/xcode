@@ -131,7 +131,7 @@ void ToneInterruptionListener(void *inClientData, UInt32 inInterruptionState)
 
 - (IBAction)togglePlay:(UIButton *)selectedButton
 {
-	if (toneUnit)
+	if(toneUnit)
 	{
 		AudioOutputUnitStop(toneUnit);
 		AudioUnitUninitialize(toneUnit);
@@ -146,11 +146,11 @@ void ToneInterruptionListener(void *inClientData, UInt32 inInterruptionState)
 		
 		// Stop changing parameters on the unit
 		OSErr err = AudioUnitInitialize(toneUnit);
-		NSAssert1(err == noErr, @"Error initializing unit: %ld", err);
+		NSAssert1(err == noErr, @"Error initializing unit: %hd", err);
 		
 		// Start playback
 		err = AudioOutputUnitStart(toneUnit);
-		NSAssert1(err == noErr, @"Error starting unit: %ld", err);
+		NSAssert1(err == noErr, @"Error starting unit: %hd", err);
 		
 		[selectedButton setTitle:NSLocalizedString(@"Stop", nil) forState:0];
 	}
