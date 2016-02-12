@@ -21,14 +21,14 @@
 
     // ============================================================
     // circle one
-    CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    circleLayer.name = @"circle";
+    _circleLayer0 = [CAShapeLayer layer];
+    _circleLayer0.name = @"circle0";
     CGFloat leftX = 100.0f;
     CGFloat leftY = 100.0f;
     CGFloat Width = 50.0f;
     CGFloat Height = 50.0f;
     UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(leftX, leftY, Width, Height)];
-    [circleLayer setPath:[path CGPath]];
+    [_circleLayer0 setPath:[path CGPath]];
     
     CGFloat component[4];
     component[0] = 100.0;
@@ -36,17 +36,17 @@
     component[2] = 2.0;
     component[3] = 2.0;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    [circleLayer setStrokeColor:CGColorCreate(colorSpace, component)];
-    [circleLayer setLineWidth:1.0f];
-    [circleLayer setFillColor:[[UIColor brownColor] CGColor]];
+    [_circleLayer0 setStrokeColor:CGColorCreate(colorSpace, component)];
+    [_circleLayer0 setLineWidth:1.0f];
+    [_circleLayer0 setFillColor:[[UIColor brownColor] CGColor]];
     // ============================================================
     // circle two
-    CAShapeLayer* circleLayer1 = [CAShapeLayer layer];
+    _circleLayer1 = [CAShapeLayer layer];
     CGFloat leftX1 = 200.0f;
     CGFloat leftY1 = 200.0f;
     UIBezierPath* path1 = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(leftX1, leftY1, Width, Height)];
-    [circleLayer1 setPath:[path1 CGPath]];
-    circleLayer1.name = @"circle1";
+    [_circleLayer1 setPath:[path1 CGPath]];
+    _circleLayer1.name = @"circle1";
     
     CGFloat component1[4];
     component1[0] = 100.0;
@@ -54,9 +54,9 @@
     component1[2] = 0.3;
     component1[3] = 0.6;
     CGColorSpaceRef colorSpace1 = CGColorSpaceCreateDeviceRGB();
-    [circleLayer1 setStrokeColor:CGColorCreate(colorSpace1, component1)];
-    [circleLayer1 setLineWidth:1.0f];
-    [circleLayer1 setFillColor:[[UIColor blueColor] CGColor]];
+    [_circleLayer1 setStrokeColor:CGColorCreate(colorSpace1, component1)];
+    [_circleLayer1 setLineWidth:1.0f];
+    [_circleLayer1 setFillColor:[[UIColor blueColor] CGColor]];
     // ============================================================
 
     UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -78,27 +78,50 @@
     mybut1.backgroundColor = [UIColor brownColor];
 
     
+    UIButton* mybut11 = [UIButton buttonWithType:UIButtonTypeSystem];
+    CGRect frame11 = CGRectMake(4, 500, 140, 50);
+    mybut11.frame = frame11;
+    [mybut11 addTarget:self action:@selector(hideCircle0:) forControlEvents:UIControlEventTouchUpInside];
+    [mybut11 setTitle:@"Hide circle" forState:(UIControlState) UIControlStateNormal];
+    [mybut11 setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+    [mybut11.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    mybut11.backgroundColor = [UIColor brownColor];
+    
+    UIButton* mybut22 = [UIButton buttonWithType:UIButtonTypeSystem];
+    CGRect frame22 = CGRectMake(150, 500, 140, 50);
+    mybut22.frame = frame22;
+    [mybut22 addTarget:self action:@selector(hideCircle1:) forControlEvents:UIControlEventTouchUpInside];
+    [mybut22 setTitle:@"Hide circle1" forState:(UIControlState) UIControlStateNormal];
+    [mybut22 setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+    [mybut22.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    mybut22.backgroundColor = [UIColor brownColor];
+
+    
     [self.window addSubview:mybut];
     [self.window addSubview:mybut1];
     
-    [self.window.layer addSublayer:circleLayer];
-    [self.window.layer addSublayer:circleLayer1];
+    [self.window addSubview:mybut11];
+    [self.window addSubview:mybut22];
+
+    
+    [self.window.layer addSublayer:_circleLayer0];
+    [self.window.layer addSublayer:_circleLayer1];
     
     [self.window makeKeyAndVisible];
     return YES;
 }
 
 -(void)startClick1:(id)sender{
-    NSLog(@"Click1 me");
+    NSLog(@"Click0 me");
     for(CAShapeLayer* layer in [self.window.layer.sublayers copy]){
-        if([[layer name] isEqualToString:@"circle"]){
+        if([[layer name] isEqualToString:@"circle0"]){
             [layer removeFromSuperlayer];
         }
     }
 }
 
 -(void)startClick2:(id)sender{
-    NSLog(@"Click2 me");
+    NSLog(@"Click1 me");
     for(CAShapeLayer* layer in [self.window.layer.sublayers copy]){
         if([[layer name] isEqualToString:@"circle1"]){
             [layer removeFromSuperlayer];
@@ -106,6 +129,23 @@
     }
 }
 
+-(void)hideCircle0:(id)sender{
+    if(_circleLayer0.isHidden)
+        [_circleLayer0 setHidden:NO];
+    else
+        [_circleLayer0 setHidden:YES];
+
+    NSLog(@"Hide Circle0");
+}
+
+-(void)hideCircle1:(id)sender{
+    if(_circleLayer1.isHidden)
+        [_circleLayer1 setHidden:NO];
+    else
+        [_circleLayer1 setHidden:YES];
+    
+    NSLog(@"Hide Circle1");
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    CAShapeLayer* _circleLayer0;
+    CAShapeLayer* _circleLayer1;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
