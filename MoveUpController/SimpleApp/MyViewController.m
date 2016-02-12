@@ -18,6 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
+    
+    
     UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
     CGRect frame = CGRectMake(50, 100, 200, 50);
     mybut.frame = frame;

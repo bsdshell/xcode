@@ -60,8 +60,11 @@
 {
     NSLog(@"click me");
     
-    MyViewController* myVeiwController = [[MyViewController alloc]init];
-    [self presentModalViewController:myVeiwController animated:YES];
+    MyViewController* modalController = [[MyViewController alloc]init];
+    modalController.view.backgroundColor = [UIColor clearColor];
+    modalController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+
+    [self presentViewController:modalController animated:YES completion:nil];
 }
 
 - (void)viewDidUnload
