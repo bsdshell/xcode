@@ -95,6 +95,7 @@
     [mybut22 setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
     [mybut22.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
     mybut22.backgroundColor = [UIColor brownColor];
+    
 
     
     [self.window addSubview:mybut];
