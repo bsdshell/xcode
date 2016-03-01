@@ -39,7 +39,18 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
+    _myLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 400, 400, 100)];
+    _myLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(150, 400, 400, 100)];
 
+    [_myLabel1 setTextColor:[UIColor redColor]];
+    [_myLabel1 setBackgroundColor:[UIColor clearColor]];
+    [_myLabel1 setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+
+    [_myLabel2 setTextColor:[UIColor brownColor]];
+    [_myLabel2 setBackgroundColor:[UIColor clearColor]];
+    [_myLabel2 setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+
+    
     [self drawCircle:CGPointMake(100, 250) radius:50];
     self.rectLayer = [self drawRectangle:CGPointMake(150, 300) semiWidth:50 semiHeight:80];
     [self.view.layer addSublayer:self.rectLayer];
@@ -48,26 +59,35 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"%s", __PRETTY_FUNCTION__);
 
+
+
+    
     UITouch* touch = [touches anyObject];
     if(touch != nil){
         self.view.multipleTouchEnabled = NO;
         
         CGPoint touchXY = [touch locationInView:touch.view];
         
+        NSString* labelTitle = @"";
         if(CGPathContainsPoint(_shapeLayer.path, NULL, touchXY, FALSE)){
             NSLog(@"inside the  circle x=[%f] y=[%f]", touchXY.x, touchXY.y);
+                [_myLabel1 setText:[NSString stringWithFormat:@"Inside circle"]];
         }else{
+            [_myLabel1 setText:[NSString stringWithFormat:@"Outside circle"]];
             NSLog(@"outside the circle x=[%f] y=[%f]", touchXY.x, touchXY.y);
         }
         
         if(CGPathContainsPoint(_rectLayer.path, NULL, touchXY, FALSE)){
+            [_myLabel2 setText:[NSString stringWithFormat:@"Inside Rectangle"]];
             NSLog(@"inside the  rectangle x=[%f] y=[%f]", touchXY.x, touchXY.y);
         }else{
+            [_myLabel2 setText:[NSString stringWithFormat:@"Outside Rectangle"]];
             NSLog(@"outside the rectangle x=[%f] y=[%f]", touchXY.x, touchXY.y);
         }
+        
+        [self.view addSubview:_myLabel1];
+        [self.view addSubview:_myLabel2];
 
-        
-        
         NSLog(@"---------------------------------------");
     }
 }

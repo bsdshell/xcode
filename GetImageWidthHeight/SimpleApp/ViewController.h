@@ -9,20 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-{
-    CAShapeLayer* _shapeLayer;
-    CAShapeLayer* _rectLayer;
-    UILabel *_myLabel1;
-    UILabel *_myLabel2;
-}
 
-@property(nonatomic, retain)CAShapeLayer* shaperLayer;
-@property(nonatomic, retain)CAShapeLayer* rectLayer;
 @end
 
 @interface MyButton: UIButton
 
 -(id) initWithFrame:(CGRect)frame;
 -(void) clickMe:(id) sender;
-
+-(UIImage*) createGrayScaleImage:(UIImage*) originalImage;
 @end
