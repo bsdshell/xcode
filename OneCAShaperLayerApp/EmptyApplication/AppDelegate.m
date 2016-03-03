@@ -19,6 +19,7 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
 
+    
     //----------------------------------------------------------
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
     CGFloat leftX = 60.0f;
@@ -55,14 +56,59 @@
     [circleLayer1 setStrokeColor:CGColorCreate(colorSpace1, component1)];
     circleLayer1.lineWidth = 40.0f;
     [circleLayer1 setFillColor:[[UIColor clearColor] CGColor]];
+    
+    
+    
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.startPoint = CGPointMake(0.5,1.0);
+    gradientLayer.endPoint = CGPointMake(0.5,0.0);
+    gradientLayer.frame = CGRectMake(0, 0, self.window.bounds.size.width, self.window.bounds.size.height);
+    NSMutableArray *colors = [NSMutableArray array];
+    for (int i = 0; i < 10; i++) {
+        [colors addObject:(id)[[UIColor colorWithHue:(0.1 * i) saturation:1 brightness:.8 alpha:1] CGColor]];
+    }
+    gradientLayer.colors = colors;
+    
+    [gradientLayer setMask:circleLayer1];
+    
+    CAShapeLayer* rectLayer = [self drawRectangle:CGPointMake(200, 300) semiWidth:100 semiHeight:100];
+    [gradientLayer setMask:rectLayer];
+    //[self.window.layer addSublayer:rectLayer];
+    [self.window.layer addSublayer:gradientLayer];
+    
     //----------------------------------------------------------
+
     
     [self.window.layer addSublayer:circleLayer];
-    [self.window.layer addSublayer:circleLayer1];
+    //[self.window.layer addSublayer:circleLayer1];
     
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+// draw rectangle
+-(CAShapeLayer*)drawRectangle:(CGPoint) location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight{
+    CAShapeLayer* shapeLayer = [CAShapeLayer layer];
+    UIBezierPath* path = [UIBezierPath bezierPath];
+    
+    [path moveToPoint:CGPointMake(location.x - semiWidth, location.y - semiHeight)];
+    
+    [path addLineToPoint:CGPointMake(location.x + semiWidth, location.y - semiHeight)];
+    [path addLineToPoint:CGPointMake(location.x + semiWidth, location.y + semiHeight)];
+    [path addLineToPoint:CGPointMake(location.x - semiWidth, location.y + semiHeight)];
+    [path addLineToPoint:CGPointMake(location.x - semiWidth + 0.5, location.y - semiHeight + 0.5)];
+    
+    shapeLayer.path = [path CGPath];
+    
+    shapeLayer.strokeColor = [[UIColor yellowColor] CGColor];
+    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
+    shapeLayer.lineWidth = 1;
+    [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
+
+    return shapeLayer;
+}
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
