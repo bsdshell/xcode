@@ -111,6 +111,8 @@
     [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
     shapeLayer.lineWidth = 20;
     
+    // cool
+    
     return shapeLayer;
 }
 
