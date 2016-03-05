@@ -49,18 +49,21 @@
     [self.window.layer addSublayer:gradientLayer1];
    
     // ------------------------------------------------------------------
-    CAGradientLayer *gradientLayer2 = [CAGradientLayer layer];
-    gradientLayer2.startPoint = CGPointMake(0.5,1.0);
-    gradientLayer2.endPoint = CGPointMake(0.5,0.0);
-    gradientLayer2.frame = CGRectMake(0, 0, self.window.bounds.size.width, self.window.bounds.size.height);
-    NSMutableArray *colors2 = [NSMutableArray array];
-    for (int i = 0; i < 5; i++) {
-        [colors2 addObject:(id)[[UIColor colorWithHue:(0.3 * i) saturation:0.7 brightness:.8 alpha:0.5] CGColor]];
+    
+    for(int i=0; i<4; i++){
+        CAGradientLayer *gradientLayer2 = [CAGradientLayer layer];
+        gradientLayer2.startPoint = CGPointMake(0.5,1.0);
+        gradientLayer2.endPoint = CGPointMake(0.5,0.5);
+        gradientLayer2.frame = CGRectMake(0, 0, self.window.bounds.size.width, self.window.bounds.size.height);
+        NSMutableArray *colors2 = [NSMutableArray array];
+        for (int i = 0; i < 10; i++) {
+            [colors2 addObject:(id)[[UIColor colorWithHue:(0.2 * i) saturation:0.4 brightness:.6 + 0.1*i alpha:0.4] CGColor]];
+        }
+        gradientLayer2.colors = colors2;
+        CAShapeLayer* rectLayer2 = [self drawRectangle2:CGPointMake(150, 350 + 62*i) semiWidth:20 semiHeight:20];
+        [gradientLayer2 setMask:rectLayer2];
+        [self.window.layer addSublayer:gradientLayer2];
     }
-    gradientLayer2.colors = colors2;
-    CAShapeLayer* rectLayer2 = [self drawRectangle2:CGPointMake(200, 350) semiWidth:40 semiHeight:40];
-    [gradientLayer2 setMask:rectLayer2];
-    [self.window.layer addSublayer:gradientLayer2];
     // ------------------------------------------------------------------
 
     [self.window makeKeyAndVisible];
@@ -110,8 +113,6 @@
     shapeLayer.strokeColor = [[UIColor yellowColor] CGColor];
     [shapeLayer setFillColor:[[UIColor clearColor] CGColor]];
     shapeLayer.lineWidth = 20;
-    
-    // cool yes
     
     return shapeLayer;
 }

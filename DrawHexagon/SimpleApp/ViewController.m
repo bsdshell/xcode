@@ -53,7 +53,7 @@
     
     //[self drawCircle:CGPointMake(100, 250) radius:50];
     //self.rectLayer = [self drawRectangle:CGPointMake(150, 300) semiWidth:50 semiHeight:80];
-    self.rectLayer = [self drawHexagon:CGPointMake(150, 300) semiWidth:50 semiHeight:80];
+    self.rectLayer = [self drawHexagon:CGPointMake(200, 300) semiWidth:50 semiHeight:80];
     [self.view.layer addSublayer:self.rectLayer];
 }
 
@@ -121,7 +121,7 @@
     UIBezierPath* path = [UIBezierPath bezierPath];
 
     NSInteger dist = 4;
-    double radians = 50.0;
+    double radians = 100.0;
     NSInteger num = 6;
     double interval = 2*M_PI/num;
     
@@ -159,20 +159,20 @@
     NSInteger dist = 4;
     double radians = 50.0;
     NSInteger num = 6;
-    double interval = 2*M_PI/num;
+    double delta = M_2_PI/num;
 
-    NSInteger initX = radians*cosf(interval);
-    NSInteger initY = radians*sinf(interval);
+    NSInteger initX = radians*cosf(delta);
+    NSInteger initY = radians*sinf(delta);
     
     [path moveToPoint:CGPointMake(location.x - semiWidth + initX, location.y - semiHeight + initY)];
     for(int i=2; i<=num+1; i++){
-        double x = radians*cosf(i*interval);
-        double y = radians*sinf(i*interval);
+        double x = radians*cosf(i*delta);
+        double y = radians*sinf(i*delta);
         //[path moveToPoint:CGPointMake(location.x - semiWidth + x, location.y - semiHeight + y)];
         [path addLineToPoint:CGPointMake(location.x - semiWidth + x, location.y - semiHeight + y)];
     }
     
-    //[path closePath];
+    [path closePath];
     
     shapeLayer.path = [path CGPath];
     
