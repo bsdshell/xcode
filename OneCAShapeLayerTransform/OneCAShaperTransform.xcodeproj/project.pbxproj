@@ -19,6 +19,7 @@
 		4E395624191A0D65002F73AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E39560C191A0D65002F73AB /* UIKit.framework */; };
 		4E39562C191A0D65002F73AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E39562A191A0D65002F73AB /* InfoPlist.strings */; };
 		4E39562E191A0D65002F73AB /* EmptyApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */; };
+		4E80BD971C8A6B2300BBA11F /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E80BD961C8A6B2300BBA11F /* MyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		4E395629191A0D65002F73AB /* OneCAShaperTransformTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShaperTransformTests-Info.plist"; sourceTree = "<group>"; };
 		4E39562B191A0D65002F73AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyApplicationTests.m; sourceTree = "<group>"; };
+		4E80BD951C8A6B2300BBA11F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		4E80BD961C8A6B2300BBA11F /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				4E395618191A0D65002F73AB /* AppDelegate.m */,
 				4E39561A191A0D65002F73AB /* Images.xcassets */,
 				4E39560F191A0D65002F73AB /* Supporting Files */,
+				4E80BD951C8A6B2300BBA11F /* MyViewController.h */,
+				4E80BD961C8A6B2300BBA11F /* MyViewController.m */,
 			);
 			path = EmptyApplication;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E80BD971C8A6B2300BBA11F /* MyViewController.m in Sources */,
 				4E395619191A0D65002F73AB /* AppDelegate.m in Sources */,
 				4E395615191A0D65002F73AB /* main.m in Sources */,
 			);
