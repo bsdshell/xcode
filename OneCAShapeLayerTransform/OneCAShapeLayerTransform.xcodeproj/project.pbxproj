@@ -33,20 +33,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E395605191A0D65002F73AB /* OneCAShaperTransform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneCAShaperTransform.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E395605191A0D65002F73AB /* OneCAShapeLayerTransform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneCAShapeLayerTransform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E395608191A0D65002F73AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E39560A191A0D65002F73AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4E39560C191A0D65002F73AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4E395610191A0D65002F73AB /* OneCAShaperTransform-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShaperTransform-Info.plist"; sourceTree = "<group>"; };
+		4E395610191A0D65002F73AB /* OneCAShapeLayerTransform-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShapeLayerTransform-Info.plist"; sourceTree = "<group>"; };
 		4E395612191A0D65002F73AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E395614191A0D65002F73AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4E395616191A0D65002F73AB /* OneCAShaperTransform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneCAShaperTransform-Prefix.pch"; sourceTree = "<group>"; };
+		4E395616191A0D65002F73AB /* OneCAShapeLayerTransform-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OneCAShapeLayerTransform-Prefix.pch"; sourceTree = "<group>"; };
 		4E395617191A0D65002F73AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E395618191A0D65002F73AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4E39561A191A0D65002F73AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4E395620191A0D65002F73AB /* OneCAShaperTransformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneCAShaperTransformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E395620191A0D65002F73AB /* OneCAShapeLayerTransformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneCAShapeLayerTransformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E395621191A0D65002F73AB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		4E395629191A0D65002F73AB /* OneCAShaperTransformTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShaperTransformTests-Info.plist"; sourceTree = "<group>"; };
+		4E395629191A0D65002F73AB /* OneCAShapeLayerTransformTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneCAShapeLayerTransformTests-Info.plist"; sourceTree = "<group>"; };
 		4E39562B191A0D65002F73AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyApplicationTests.m; sourceTree = "<group>"; };
 		4E80BD951C8A6B2300BBA11F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 		4E395606191A0D65002F73AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4E395605191A0D65002F73AB /* OneCAShaperTransform.app */,
-				4E395620191A0D65002F73AB /* OneCAShaperTransformTests.xctest */,
+				4E395605191A0D65002F73AB /* OneCAShapeLayerTransform.app */,
+				4E395620191A0D65002F73AB /* OneCAShapeLayerTransformTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,10 +124,10 @@
 		4E39560F191A0D65002F73AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E395610191A0D65002F73AB /* OneCAShaperTransform-Info.plist */,
+				4E395610191A0D65002F73AB /* OneCAShapeLayerTransform-Info.plist */,
 				4E395611191A0D65002F73AB /* InfoPlist.strings */,
 				4E395614191A0D65002F73AB /* main.m */,
-				4E395616191A0D65002F73AB /* OneCAShaperTransform-Prefix.pch */,
+				4E395616191A0D65002F73AB /* OneCAShapeLayerTransform-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,7 +144,7 @@
 		4E395628191A0D65002F73AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E395629191A0D65002F73AB /* OneCAShaperTransformTests-Info.plist */,
+				4E395629191A0D65002F73AB /* OneCAShapeLayerTransformTests-Info.plist */,
 				4E39562A191A0D65002F73AB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -160,9 +160,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4E395604191A0D65002F73AB /* OneCAShaperTransform */ = {
+		4E395604191A0D65002F73AB /* OneCAShapeLayerTransform */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperTransform" */;
+			buildConfigurationList = 4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShapeLayerTransform" */;
 			buildPhases = (
 				4E395601191A0D65002F73AB /* Sources */,
 				4E395602191A0D65002F73AB /* Frameworks */,
@@ -172,14 +172,14 @@
 			);
 			dependencies = (
 			);
-			name = OneCAShaperTransform;
+			name = OneCAShapeLayerTransform;
 			productName = EmptyApplication;
-			productReference = 4E395605191A0D65002F73AB /* OneCAShaperTransform.app */;
+			productReference = 4E395605191A0D65002F73AB /* OneCAShapeLayerTransform.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E39561F191A0D65002F73AB /* OneCAShaperTransformTests */ = {
+		4E39561F191A0D65002F73AB /* OneCAShapeLayerTransformTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperTransformTests" */;
+			buildConfigurationList = 4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShapeLayerTransformTests" */;
 			buildPhases = (
 				4E39561C191A0D65002F73AB /* Sources */,
 				4E39561D191A0D65002F73AB /* Frameworks */,
@@ -190,9 +190,9 @@
 			dependencies = (
 				4E395626191A0D65002F73AB /* PBXTargetDependency */,
 			);
-			name = OneCAShaperTransformTests;
+			name = OneCAShapeLayerTransformTests;
 			productName = EmptyApplicationTests;
-			productReference = 4E395620191A0D65002F73AB /* OneCAShaperTransformTests.xctest */;
+			productReference = 4E395620191A0D65002F73AB /* OneCAShapeLayerTransformTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +209,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4E395600191A0D65002F73AB /* Build configuration list for PBXProject "OneCAShaperTransform" */;
+			buildConfigurationList = 4E395600191A0D65002F73AB /* Build configuration list for PBXProject "OneCAShapeLayerTransform" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -221,8 +221,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4E395604191A0D65002F73AB /* OneCAShaperTransform */,
-				4E39561F191A0D65002F73AB /* OneCAShaperTransformTests */,
+				4E395604191A0D65002F73AB /* OneCAShapeLayerTransform */,
+				4E39561F191A0D65002F73AB /* OneCAShapeLayerTransformTests */,
 			);
 		};
 /* End PBXProject section */
@@ -271,7 +271,7 @@
 /* Begin PBXTargetDependency section */
 		4E395626191A0D65002F73AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4E395604191A0D65002F73AB /* OneCAShaperTransform */;
+			target = 4E395604191A0D65002F73AB /* OneCAShapeLayerTransform */;
 			targetProxy = 4E395625191A0D65002F73AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -372,9 +372,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EmptyApplication/OneCAShaperTransform-Prefix.pch";
-				INFOPLIST_FILE = "EmptyApplication/OneCAShaperTransform-Info.plist";
-				PRODUCT_NAME = OneCAShaperTransform;
+				GCC_PREFIX_HEADER = "EmptyApplication/OneCAShapeLayerTransform-Prefix.pch";
+				INFOPLIST_FILE = "EmptyApplication/OneCAShapeLayerTransform-Info.plist";
+				PRODUCT_NAME = OneCAShapeLayerTransform;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -385,9 +385,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EmptyApplication/OneCAShaperTransform-Prefix.pch";
-				INFOPLIST_FILE = "EmptyApplication/OneCAShaperTransform-Info.plist";
-				PRODUCT_NAME = OneCAShaperTransform;
+				GCC_PREFIX_HEADER = "EmptyApplication/OneCAShapeLayerTransform-Prefix.pch";
+				INFOPLIST_FILE = "EmptyApplication/OneCAShapeLayerTransform-Info.plist";
+				PRODUCT_NAME = OneCAShapeLayerTransform;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -407,8 +407,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "EmptyApplicationTests/OneCAShaperTransformTests-Info.plist";
-				PRODUCT_NAME = OneCAShaperTransformTests;
+				INFOPLIST_FILE = "EmptyApplicationTests/OneCAShapeLayerTransformTests-Info.plist";
+				PRODUCT_NAME = OneCAShapeLayerTransformTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -425,8 +425,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EmptyApplication/EmptyApplication-Prefix.pch";
-				INFOPLIST_FILE = "EmptyApplicationTests/OneCAShaperTransformTests-Info.plist";
-				PRODUCT_NAME = OneCAShaperTransformTests;
+				INFOPLIST_FILE = "EmptyApplicationTests/OneCAShapeLayerTransformTests-Info.plist";
+				PRODUCT_NAME = OneCAShapeLayerTransformTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -435,7 +435,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E395600191A0D65002F73AB /* Build configuration list for PBXProject "OneCAShaperTransform" */ = {
+		4E395600191A0D65002F73AB /* Build configuration list for PBXProject "OneCAShapeLayerTransform" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E39562F191A0D65002F73AB /* Debug */,
@@ -444,7 +444,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperTransform" */ = {
+		4E395631191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShapeLayerTransform" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E395632191A0D65002F73AB /* Debug */,
@@ -453,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShaperTransformTests" */ = {
+		4E395634191A0D65002F73AB /* Build configuration list for PBXNativeTarget "OneCAShapeLayerTransformTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4E395635191A0D65002F73AB /* Debug */,
