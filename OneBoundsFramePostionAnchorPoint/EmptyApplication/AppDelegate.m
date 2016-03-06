@@ -11,20 +11,27 @@
     
     //----------------------------------------------------------
     CAShapeLayer* circleLayer = [CAShapeLayer layer];
-    CGFloat Width = 240.0f;
+    CGFloat Width = 200.0f;
     CGFloat Height = 200.0f;
     CGFloat leftX = size.width/2 - Width/2;
     CGFloat leftY = size.height/2 - Height/2;
-    UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(leftX, leftY, Width, Height)];
+    //UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(leftX, leftY, Width, Height)];
+    UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(leftX, leftY, Width, Height)];
+
+    [self printLayerInfo:circleLayer];
     
     [circleLayer setPath:[path CGPath]];
-
-    circleLayer.lineWidth = 10.0f;
+    //circleLayer.position = CGPointMake(10, 10);
+    [circleLayer setBounds:CGRectMake(0, 0, 50, 50)];
+    //[circleLayer setFrame:CGRectMake(0, 0, 100, 100)];
+    circleLayer.lineWidth = 1.0f;
     circleLayer.strokeColor = [[UIColor brownColor] CGColor];
     [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
     //----------------------------------------------------------
+    [self printLayerInfo:circleLayer];
     
     [self.window.layer addSublayer:circleLayer];
+
     //----------------------------------------------------------
     UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
     CGRect frame = CGRectMake(100, 450, 140, 50);
@@ -36,15 +43,38 @@
     mybut.backgroundColor = [UIColor brownColor];
     [self.window addSubview:mybut];
     //----------------------------------------------------------
-    [self printLayerInfo:self.window.layer];
-    self.window.layer.anchorPoint = CGPointMake(0.5, 0.5);
-    [self printLayerInfo:self.window.layer];
+
+    CAShapeLayer* cartesianLayer = [self CartesianCoordinate];
+    [self.window.layer addSublayer:cartesianLayer];
     
    [self.window makeKeyAndVisible];
     return YES;
 }
 
+-(CAShapeLayer*)CartesianCoordinate{
+    CGSize size          = [UIScreen mainScreen].bounds.size;
+    
+    CAShapeLayer* shapeLayer = [CAShapeLayer layer];
+    UIBezierPath* path = [UIBezierPath bezierPath];
+    
+    // Vertical line
+    [path moveToPoint:CGPointMake(size.width/2, 0)];
+    [path addLineToPoint:CGPointMake(size.width/2, size.height)];
+    
+    // Horizontal line
+    [path moveToPoint:CGPointMake(0, size.height/2)];
+    [path addLineToPoint:CGPointMake(size.width, size.height/2)];
+    
+    shapeLayer.path = [path CGPath];
+    shapeLayer.strokeColor = [[UIColor blackColor] CGColor];
+    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
+    shapeLayer.lineWidth = 1.0f;
+    return shapeLayer;
+}
+
+
 -(void)printLayerInfo:(CALayer*)layer{
+    NSLog(@"-----------------------------------------------------");
     CGPoint anchorPoint = layer.anchorPoint;
     CGPoint position = layer.position;
     CGRect layerFrame = layer.frame;
@@ -53,6 +83,7 @@
     NSLog(@"layer_position =[%@]", [NSValue valueWithCGPoint:position]);
     NSLog(@"layer_frame    =[%@]", [NSValue valueWithCGRect:layerFrame]);
     NSLog(@"layer_bounds   =[%@]", [NSValue valueWithCGRect:layerBounds]);
+    NSLog(@"-----------------------------------------------------");
 }
 
 -(void)startClick1:(id)sender{
