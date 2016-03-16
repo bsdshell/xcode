@@ -81,10 +81,13 @@
     CGFloat repeat = 1.0;
     CABasicAnimation* rotationAnimation;
     rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0];
+    rotationAnimation.fillMode = kCAFillModeForwards;
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI/3.0];
+    rotationAnimation.autoreverses = NO;
     rotationAnimation.duration = duration;
     rotationAnimation.cumulative = YES;
     rotationAnimation.repeatCount = repeat;
+    
     return rotationAnimation;
 }
 
@@ -123,12 +126,7 @@
     CGFloat blockMarginY = 10;
     CGFloat width        = 50.0;
     CGFloat height       = 50.0;
-    CGFloat marginX      = 10;
-    CGFloat marginY      = 10;
-    CGPoint mainUpLeft   = CGPointMake(0, 0);
     CGPoint blockUpLeft  = CGPointMake((_mainWidth - numBlocks*width - (numBlocks-1)*blockMarginX)/2, (_mainHeight - numBlocks*height - (numBlocks-1)*blockMarginY)/2);
-    CGSize size          = [UIScreen mainScreen].bounds.size;
-    CGPoint leftUp       = CGPointMake(0, 0);
     _prevPos           = CGPointMake(0, 0);
 
     _rotationAnimation = [self createAnimation];
@@ -158,32 +156,12 @@
             
             [self printLayerInfo:_rectLayer];
 
-            //[self.view.layer addSublayer:_rectLayer];
-            
             [_mainLayer addSublayer:_rectLayer];
         }
     }
     [_mainLayer addAnimation:_rotationAnimation forKey:@"rotationAnimation"];
     _mainLayer.anchorPoint = CGPointMake(0.5, 0.5);
     [self.view.layer addSublayer:_mainLayer];
-    NSString* anchorText = [self printLayerInfo:_rectLayer];
-    
-//    CAShapeLayer* newLayer = [CAShapeLayer layer];
-//    UIBezierPath* newPath = [UIBezierPath bezierPathWithRect:CGRectMake(leftUp.x, leftUp.y, width, height)];
-//    newLayer.lineWidth = 10.0f;
-//    newLayer.strokeColor = [[UIColor brownColor] CGColor];
-//    [newLayer setFillColor:[[UIColor clearColor] CGColor]];
-//    [newLayer setPath:[newPath CGPath]];
-//    
-//    newLayer.bounds = newPath.bounds;
-//    CGPoint newLayerCenter = CGPointMake(leftUp.x + width/2 , leftUp.y + height/2);
-//    
-//    newLayer.anchorPoint = CGPointMake(newLayerCenter.x/size.width, newLayerCenter.y/size.height);
-//    CGFloat offset = 100.0;
-//    newLayer.position = CGPointMake(size.width/2, size.height/2 + offset);
-//    
-//    [newLayer addAnimation:_rotationAnimation forKey:@"rotationAnimation"];
-//    [self.view.layer addSublayer:newLayer];
 }
 
 -(void)CartesianCoordinate:(CALayer*)layer{
@@ -215,8 +193,6 @@
         CGPoint currXY = [touch locationInView:touch.view];
         _prevPos = currXY;
         NSString* text = [NSString stringWithFormat:@"[%@]", [NSValue valueWithCGPoint:currXY]];
-        //_rectLayer.position = currXY;
-        
         [self createLabel:_clickPos text:text];
 
         NSString* mainLayer = [self printLayerInfo:_mainLayer];
@@ -229,32 +205,21 @@
         NSLog(@"currXY      [%@]", [NSValue valueWithCGPoint:currXY]);
         NSLog(@"f.o + currXY[%@]", [NSValue valueWithCGPoint:CGPointMake(currXY.x + _mainLayer.frame.origin.x, currXY.y + _mainLayer.frame.origin.y)]);
         
-        //currXY = [_mainLayer convertPoint:currXY toLayer:self.view.layer];
         if(CGPathContainsPoint(_mainLayer.path, NULL, layerToSelfP, FALSE)){
-        //if(CGPathContainsPoint(_mainLayer.path, NULL, CGPointMake(currXY.x, currXY.y), FALSE)){
             _mainLayer.position = CGPointMake(_mainLayer.position.x + currXY.x - _prevPos.x, _mainLayer.position.y + currXY.y - _prevPos.y);
         }
-        //_cursorPos = currXY;
-//        if(CGPathContainsPoint(_rectLayer.path, NULL, currXY, FALSE)){
-//            _rectLayer.position = currXY;
-//        }
     }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     UITouch* touch = [touches anyObject];
-
-
     if(touch != nil){
         CGPoint currXY = [touch locationInView:touch.view];
         NSString* text = [NSString stringWithFormat:@"[%@]", [NSValue valueWithCGPoint:currXY]];
-        //_rectLayer.position = currXY;
         [self createLabel:_clickPos text:text];
 
         NSLog(@"path[%@]", [NSValue valueWithCGRect:_mainLayer.frame]);
         
-        //currXY = [_mainLayer convertPoint:currXY toLayer:self.view.layer];
-
         CGPoint layerToSelfP = [self.view.layer convertPoint:currXY toLayer:_mainLayer];
         CGPoint selfToLayerP = [_mainLayer convertPoint:currXY toLayer:self.view.layer];
         NSLog(@"layerToSelfP[%@]", [NSValue valueWithCGPoint:layerToSelfP]);
@@ -263,21 +228,15 @@
         NSLog(@"f.o + currXY[%@]", [NSValue valueWithCGPoint:CGPointMake(currXY.x + _mainLayer.frame.origin.x, currXY.y + _mainLayer.frame.origin.y)]);
         
         if(CGPathContainsPoint(_mainLayer.path, NULL, layerToSelfP, FALSE)){
-//        if(CGPathContainsPoint(_mainLayer.path, NULL, currXY, FALSE)){
             _mainLayer.position = CGPointMake(_mainLayer.position.x + currXY.x - _prevPos.x , _mainLayer.position.y + currXY.y - _prevPos.y);
         }
-
-//        if(CGPathContainsPoint(_rectLayer.path, NULL, currXY, FALSE)){
-//            _rectLayer.position = CGPointMake(currXY.x - _cursorPos.x, currXY.y -_cursorPos.y);
-//        }
         
         NSString* anchorText = [self printLayerInfo:_rectLayer];
         [self createLabel:_anchorLabel text:anchorText];
 
         NSString* mainLayer = [self printLayerInfo:_mainLayer];
         [self createLabel:_mainLabel text:mainLayer];
-
-        _prevPos = currXY; 
+        _prevPos = currXY;
     }
 }
 
@@ -290,9 +249,6 @@
         if(CGPathContainsPoint(_mainLayer.path, NULL, currXY, FALSE)){
             _mainLayer.position = CGPointMake(_mainLayer.position.x + _prevPos.x - currXY.x, _mainLayer.position.y + _prevPos.y - currXY.y);
         }
-//        if(CGPathContainsPoint(_rectLayer.path, NULL, currXY, FALSE)){
-//            _rectLayer.position = CGPointMake(_cursorPos.x - currXY.x, _cursorPos.y - currXY.y);
-//        }
         _prevPos = currXY;
     }
 }
