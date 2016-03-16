@@ -19,7 +19,7 @@
 		4E395624191A0D65002F73AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E39560C191A0D65002F73AB /* UIKit.framework */; };
 		4E39562C191A0D65002F73AB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E39562A191A0D65002F73AB /* InfoPlist.strings */; };
 		4E39562E191A0D65002F73AB /* EmptyApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */; };
-		4E40650E1C9A16E200C90471 /* MyLib.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E40650D1C9A16E200C90471 /* MyLib.m */; };
+		4E4065461C9A254200C90471 /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4065451C9A254200C90471 /* Core.m */; };
 		4E80BD971C8A6B2300BBA11F /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E80BD961C8A6B2300BBA11F /* MyViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +50,8 @@
 		4E395629191A0D65002F73AB /* OneRotationNonCenterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OneRotationNonCenterTests-Info.plist"; sourceTree = "<group>"; };
 		4E39562B191A0D65002F73AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4E39562D191A0D65002F73AB /* EmptyApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyApplicationTests.m; sourceTree = "<group>"; };
-		4E40650C1C9A16E200C90471 /* MyLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyLib.h; path = ../../../MyAppLib/MyLib/MyLib/MyLib.h; sourceTree = "<group>"; };
-		4E40650D1C9A16E200C90471 /* MyLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyLib.m; path = ../../../MyAppLib/MyLib/MyLib/MyLib.m; sourceTree = "<group>"; };
+		4E4065441C9A254200C90471 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Core.h; path = ../../CoreApp/CoreApp/Core.h; sourceTree = "<group>"; };
+		4E4065451C9A254200C90471 /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Core.m; path = ../../CoreApp/CoreApp/Core.m; sourceTree = "<group>"; };
 		4E80BD951C8A6B2300BBA11F /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		4E80BD961C8A6B2300BBA11F /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +114,8 @@
 		4E39560E191A0D65002F73AB /* EmptyApplication */ = {
 			isa = PBXGroup;
 			children = (
-				4E40650C1C9A16E200C90471 /* MyLib.h */,
-				4E40650D1C9A16E200C90471 /* MyLib.m */,
+				4E4065441C9A254200C90471 /* Core.h */,
+				4E4065451C9A254200C90471 /* Core.m */,
 				4E395617191A0D65002F73AB /* AppDelegate.h */,
 				4E395618191A0D65002F73AB /* AppDelegate.m */,
 				4E39561A191A0D65002F73AB /* Images.xcassets */,
@@ -259,8 +259,8 @@
 			files = (
 				4E80BD971C8A6B2300BBA11F /* MyViewController.m in Sources */,
 				4E395619191A0D65002F73AB /* AppDelegate.m in Sources */,
+				4E4065461C9A254200C90471 /* Core.m in Sources */,
 				4E395615191A0D65002F73AB /* main.m in Sources */,
-				4E40650E1C9A16E200C90471 /* MyLib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

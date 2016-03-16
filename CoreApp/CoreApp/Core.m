@@ -1271,6 +1271,36 @@
     NSLog(@"--------------------[end   %@]------------------------------", text);
 }
 
+
++(CAShapeLayer*)CartesianCoordinate{
+    CGSize size          = [UIScreen mainScreen].bounds.size;
+    
+    CAShapeLayer* shapeLayer = [CAShapeLayer layer];
+    UIBezierPath* path = [UIBezierPath bezierPath];
+
+    // Vertical line
+    [path moveToPoint:CGPointMake(size.width/2, 0)];
+    [path addLineToPoint:CGPointMake(size.width/2, size.height)];
+
+    // Horizontal line
+    [path moveToPoint:CGPointMake(0, size.height/2)];
+    [path addLineToPoint:CGPointMake(size.width, size.height/2)];
+
+    shapeLayer.path = [path CGPath];
+    shapeLayer.strokeColor = [[UIColor blackColor] CGColor];
+    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
+    shapeLayer.lineWidth = 1.0f;
+    return shapeLayer;
+}
++(void)printCATransform3D:(CATransform3D)transform{
+    NSLog(@"-------------------------------------------------------------------------------");
+    NSLog(@"[%f] [%f] [%f] [%f]", transform.m11, transform.m12, transform.m13, transform.m14);
+    NSLog(@"[%f] [%f] [%f] [%f]", transform.m21, transform.m22, transform.m23, transform.m24);
+    NSLog(@"[%f] [%f] [%f] [%f]", transform.m31, transform.m32, transform.m33, transform.m34);
+    NSLog(@"[%f] [%f] [%f] [%f]", transform.m41, transform.m42, transform.m43, transform.m44);
+    NSLog(@"-------------------------------------------------------------------------------");
+}
+
 @end
 
 

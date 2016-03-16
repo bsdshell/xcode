@@ -224,4 +224,7 @@
 +(UIColor*__strong*)allColor;
 +(NSMutableArray*)allXColor;
 +(void)drawLabel:(id)view rect:(CGRect)rect text:(NSString*)text;
++(CAShapeLayer*)CartesianCoordinate;
++(CAShapeLayer*)verticalLine:(NSInteger)offset;
++(void)printCATransform3D:(CATransform3D)transform;
 @end
