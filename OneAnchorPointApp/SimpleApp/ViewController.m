@@ -59,34 +59,6 @@
     return rotationAnimation;
 }
 
--(void)createLabel:(NSString*)text{
-    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 300, 300, 300)];
-    [myLabel setTextColor:[UIColor blueColor]];
-    [myLabel setBackgroundColor:[UIColor clearColor]];
-    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
-    [myLabel setText:text];
-    [myLabel setNumberOfLines:0];
-    [self.view addSubview:myLabel];
-}
-
--(void)createLabel:(NSString*)text x:(NSInteger)x y:(NSInteger)y{
-    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 300, 300)];
-    [myLabel setTextColor:[UIColor blueColor]];
-    [myLabel setBackgroundColor:[UIColor clearColor]];
-    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
-    [myLabel setText:text];
-    [myLabel setNumberOfLines:0];
-    [self.view addSubview:myLabel];
-}
-
--(void)createLabel:(UILabel*)myLabel text:(NSString*)text{
-    [myLabel setTextColor:[UIColor blueColor]];
-    [myLabel setBackgroundColor:[UIColor grayColor]];
-    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
-    [myLabel setText:text];
-    [myLabel setNumberOfLines:0];
-    [self.view addSubview:myLabel];
-}
 
 -(void)animationRectangle{
     CGFloat width = 40.0;
@@ -101,8 +73,8 @@
     mainLayer.lineWidth = 4.0f;
     mainLayer.strokeColor = [[UIColor blackColor]CGColor];
     
-    for(int i=0; i<1; i++){
-        for(int j=0; j<1; j++){
+    for(int i=0; i<2; i++){
+        for(int j=0; j<2; j++){
             _rectLayer = [CAShapeLayer layer];
             
             UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(leftUp.x + j*50, leftUp.y + i*50, width, height)];
@@ -131,26 +103,7 @@
     mainLayer.position = CGPointMake(100, 100);
     mainLayer.backgroundColor = [[UIColor clearColor] CGColor];
     mainLayer.anchorPoint = CGPointMake(0.5, 0.5);
-    
-    //[self.view.layer addSublayer:mainLayer];
-    
-//    CAShapeLayer* newLayer = [CAShapeLayer layer];
-//    UIBezierPath* newPath = [UIBezierPath bezierPathWithRect:CGRectMake(leftUp.x, leftUp.y, width, height)];
-//    newLayer.lineWidth = 10.0f;
-//    newLayer.strokeColor = [[UIColor brownColor] CGColor];
-//    [newLayer setFillColor:[[UIColor clearColor] CGColor]];
-//    [newLayer setPath:[newPath CGPath]];
-//    
-//    newLayer.bounds = newPath.bounds;
-//    CGPoint newLayerCenter = CGPointMake(leftUp.x + width/2 , leftUp.y + height/2);
-//    
-//    newLayer.anchorPoint = CGPointMake(newLayerCenter.x/size.width, newLayerCenter.y/size.height);
-//    CGFloat offset = 100.0;
-//    newLayer.position = CGPointMake(size.width/2, size.height/2 + offset);
-//    
-//    [newLayer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
-//    [self.view.layer addSublayer:newLayer];
-}
+ }
 
 -(void)CartesianCoordinate:(CALayer*)layer{
     CGSize size          = [UIScreen mainScreen].bounds.size;
@@ -171,6 +124,37 @@
     shapeLayer.fillColor = [[UIColor brownColor] CGColor];
     shapeLayer.lineWidth = 1.0f;
     [layer addSublayer:shapeLayer];
+}
+
+-(void)createLabel:(NSString*)text{
+    
+    
+    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 300, 300, 300)];
+    [myLabel setTextColor:[UIColor blueColor]];
+    [myLabel setBackgroundColor:[UIColor clearColor]];
+    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
+    [myLabel setText:text];
+    [myLabel setNumberOfLines:0];
+    [self.view addSubview:myLabel];
+}
+
+-(void)createLabel:(NSString*)text x:(NSInteger)x y:(NSInteger)y{
+    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, y, 300, 300)];
+    [myLabel setTextColor:[UIColor blueColor]];
+    [myLabel setBackgroundColor:[UIColor clearColor]];
+    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
+    [myLabel setText:text];
+    [myLabel setNumberOfLines:0];
+    [self.view addSubview:myLabel];
+}
+
+-(void)createLabel:(UILabel*)myLabel text:(NSString*)text{
+    [myLabel setTextColor:[UIColor blueColor]];
+    [myLabel setBackgroundColor:[UIColor grayColor]];
+    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 12.0f]];
+    [myLabel setText:text];
+    [myLabel setNumberOfLines:0];
+    [self.view addSubview:myLabel];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
