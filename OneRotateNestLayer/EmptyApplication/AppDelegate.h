@@ -19,15 +19,14 @@
     double _semiHeight;
     CGPoint _upLeft;
     NSTimer* _tickFinish;
-    MyViewController* _myView;
-    MyViewController* _nonCenterView;
+    MyViewController* _mainView;
     BOOL _isRotated;
     
     CATransform3D _transform;
-    CATransform3D _nonCenterTransform;
-    CAShapeLayer* _mainLayer;
-    CGFloat _mainWidth;
-    CGFloat _mainHeight;
+    CATransform3D _rotateTransform;
+    CAShapeLayer* _outerLayer;
+    CGFloat _outerWidth;
+    CGFloat _outerHeight;
     
     bool _axisX;
     bool _axisY;
@@ -38,7 +37,7 @@
     NSInteger _rotX;
     NSInteger _rotY;
     NSInteger _rotZ;
-    NSInteger _nonCenter;
+    NSInteger _deltaCount;
     
     CGFloat _width;
     CGFloat _height;

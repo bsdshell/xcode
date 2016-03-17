@@ -9,61 +9,29 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     _mainPos = CGPointMake(100, 300);
+    _outerLayer = [CAShapeLayer layer];
 
-    
-    _mainLayer = [CAShapeLayer layer];
-
-    _myView = [[MyViewController alloc]init];
-    _nonCenterView = [[MyViewController alloc]init];
+    _mainView = [[MyViewController alloc]init];
     _transform = CATransform3DIdentity;
-    _nonCenterTransform = CATransform3DIdentity;
-    CGSize size          = [UIScreen mainScreen].bounds.size;
+    _rotateTransform = CATransform3DIdentity;
     //----------------------------------------------------------
-    _nonCenter = 0;
+    _deltaCount = 0;
     _isRotated = false;
 
-    _mainLayer = [CAShapeLayer layer];
+    _outerLayer = [CAShapeLayer layer];
     _rectLayer = [CAShapeLayer layer];
     _nonCenterLayer = [CAShapeLayer layer];
     _width = 100.0f;
     _height = 100.0f;
-    _mainWidth = 200;
-    _mainHeight = 200;
-
-
-    _mycenter = CGPointMake(size.width/2 - _width/2, size.height/2 - _height/2);
-    
-    
-    _curveCenter = CGPointMake(100, 100);
-    
-    
-//    UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(_mycenter.x, _mycenter.y, _width, _height)];
-//    _rectLayer.lineWidth = 10.0f;
-//    _rectLayer.strokeColor = [[UIColor brownColor] CGColor];
-//    [_rectLayer setFillColor:[[UIColor clearColor] CGColor]];
-//    [_rectLayer setPath:[path CGPath]];
-
-    [_myView.view.layer addSublayer:_rectLayer];
-    
-    UIBezierPath* path1 = [UIBezierPath bezierPathWithRect:CGRectMake(_curveCenter.x - _width/2, _curveCenter.y - _height/2, _width, _height)];
-    
-    _nonCenterLayer.lineWidth = 10.0f;
-    _nonCenterLayer.strokeColor = [[UIColor purpleColor] CGColor];
-    [_nonCenterLayer setFillColor:[[UIColor clearColor] CGColor]];
-    [_nonCenterLayer setPath:[path1 CGPath]];
-    
-    [_nonCenterView.view.layer addSublayer:_nonCenterLayer];
+    _outerWidth = 200;
+    _outerHeight = 200;
     
     CAShapeLayer* cartesianCoordinate = [Core CartesianCoordinate];
     [self.window.layer addSublayer:cartesianCoordinate];
-    [self.window addSubview:_myView.view];
-    [self.window addSubview:_nonCenterView.view];
+    [self.window addSubview:_mainView.view];
 
     [self myDrawRectangle];
-    
-
     [self myButtonRot];
-    
     [self startFinishGameTimer];
     
     [self.window makeKeyAndVisible];
@@ -76,18 +44,17 @@
     CGFloat height = 50.0;
     CGFloat blockMarginX = 10;
     CGFloat blockMarginY = 10;
-    CGPoint blockUpLeft  = CGPointMake((_mainWidth - numBlocks*width - (numBlocks-1)*blockMarginX)/2, (_mainHeight - numBlocks*height - (numBlocks-1)*blockMarginY)/2);
+    CGPoint blockUpLeft  = CGPointMake((_outerWidth - numBlocks*width - (numBlocks-1)*blockMarginX)/2, (_outerHeight - numBlocks*height - (numBlocks-1)*blockMarginY)/2);
 
     CGSize size          = [UIScreen mainScreen].bounds.size;
     CGFloat offset = 50.0;
-    CGPoint centerPoint = CGPointMake(size.width/2 - width/2, size.height/2 - height/2 + offset);
 
-    UIBezierPath* mainPath     = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, _mainWidth, _mainHeight)];
-    _mainLayer.path        = [mainPath CGPath];
-    _mainLayer.bounds = CGRectMake(0, 0, _mainWidth, _mainHeight);
-    _mainLayer.position = _mainPos;
-    _mainLayer.lineWidth   = 4.0f;
-    _mainLayer.strokeColor = [[UIColor yellowColor]CGColor];
+    UIBezierPath* mainPath     = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, _outerWidth, _outerHeight)];
+    _outerLayer.path        = [mainPath CGPath];
+    _outerLayer.bounds = CGRectMake(0, 0, _outerWidth, _outerHeight);
+    _outerLayer.position = _mainPos;
+    _outerLayer.lineWidth   = 4.0f;
+    _outerLayer.strokeColor = [[UIColor yellowColor]CGColor];
     
     
     for(int i=0; i<2; i++){
@@ -108,13 +75,13 @@
             
             [Core printLayerInfo:_rectLayer text:@"_rectLayer"];
             
-            [_mainLayer addSublayer:_rectLayer];
+            [_outerLayer addSublayer:_rectLayer];
         }
     }
-    [_mainLayer setBackgroundColor:[[UIColor cyanColor]CGColor]];
-    _mainLayer.anchorPoint = CGPointMake(0.5, 0.5);
-    [_mainLayer setTransform:_nonCenterTransform];
-    [self.window.layer addSublayer:_mainLayer];
+    [_outerLayer setBackgroundColor:[[UIColor cyanColor]CGColor]];
+    _outerLayer.anchorPoint = CGPointMake(0.5, 0.5);
+    [_outerLayer setTransform:_rotateTransform];
+    [self.window.layer addSublayer:_outerLayer];
 
 }
 
@@ -131,61 +98,30 @@
     [self.window addSubview:mybut];
 }
 
-//-(void)rotation:(id)sender{
-//    if(_isRotated){
-//        CGSize size          = [UIScreen mainScreen].bounds.size;
-//        if(_nonCenter < 100)
-//            _nonCenter++;
-//        else
-//            _nonCenter = 1;
-//        
-//        _nonCenterTransform = CATransform3DIdentity;
-//        
-//        CGFloat radians = 2*M_PI/100.0f;
-//        CGFloat rotValue = _nonCenter*radians;
-//        
-//        CGPoint anchorPoint = CGPointMake(_curveCenter.x/size.width, _curveCenter.y/size.height);
-//        [Core printLayerInfo:_nonCenterView.view.layer text:@"layer1"];
-//        
-//        _nonCenterView.view.layer.anchorPoint = anchorPoint;
-//        
-//        _nonCenterView.view.layer.position = _curveCenter;
-//        _nonCenterTransform = CATransform3DRotate(_nonCenterTransform, rotValue, 0.0, 0.0, 1.0);
-//        
-//        [Core printLayerInfo:_nonCenterView.view.layer text:@"layer2"];
-//        [Core printCATransform3D:_nonCenterTransform];
-//        [_nonCenterView.view.layer setTransform:_nonCenterTransform];
-//        
-//        [Core printLayerInfo:_nonCenterView.view.layer text:@"layer3"];
-//    }
-//}
-
 -(void)rotation:(id)sender{
     if(_isRotated){
-        CGSize size          = [UIScreen mainScreen].bounds.size;
-        if(_nonCenter < 100)
-            _nonCenter++;
+        if(_deltaCount < 100)
+            _deltaCount++;
         else
-            _nonCenter = 1;
+            _deltaCount = 1;
 
-        _nonCenterTransform = CATransform3DIdentity;
+        _rotateTransform = CATransform3DIdentity;
 
         CGFloat radians = 2*M_PI/100.0f;
-        CGFloat rotValue = _nonCenter*radians;
+        CGFloat rotValue = _deltaCount*radians;
 
-        CGPoint anchorPoint = CGPointMake(_curveCenter.x/size.width, _curveCenter.y/size.height);
-        [Core printLayerInfo:_mainLayer text:@"mainLayer"];
+        [Core printLayerInfo:_outerLayer text:@"mainLayer"];
 
-        _mainLayer.anchorPoint = CGPointMake(0.5, 0.5);
+        _outerLayer.anchorPoint = CGPointMake(0.5, 0.5);
 
-        _mainLayer.position = _mainPos;
-        _nonCenterTransform = CATransform3DRotate(_nonCenterTransform, rotValue, 0.0, 0.0, 1.0);
+        _outerLayer.position = _mainPos;
+        _rotateTransform = CATransform3DRotate(_rotateTransform, rotValue, 0.0, 0.0, 1.0);
 
-        [Core printLayerInfo:_mainLayer text:@"mainLayer"];
-        [Core printCATransform3D:_nonCenterTransform];
-        [_mainLayer setTransform:_nonCenterTransform];
+        [Core printLayerInfo:_outerLayer text:@"mainLayer"];
+        [Core printCATransform3D:_rotateTransform];
+        [_outerLayer setTransform:_rotateTransform];
 
-        [Core printLayerInfo:_mainLayer text:@"mainLayer"];
+        [Core printLayerInfo:_outerLayer text:@"mainLayer"];
     }
 }
 
