@@ -1,2 +1,3 @@
-### Rotate rectangle around any position. 
-## keywords:  layer position, layer anchor point
+### Rotate a Layer, setup bounds, position. 
+## keywords:  CGPathContainPoint, [layer convertPoint:newpoint toLayer:otherLayer] 
+[Main Code](https://github.com/bsdshell/xcode/blob/master/OneSelectTranslation/EmptyApplication/AppDelegate.m)
