@@ -9,12 +9,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     _myView = [[MyViewController alloc]init];
-    _nonCenterView = [[MyViewController alloc]init];
+    _mainView = [[MyViewController alloc]init];
     _transform = CATransform3DIdentity;
-    _nonCenterTransform = CATransform3DIdentity;
+    _rotateTransform = CATransform3DIdentity;
     CGSize size          = [UIScreen mainScreen].bounds.size;
     //----------------------------------------------------------
-    _nonCenter = 0;
+    _deltaCount = 0;
     _isRotated = false;
     
     _rectLayer = [CAShapeLayer layer];
@@ -42,12 +42,12 @@
     [_nonCenterLayer setFillColor:[[UIColor clearColor] CGColor]];
     [_nonCenterLayer setPath:[path1 CGPath]];
     
-    [_nonCenterView.view.layer addSublayer:_nonCenterLayer];
+    [_mainView.view.layer addSublayer:_nonCenterLayer];
     
     CAShapeLayer* cartesianCoordinate = [Core CartesianCoordinate];
     [self.window.layer addSublayer:cartesianCoordinate];
     [self.window addSubview:_myView.view];
-    [self.window addSubview:_nonCenterView.view];
+    [self.window addSubview:_mainView.view];
 
     [self myDrawRectangle];
     
@@ -91,29 +91,29 @@
 -(void)rotation:(id)sender{
     if(_isRotated){
         CGSize size          = [UIScreen mainScreen].bounds.size;
-        if(_nonCenter < 100)
-            _nonCenter++;
+        if(_deltaCount < 100)
+            _deltaCount++;
         else
-            _nonCenter = 1;
+            _deltaCount = 1;
 
-        _nonCenterTransform = CATransform3DIdentity;
+        _rotateTransform = CATransform3DIdentity;
 
         CGFloat radians = 2*M_PI/100.0f;
-        CGFloat rotValue = _nonCenter*radians;
+        CGFloat rotValue = _deltaCount*radians;
 
         CGPoint anchorPoint = CGPointMake(_curveCenter.x/size.width, _curveCenter.y/size.height);
-        [Core printLayerInfo:_nonCenterView.view.layer text:@"layer1"];
+        [Core printLayerInfo:_mainView.view.layer text:@"layer1"];
 
-        _nonCenterView.view.layer.anchorPoint = anchorPoint;
+        _mainView.view.layer.anchorPoint = anchorPoint;
 
-        _nonCenterView.view.layer.position = _curveCenter;
-        _nonCenterTransform = CATransform3DRotate(_nonCenterTransform, rotValue, 0.0, 0.0, 1.0);
+        _mainView.view.layer.position = _curveCenter;
+        _rotateTransform = CATransform3DRotate(_rotateTransform, rotValue, 0.0, 0.0, 1.0);
 
-        [Core printLayerInfo:_nonCenterView.view.layer text:@"layer2"];
-        [Core printCATransform3D:_nonCenterTransform];
-        [_nonCenterView.view.layer setTransform:_nonCenterTransform];
+        [Core printLayerInfo:_mainView.view.layer text:@"layer2"];
+        [Core printCATransform3D:_rotateTransform];
+        [_mainView.view.layer setTransform:_rotateTransform];
 
-        [Core printLayerInfo:_nonCenterView.view.layer text:@"layer3"];
+        [Core printLayerInfo:_mainView.view.layer text:@"layer3"];
     }
 }
 

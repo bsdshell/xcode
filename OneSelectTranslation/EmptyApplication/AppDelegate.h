@@ -12,7 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     NSInteger _numClick;
     CAShapeLayer* _rectLayer;
-    CAShapeLayer* _nonCenterLayer;
+    CAShapeLayer* _myRectLayer;
     UIBezierPath* _curve;
     CGPoint _mycenter;
     double _semiWidth;
@@ -24,13 +24,9 @@
     BOOL _isRotated;
     
     CATransform3D _transform;
-    CATransform3D _rotateTransform;
+    CATransform3D _translateTransform;
     
-    bool _axisX;
-    bool _axisY;
-    bool _axisZ;
-    
-    CGPoint _curveCenter;
+    CGPoint _rectCenter;
     NSInteger _rotX;
     NSInteger _rotY;
     NSInteger _rotZ;
@@ -38,9 +34,8 @@
     
     CGFloat _width;
     CGFloat _height;
-
-    
-    
+    CGPoint _initXY;
+    CGPoint _newInitXY;
 }
 
 @property (strong, nonatomic) UIWindow *window;

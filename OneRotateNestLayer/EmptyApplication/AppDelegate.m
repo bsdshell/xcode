@@ -32,7 +32,7 @@
 
     [self myDrawRectangle];
     [self myButtonRot];
-    [self startFinishGameTimer];
+    //[self startFinishGameTimer];
     
     [self.window makeKeyAndVisible];
     return YES;
@@ -100,6 +100,8 @@
 
 -(void)rotation:(id)sender{
     if(_isRotated){
+
+        
         if(_deltaCount < 100)
             _deltaCount++;
         else
@@ -110,23 +112,26 @@
         CGFloat radians = 2*M_PI/100.0f;
         CGFloat rotValue = _deltaCount*radians;
 
-        [Core printLayerInfo:_outerLayer text:@"mainLayer"];
+        [Core printLayerInfo:_outerLayer text:@"mainLayer1"];
 
         _outerLayer.anchorPoint = CGPointMake(0.5, 0.5);
 
         _outerLayer.position = _mainPos;
         _rotateTransform = CATransform3DRotate(_rotateTransform, rotValue, 0.0, 0.0, 1.0);
 
-        [Core printLayerInfo:_outerLayer text:@"mainLayer"];
+        [Core printLayerInfo:_outerLayer text:@"mainLayer2"];
         [Core printCATransform3D:_rotateTransform];
         [_outerLayer setTransform:_rotateTransform];
 
-        [Core printLayerInfo:_outerLayer text:@"mainLayer"];
+        [Core printLayerInfo:_outerLayer text:@"mainLayer3"];
     }
 }
 
 -(void)clickNonCenter:(id)sender{
     _isRotated = _isRotated? NO : YES;
+    if(_isRotated){
+        [self startFinishGameTimer];
+    }
 }
 
 -(void)startFinishGameTimer{
