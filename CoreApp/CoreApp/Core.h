@@ -170,7 +170,6 @@
 +(void)printMatrix:(CGAffineTransform) m;
 +(CGAffineTransform)rotateCenter:(CGAffineTransform)matrix center:(CGPoint)center;
 +(NSMutableArray*)geneUniqueRandomMutable:(unsigned)low high:(unsigned)high;
-+(bool)isSquareNumber:(int)num;
 +(int**)generateUniqueRandom2D:(unsigned)height width:(unsigned)width;
 +(bool)isSquareNumber:(int)num;
 +(bool)isUniqueArray:(int*)array length:(NSUInteger)length;

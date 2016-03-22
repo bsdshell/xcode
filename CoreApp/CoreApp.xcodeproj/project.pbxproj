@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2F1CE41C9F60C10044B679 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2F1CE31C9F60C10044B679 /* MyClass.m */; };
+		4E2F1CE71C9F62A40044B679 /* MyEncodeCATransform3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2F1CE61C9F62A40044B679 /* MyEncodeCATransform3D.m */; };
 		4E40651E1C9A216500C90471 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E40651D1C9A216500C90471 /* main.m */; };
 		4E4065211C9A216500C90471 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4065201C9A216500C90471 /* AppDelegate.m */; };
 		4E4065241C9A216500C90471 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4065231C9A216500C90471 /* ViewController.m */; };
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E2F1CE21C9F60C10044B679 /* MyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyClass.h; path = ../MyClass.h; sourceTree = "<group>"; };
+		4E2F1CE31C9F60C10044B679 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyClass.m; path = ../MyClass.m; sourceTree = "<group>"; };
+		4E2F1CE51C9F62A40044B679 /* MyEncodeCATransform3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEncodeCATransform3D.h; sourceTree = "<group>"; };
+		4E2F1CE61C9F62A40044B679 /* MyEncodeCATransform3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEncodeCATransform3D.m; sourceTree = "<group>"; };
 		4E4065181C9A216500C90471 /* CoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E40651C1C9A216500C90471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E40651D1C9A216500C90471 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -86,6 +92,10 @@
 			children = (
 				4E4065411C9A21C500C90471 /* Core.h */,
 				4E4065421C9A21C500C90471 /* Core.m */,
+				4E2F1CE21C9F60C10044B679 /* MyClass.h */,
+				4E2F1CE31C9F60C10044B679 /* MyClass.m */,
+				4E2F1CE51C9F62A40044B679 /* MyEncodeCATransform3D.h */,
+				4E2F1CE61C9F62A40044B679 /* MyEncodeCATransform3D.m */,
 				4E40651F1C9A216500C90471 /* AppDelegate.h */,
 				4E4065201C9A216500C90471 /* AppDelegate.m */,
 				4E4065221C9A216500C90471 /* ViewController.h */,
@@ -226,6 +236,8 @@
 			files = (
 				4E4065241C9A216500C90471 /* ViewController.m in Sources */,
 				4E4065211C9A216500C90471 /* AppDelegate.m in Sources */,
+				4E2F1CE41C9F60C10044B679 /* MyClass.m in Sources */,
+				4E2F1CE71C9F62A40044B679 /* MyEncodeCATransform3D.m in Sources */,
 				4E40651E1C9A216500C90471 /* main.m in Sources */,
 				4E4065431C9A21C500C90471 /* Core.m in Sources */,
 			);
@@ -418,6 +430,7 @@
 				4E40653D1C9A216500C90471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4E40653E1C9A216500C90471 /* Build configuration list for PBXNativeTarget "CoreAppTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				4E4065401C9A216500C90471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
