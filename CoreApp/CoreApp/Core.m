@@ -1259,15 +1259,20 @@
 }
 
 +(void)printLayerInfo:(CALayer*)layer text:(NSString*)text{
+    CGSize size         = [UIScreen mainScreen].bounds.size;
     CGPoint anchorPoint = layer.anchorPoint;
-    CGPoint position = layer.position;
-    CGRect frame = layer.frame;
-    CGRect bounds = layer.bounds;
+    CGPoint position    = layer.position;
+    CGRect frame        = layer.frame;
+    CGPoint origin      = layer.frame.origin;
+    CGRect bounds       = layer.bounds;
     NSLog(@"--------------------[begin %@]------------------------------", text);
-    NSLog(@"anchor  [%@]", [NSValue valueWithCGPoint:anchorPoint]);
-    NSLog(@"position[%@]", [NSValue valueWithCGPoint:position]);
-    NSLog(@"frame   [%@]", [NSValue valueWithCGRect:frame]);
-    NSLog(@"bounds  [%@]", [NSValue valueWithCGRect:bounds]);
+    NSLog(@"screen size    [%@]", [NSValue valueWithCGSize:size]);
+    NSLog(@"screen center  [%@]", [NSValue valueWithCGPoint:CGPointMake(size.width/2, size.height/2)]);
+    NSLog(@"anchor         [%@]", [NSValue valueWithCGPoint:anchorPoint]);
+    NSLog(@"position       [%@]", [NSValue valueWithCGPoint:position]);
+    NSLog(@"frame          [%@]", [NSValue valueWithCGRect:frame]);
+    NSLog(@"frame.origin   [%@]", [NSValue valueWithCGPoint:origin]);
+    NSLog(@"bounds         [%@]", [NSValue valueWithCGRect:bounds]);
     NSLog(@"--------------------[end   %@]------------------------------", text);
 }
 

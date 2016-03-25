@@ -118,18 +118,10 @@
 +(CAShapeLayer*)drawRectangle:(CGPoint) location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight;
 +(void)drawRectangleToView:(id)layer location:(CGPoint)location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight;
 
-// TODO delete it
-//+(void)drawOneBlock:(id)view layer:(CAShapeLayer*)shapeLayer blockInfo:(BlockInfo*)blockInfo text:(NSString*)text color:(UIColor*)color;
-//+(bool)isLinearBlock:(BlockInfo*)box0 box1:(BlockInfo*)box1 box2:(BlockInfo*)box2;
-//+(void)drawBlock:(BlockInfo*)blockInfo color:(UIColor*)color;
-//+(void)drawBlock:(id)view blockInfo:(BlockInfo*)blockInfo text:(NSString*)text color:(UIColor*)color;
 +(void)drawGrid:(id)view upLeft:(CGPoint)upLeft marginWidth:(CGFloat)marginWidth marginHeight:(CGFloat)marginHeight numCol:(int)numCol numRow:(int)numRow;
 +(NSMutableArray*)drawGridArray:(id)view upLeft:(CGPoint)upLeft marginWidth:(CGFloat)marginWidth marginHeight:(CGFloat)marginHeight numCol:(int)numCol numRow:(int)numRow;
 +(void)drawOneCircle:(CAShapeLayer*)shapeLayer location:(CGPoint)location radius:(CGFloat)radius;
 +(void)printLayerInfo:(CALayer*)layer text:(NSString*)text;
-
-
-
 
 +(int*)generatePrime:(unsigned) n;
 +(int*)generateUniqueRandom:(unsigned)low high:(unsigned)high;

@@ -31,10 +31,10 @@
     [self.window.layer addSublayer:cartesianCoordinate];
     [self.window addSubview:_mainView.view];
     [self myButtonRot];
-    [self startFinishGameTimer];
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 
 -(void)myButtonRot{
     UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -69,16 +69,6 @@
 
 -(void)clickNonCenter:(id)sender{
     _isRotated = _isRotated? NO : YES;
-}
-
--(void)startFinishGameTimer{
-    if (_tickFinish!= nil)
-        [_tickFinish invalidate];
-    _tickFinish = [NSTimer scheduledTimerWithTimeInterval:0.05f
-                                                   target:self
-                                                 selector:@selector(rotation:)
-                                                 userInfo:nil
-                                                  repeats:YES];
 }
 
 @end

@@ -31,9 +31,24 @@
     CAShapeLayer* cartesianCoordinate = [Core CartesianCoordinate];
     [self.window.layer addSublayer:cartesianCoordinate];
     [self myButtonRot];
+    [self myCenterButton];
     [self startFinishGameTimer];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)myCenterButton{
+    // create simple text label
+    CGSize size       = [UIScreen mainScreen].bounds.size;
+    NSInteger bwidth  = 300;
+    NSInteger bheight = 40;
+    CGPoint upLeft = CGPointMake(size.width/2 - bwidth/2, 10);
+    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(upLeft.x, upLeft.y, bwidth, bheight)];
+    [myLabel setTextColor:[UIColor redColor]];
+    [myLabel setBackgroundColor:[UIColor clearColor]];
+    [myLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 20.0f]];
+    [myLabel setText:@"CATransform3D Translation"];
+    [self.window addSubview:myLabel];
 }
 
 -(void)myButtonRot{
@@ -104,6 +119,8 @@
             
             CGPoint diffPoint = CGPointMake(newPoint.x - _newInitXY.x, newPoint.y - _newInitXY.y);
             _translateTransform = CATransform3DTranslate(_translateTransform, diffPoint.x, diffPoint.y, 0);
+            NSLog(@"position[%@]", [NSValue valueWithCGPoint:_rectLayer.position]);
+            [Core printLayerInfo:_rectLayer text:@"_rectLayer"];
             
             [Core printCATransform3D:_translateTransform];
             [_rectLayer setTransform:_translateTransform];
