@@ -17,8 +17,9 @@
     UILabel* _labelTimer;
     CATextLayer* _textLayer;
     NSInteger _numSecond;
+    UIButton* _startButton;
+    UIButton* _resetButton;
 
-    
     BOOL _pause;
     
     NSInteger _deltaCount;
@@ -27,5 +28,5 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
--(void)createTextLayer:(NSString*)timeText;
+-(void)createTextLayer;
 @end

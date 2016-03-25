@@ -13,19 +13,24 @@
     _numSecond = 1800;
     
     [self myButtonRot];
+    [self myReset];
     [self startFinishGameTimer];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
--(void)createTextLayer:(NSString*)timeText{
-    [_textLayer setFrame:CGRectMake(20, 100, 300, 200)];
-    [_textLayer setString:timeText];
+-(void)createTextLayer{
+    [_textLayer setFrame:CGRectMake(5, 50, 360, 300)];
+    NSInteger minute = _numSecond / 60;
+    NSInteger second = _numSecond % 60;
+
+    NSString* timeStr = [NSString stringWithFormat:@"%2d:%2d", minute, second];
+    [_textLayer setString:timeStr];
     [_textLayer setForegroundColor:[UIColor grayColor].CGColor];
     [_textLayer setContentsScale:2.f];
     [_textLayer setWrapped:YES];
     [_textLayer setAlignmentMode:kCAAlignmentCenter];
-    [_textLayer setFontSize:80.f];
+    [_textLayer setFontSize:100.f];
     [self.window.layer addSublayer:_textLayer];
 }
 
@@ -38,26 +43,48 @@
     NSString* newDateString = [dateFormatter stringFromDate:timestamp];
 
     NSString* secondText = [NSString stringWithFormat:@"%d", _numSecond];
-    [self createTextLayer:secondText];
+    [self createTextLayer];
 }
 
--(void)myButtonRot{
-    UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
+-(void)myReset{
+    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
     CGRect frame = CGRectMake(100, 500+10, 100, 50);
-    mybut.frame = frame;
-    [mybut addTarget:self action:@selector(clickStart:) forControlEvents:UIControlEventTouchUpInside];
-    [mybut setTitle:@"Star Timer" forState:(UIControlState) UIControlStateNormal];
-    [mybut setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [mybut.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
-    mybut.backgroundColor = [UIColor brownColor];
-    [self.window addSubview:mybut];
+    _resetButton.frame = frame;
+    [_resetButton addTarget:self action:@selector(clickClean:) forControlEvents:UIControlEventTouchUpInside];
+    [_resetButton setTitle:@"Clean" forState:(UIControlState) UIControlStateNormal];
+    [_resetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_resetButton.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    _resetButton.backgroundColor = [UIColor brownColor];
+    [self.window addSubview:_resetButton];
 }
+
+
+-(void)myButtonRot{
+    _startButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    CGRect frame = CGRectMake(100, 400, 100, 50);
+    _startButton.frame = frame;
+    [_startButton addTarget:self action:@selector(clickStart:) forControlEvents:UIControlEventTouchUpInside];
+    [_startButton setTitle:@"Star Timer" forState:(UIControlState) UIControlStateNormal];
+    [_startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_startButton.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
+    _startButton.backgroundColor = [UIColor brownColor];
+    [self.window addSubview:_startButton];
+}
+
 
 -(void)tickEvent:(id)sender{
     NSLog(@"%s", __PRETTY_FUNCTION__);
     _numSecond--;
     [self myTimer];
 }
+
+-(void)clickClean:(id)sender{
+    _numSecond = 1800;
+    _pause = YES;
+    [_tickFinish invalidate];
+    [self createTextLayer];
+}
+
 
 -(void)clickStart:(id)sender{
     _pause = _pause? NO : YES;
