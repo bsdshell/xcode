@@ -1,20 +1,25 @@
 #import "AppDelegate.h"
 #import "Core.h"
 
+#define TOTAL_NUM 1800 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    _mainView = [[MyViewController alloc]init];
-    _textLayer = [CATextLayer layer];
-    _deltaCount = 0;
-    _numSecond = 1800;
     
-    [self myButtonRot];
-    [self myReset];
-    [self startFinishGameTimer];
+    [self createStarButton];
+    [self createResetButton];
+
+    _deltaCount = 0;
+    _numSecond  = TOTAL_NUM;
+    _pause = YES;
+
+    _textLayer  = [CATextLayer layer];
+    [self createTextLayer];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -24,14 +29,56 @@
     NSInteger minute = _numSecond / 60;
     NSInteger second = _numSecond % 60;
 
-    NSString* timeStr = [NSString stringWithFormat:@"%2d:%2d", minute, second];
+    NSString* timeStr = [NSString stringWithFormat:@"%2ld:%2ld", minute, second];
     [_textLayer setString:timeStr];
-    [_textLayer setForegroundColor:[UIColor grayColor].CGColor];
+    [_textLayer setForegroundColor:[[UIColor grayColor] CGColor]];
     [_textLayer setContentsScale:2.f];
     [_textLayer setWrapped:YES];
     [_textLayer setAlignmentMode:kCAAlignmentCenter];
     [_textLayer setFontSize:100.f];
     [self.window.layer addSublayer:_textLayer];
+}
+
+-(void)createStarButton{
+    _startButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    CGRect frame = CGRectMake(100, 300, 100, 50);
+    _startButton.frame = frame;
+    [_startButton setTitle:@"Star" forState:(UIControlState) UIControlStateNormal];
+    [_startButton addTarget:self action:@selector(starEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [_startButton.titleLabel setFont:[UIFont boldSystemFontOfSize:40]];
+    _startButton.backgroundColor = [UIColor grayColor];
+    [self.window addSubview:_startButton];
+}
+-(void)starEvent:(id)sender{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if(_pause){
+        [_startButton setTitle:@"Stop" forState:(UIControlState) UIControlStateNormal];
+        [self startTimer];
+    }else{
+        [_tickFinish invalidate];
+        [_startButton setTitle:@"Star" forState:(UIControlState) UIControlStateNormal];
+    }
+    [self.window addSubview:_startButton];
+    _pause = _pause == YES ? NO : YES;
+}
+
+-(void)createResetButton{
+    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    CGRect frame = CGRectMake(10, 400, 200, 100);
+    _resetButton.frame = frame;
+    [_resetButton setTitle:@"Reset" forState:(UIControlState) UIControlStateNormal];
+    [_resetButton addTarget:self action:@selector(resetEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [_resetButton.titleLabel setFont:[UIFont boldSystemFontOfSize:40]];
+    _resetButton.backgroundColor = [UIColor brownColor];
+
+    [self.window addSubview:_resetButton];
+
+}
+-(void)resetEvent:(id)sender{
+    _numSecond = TOTAL_NUM;
+    [_tickFinish invalidate];
+    _pause = YES;
+    [self createTextLayer];
 }
 
 -(void)myTimer{
@@ -42,60 +89,20 @@
     
     NSString* newDateString = [dateFormatter stringFromDate:timestamp];
 
-    NSString* secondText = [NSString stringWithFormat:@"%d", _numSecond];
+    NSString* secondText = [NSString stringWithFormat:@"%ld", _numSecond];
     [self createTextLayer];
 }
-
--(void)myReset{
-    _resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    CGRect frame = CGRectMake(100, 500+10, 100, 50);
-    _resetButton.frame = frame;
-    [_resetButton addTarget:self action:@selector(clickClean:) forControlEvents:UIControlEventTouchUpInside];
-    [_resetButton setTitle:@"Clean" forState:(UIControlState) UIControlStateNormal];
-    [_resetButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_resetButton.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
-    _resetButton.backgroundColor = [UIColor brownColor];
-    [self.window addSubview:_resetButton];
-}
-
-
--(void)myButtonRot{
-    _startButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    CGRect frame = CGRectMake(100, 400, 100, 50);
-    _startButton.frame = frame;
-    [_startButton addTarget:self action:@selector(clickStart:) forControlEvents:UIControlEventTouchUpInside];
-    [_startButton setTitle:@"Star Timer" forState:(UIControlState) UIControlStateNormal];
-    [_startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_startButton.titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
-    _startButton.backgroundColor = [UIColor brownColor];
-    [self.window addSubview:_startButton];
-}
-
 
 -(void)tickEvent:(id)sender{
     NSLog(@"%s", __PRETTY_FUNCTION__);
     _numSecond--;
-    [self myTimer];
-}
-
--(void)clickClean:(id)sender{
-    _numSecond = 1800;
-    _pause = YES;
-    [_tickFinish invalidate];
     [self createTextLayer];
-}
-
-
--(void)clickStart:(id)sender{
-    _pause = _pause? NO : YES;
-    if(_pause){
-        [_tickFinish invalidate];
-    }else{
-        [self startFinishGameTimer];
+    if(_numSecond == 0){
+        NSLog(@"Done! _numSecond=[%d] ", _numSecond);
     }
 }
 
--(void)startFinishGameTimer{
+-(void)startTimer{
     if (_tickFinish!= nil)
         [_tickFinish invalidate];
     _tickFinish = [NSTimer scheduledTimerWithTimeInterval:1.0f
@@ -104,24 +111,5 @@
                                                  userInfo:nil
                                                   repeats:YES];
 }
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    UITouch* touch = [touches anyObject];
-    if(touch != nil){
-    }
-}
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    UITouch* touch = [touches anyObject];
-    if(touch != nil){
-    }
-}
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    UITouch* touch = [touches anyObject];
-    if(touch != nil){
-    }
-}
-
 
 @end
