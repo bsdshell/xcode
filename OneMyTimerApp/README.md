@@ -1,6 +1,4 @@
 ## The most simple stop watch You can find
-0. Do nothing
-
 ### The most advance Features you can find
 1. 30 minutes
 2. Stop button
