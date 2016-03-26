@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MyViewController.h"
 
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioUnit/AudioUnit.h>
+
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     NSInteger _numClick;
     NSTimer* _tickFinish;
@@ -19,7 +24,7 @@
     NSInteger _numSecond;
     UIButton* _startButton;
     UIButton* _resetButton;
-
+    AVAudioPlayer* _player;
     BOOL _pause;
     
     NSInteger _deltaCount;
