@@ -15,5 +15,3 @@
 2. Press the "Start" button
 3. Press the "Stop" button
 4. Press the "Reset" button
-
-<a href="url"><img src="http://url.to/stopwatch.png" align="center" height="30%" width="30%" ></a>
