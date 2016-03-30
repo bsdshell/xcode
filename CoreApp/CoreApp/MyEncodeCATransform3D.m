@@ -19,7 +19,7 @@
 -(id)initWithCoder:(NSCoder *)aDecoder{
     if(self = [self init]){
         _transform = [(NSValue*)[aDecoder decodeObjectForKey:@"transform"] CATransform3DValue];
-        [Core printCATransform3D:_transform];
+       
     }
     return self;
 }

@@ -40,16 +40,6 @@
     XCTAssertTrue(num2 == 2);
 }
 
--(void)testColor{
-    CGColorRef color = [[UIColor colorWithRed:0.1 green:0.2 blue:0.3 alpha:0.5] CGColor];
-    int numComponents = CGColorGetNumberOfComponents(color);
-    XCTAssertTrue(numComponents == 4);
-    
-    CGColorRef color1 = [Core getColorMap:10];
-    int num1 = CGColorGetNumberOfComponents(color);
-    XCTAssertTrue(num1 == 4);
-}
-
 -(void)testGetColorComponent{
     CGColorRef color = [[UIColor colorWithRed:(102.0/255.0) green:(204.0/255.0) blue:(255.0/255.0) alpha:1.0] CGColor];
     int numComponents = CGColorGetNumberOfComponents(color);
