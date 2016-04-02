@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E0BDCDF1CADB24A0051219D /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0BDCDE1CADB24A0051219D /* MyScene.m */; };
-		4E0BDCE11CADB5FE0051219D /* sprite.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4E0BDCE01CADB5FE0051219D /* sprite.jpeg */; };
 		4E269B111B68BE1C00A3B22B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B101B68BE1C00A3B22B /* main.m */; };
 		4E269B1C1B68BE1C00A3B22B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E269B1B1B68BE1C00A3B22B /* Images.xcassets */; };
 		4E269B2B1B68BE1C00A3B22B /* SimpleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B2A1B68BE1C00A3B22B /* SimpleAppTests.m */; };
 		4E269B3A1B68C24500A3B22B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B391B68C24500A3B22B /* ViewController.m */; };
 		4E269B3D1B68C2A700A3B22B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E269B3C1B68C2A700A3B22B /* AppDelegate.m */; };
-		4E8B36861CAC919400284130 /* pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B36851CAC919400284130 /* pic.png */; };
-		4ED266F71CAF2BE1001ADFD1 /* MyGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED266F61CAF2BE1001ADFD1 /* MyGameView.m */; };
+		4E269B3F1B68C30D00A3B22B /* pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E269B3E1B68C30D00A3B22B /* pic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +26,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E0BDCDD1CADB24A0051219D /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		4E0BDCDE1CADB24A0051219D /* MyScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		4E0BDCE01CADB5FE0051219D /* sprite.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sprite.jpeg; sourceTree = "<group>"; };
 		4E269B0B1B68BE1C00A3B22B /* SimpleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E269B0F1B68BE1C00A3B22B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E269B101B68BE1C00A3B22B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,9 +37,7 @@
 		4E269B391B68C24500A3B22B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E269B3B1B68C2A700A3B22B /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
 		4E269B3C1B68C2A700A3B22B /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
-		4E8B36851CAC919400284130 /* pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pic.png; path = ../pic.png; sourceTree = "<group>"; };
-		4ED266F51CAF2BE1001ADFD1 /* MyGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGameView.h; sourceTree = "<group>"; };
-		4ED266F61CAF2BE1001ADFD1 /* MyGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGameView.m; sourceTree = "<group>"; };
+		4E269B3E1B68C30D00A3B22B /* pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pic.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,15 +79,11 @@
 		4E269B0D1B68BE1C00A3B22B /* SimpleApp */ = {
 			isa = PBXGroup;
 			children = (
-				4E0BDCE01CADB5FE0051219D /* sprite.jpeg */,
-				4ED266F51CAF2BE1001ADFD1 /* MyGameView.h */,
-				4ED266F61CAF2BE1001ADFD1 /* MyGameView.m */,
-				4E0BDCDD1CADB24A0051219D /* MyScene.h */,
-				4E0BDCDE1CADB24A0051219D /* MyScene.m */,
 				4E269B381B68C24500A3B22B /* ViewController.h */,
 				4E269B391B68C24500A3B22B /* ViewController.m */,
 				4E269B3B1B68C2A700A3B22B /* AppDelegate.h */,
 				4E269B3C1B68C2A700A3B22B /* AppDelegate.m */,
+				4E269B3E1B68C30D00A3B22B /* pic.png */,
 				4E269B1B1B68BE1C00A3B22B /* Images.xcassets */,
 				4E269B0E1B68BE1C00A3B22B /* Supporting Files */,
 			);
@@ -105,7 +93,6 @@
 		4E269B0E1B68BE1C00A3B22B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4E8B36851CAC919400284130 /* pic.png */,
 				4E269B0F1B68BE1C00A3B22B /* Info.plist */,
 				4E269B101B68BE1C00A3B22B /* main.m */,
 			);
@@ -209,8 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E8B36861CAC919400284130 /* pic.png in Resources */,
-				4E0BDCE11CADB5FE0051219D /* sprite.jpeg in Resources */,
+				4E269B3F1B68C30D00A3B22B /* pic.png in Resources */,
 				4E269B1C1B68BE1C00A3B22B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,8 +215,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ED266F71CAF2BE1001ADFD1 /* MyGameView.m in Sources */,
-				4E0BDCDF1CADB24A0051219D /* MyScene.m in Sources */,
 				4E269B3A1B68C24500A3B22B /* ViewController.m in Sources */,
 				4E269B111B68BE1C00A3B22B /* main.m in Sources */,
 				4E269B3D1B68C2A700A3B22B /* AppDelegate.m in Sources */,
@@ -405,7 +389,6 @@
 				4E269B301B68BE1C00A3B22B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		4E269B311B68BE1C00A3B22B /* Build configuration list for PBXNativeTarget "SimpleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -414,7 +397,6 @@
 				4E269B331B68BE1C00A3B22B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

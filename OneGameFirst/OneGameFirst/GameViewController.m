@@ -15,7 +15,8 @@
     [super viewDidLoad];
 
     // create a new scene
-    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.dae"];
+    //SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.dae"];
+    SCNScene *scene = [SCNScene sceneNamed:@"mymod.dae"];
 
     // create and add a camera to the scene
     SCNNode *cameraNode = [SCNNode node];
@@ -29,7 +30,7 @@
     SCNNode *lightNode = [SCNNode node];
     lightNode.light = [SCNLight light];
     lightNode.light.type = SCNLightTypeOmni;
-    lightNode.position = SCNVector3Make(0, 10, 10);
+    lightNode.position = SCNVector3Make(0, 10, 10); 
     [scene.rootNode addChildNode:lightNode];
     
     // create and add an ambient light to the scene
@@ -41,6 +42,7 @@
     
     // retrieve the ship node
     SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
+    
     
     // animate the 3d object
     [ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];
@@ -72,6 +74,7 @@
 {
     // retrieve the SCNView
     SCNView *scnView = (SCNView *)self.view;
+    
     
     // check what nodes are tapped
     CGPoint p = [gestureRecognize locationInView:scnView];
