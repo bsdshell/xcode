@@ -28,6 +28,39 @@
     [super tearDown];
 }
 
+-(void)testComparePoint{
+  CGPoint p0 = CGPointMake(10.001, 20.0003); 
+  CGPoint p1 = CGPointMake(10.001, 20.0003); 
+  XCTAssertTrue([Core comparePoints:p0 p1:p1]);
+}
+
+
+-(void)testCGFloat{
+    CGFloat f1 = 0.001;
+    CGFloat f2 = 0.0001;
+    XCTAssertTrue(f1 > f2);
+    
+    CGFloat f11 = 0.000001;
+    CGFloat f22 = 0.000001;
+    XCTAssertTrue(f11 == f22);
+
+    float  d1 = 0.000001;
+    double d2 = 0.000001;
+    NSLog(@"d1[%.21f]", d1);
+    NSLog(@"d2[%.21g]", d2);
+    
+    XCTAssertTrue(d1 == d2);
+
+    NSLog(@"PI[%f]", M_PI);
+    NSLog(@"PI[%@]", [NSString stringWithFormat:@"%f", M_PI]);
+    NSLog(@"PI[%@]", [NSNumber numberWithDouble:M_PI]);
+
+    NSLog(@"-PI[%.21g]", M_PI);
+    NSLog(@"-PI[%.21Lg]", (long double)M_PI);
+    NSLog(@"-PI[%.21Lg]", asinl(1.0)*2);
+    
+}
+
 -(void)testNumComponentColor{
     CGColorRef color1 = [[UIColor brownColor]CGColor];
     int num1 = CGColorGetNumberOfComponents(color1);

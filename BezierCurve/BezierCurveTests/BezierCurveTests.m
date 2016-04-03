@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Core.h"
 
 @interface BezierCurveTests : XCTestCase
 
@@ -24,9 +25,22 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)test1 {
+    CGPoint p0 = CGPointMake(10, 100);
+    CGPoint p1 = CGPointMake(100, 100);
+    CGPoint p2 = CGPointMake(100, 200);
+
+    NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:10];
+    float scale = 1.0010;
+    [Core quatricBezierCurve:p0 p1:p1 p2:p2 scale:scale array:array]; 
+
+    // insert to first
+    [array insertObject:[NSValue valueWithCGPoint:p0] atIndex:0];
+    // insert to end 
+    [array addObject:[NSValue valueWithCGPoint:p2]];
+
+    [Core printArrayPoint:array];
+    
 }
 
 - (void)testPerformanceExample {

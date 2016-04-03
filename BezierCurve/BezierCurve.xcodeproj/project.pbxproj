@@ -15,6 +15,7 @@
 		4ED2674E1CB08377001ADFD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED2674C1CB08377001ADFD1 /* LaunchScreen.storyboard */; };
 		4ED267591CB08377001ADFD1 /* BezierCurveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED267581CB08377001ADFD1 /* BezierCurveTests.m */; };
 		4ED267641CB08377001ADFD1 /* BezierCurveUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED267631CB08377001ADFD1 /* BezierCurveUITests.m */; };
+		4ED267791CB092E2001ADFD1 /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED267781CB092E2001ADFD1 /* Core.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		4ED2675F1CB08377001ADFD1 /* BezierCurveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BezierCurveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED267631CB08377001ADFD1 /* BezierCurveUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BezierCurveUITests.m; sourceTree = "<group>"; };
 		4ED267651CB08377001ADFD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4ED267771CB092E2001ADFD1 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Core.h; path = ../../CoreApp/CoreApp/Core.h; sourceTree = "<group>"; };
+		4ED267781CB092E2001ADFD1 /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Core.m; path = ../../CoreApp/CoreApp/Core.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 		4ED2673D1CB08377001ADFD1 /* BezierCurve */ = {
 			isa = PBXGroup;
 			children = (
+				4ED267771CB092E2001ADFD1 /* Core.h */,
+				4ED267781CB092E2001ADFD1 /* Core.m */,
 				4ED267411CB08377001ADFD1 /* AppDelegate.h */,
 				4ED267421CB08377001ADFD1 /* AppDelegate.m */,
 				4ED267441CB08377001ADFD1 /* ViewController.h */,
@@ -272,6 +277,7 @@
 			files = (
 				4ED267461CB08377001ADFD1 /* ViewController.m in Sources */,
 				4ED267431CB08377001ADFD1 /* AppDelegate.m in Sources */,
+				4ED267791CB092E2001ADFD1 /* Core.m in Sources */,
 				4ED267401CB08377001ADFD1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
