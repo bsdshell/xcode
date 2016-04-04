@@ -8,7 +8,7 @@
 }
 
 +(CGFloat)norm:(CGPoint)p0 p1:(CGPoint)p1{
-    return pow(abs(p0.x - p1.x), 2.0) + pow(abs(p0.y - p1.y), 2.0);
+    return pow(fabs(p0.x - p1.x), 2.0) + pow(fabs(p0.y - p1.y), 2.0);
 }
 
 +(CGFloat)dist:(CGPoint)p0 p1:(CGPoint)p1{
@@ -32,21 +32,30 @@
         return;
 
     CGFloat anchorDist = [Core dist:p0 p1:p2];
-    CGFloat len0 = [Core dist:p0 p1:p1];
-    CGFloat len1 = [Core dist:p1 p1:p2];
+    CGFloat len0       = [Core dist:p0 p1:p1];
+    CGFloat len1       = [Core dist:p1 p1:p2];
+    CGFloat diff       = len0 + len1 - anchorDist;
+
+    NSLog(@"scale            = [%.21g]", scale);
+    NSLog(@"len0             = [%.21g]", len0);
+    NSLog(@"len1             = [%.21g]", len1);
+    NSLog(@"len0+len1        = [%.21g]", len0+len1);
+    NSLog(@"anchorDist       = [%.21g]", anchorDist);
+    NSLog(@"scale*anchorDist = [%.21g]", scale*anchorDist);
+    NSLog(@"diff             = [%.21g]", diff);
+    NSLog(@"---------------------------------");
+
     if(scale*anchorDist <= (len0 + len1)){
         CGPoint lp = [Core middlePoint:p0 p1:p1];
         CGPoint rp = [Core middlePoint:p1 p1:p2];
         CGPoint midPoint = [Core middlePoint:lp p1:rp];
+        
         [self quatricBezierCurve:p0 p1:lp p2:midPoint scale:scale array:array];
         [array addObject:[NSValue valueWithCGPoint:midPoint]];
         [self quatricBezierCurve:midPoint p1:rp p2:p2 scale:scale array:array];
-    }else{
-        NSLog(@"anchorDist=[%lf]", anchorDist);
-        NSLog(@"len0        =[%lf]", len0);
-        NSLog(@"len1        =[%lf]", len1);
     }
 }
+
 +(CAShapeLayer*)drawCurve:(NSMutableArray*)array layer:(CAShapeLayer*)shapeLayer{
     CGSize size          = [UIScreen mainScreen].bounds.size;
     UIBezierPath* path = [UIBezierPath bezierPath];

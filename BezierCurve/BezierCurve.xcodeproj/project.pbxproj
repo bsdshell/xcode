@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E0414CD1CB2432B00A5B6B5 /* pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0414CC1CB2432B00A5B6B5 /* pic.png */; };
+		4E0414CF1CB253F700A5B6B5 /* mypic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0414CE1CB253F700A5B6B5 /* mypic.png */; };
 		4ED267401CB08377001ADFD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED2673F1CB08377001ADFD1 /* main.m */; };
 		4ED267431CB08377001ADFD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED267421CB08377001ADFD1 /* AppDelegate.m */; };
 		4ED267461CB08377001ADFD1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED267451CB08377001ADFD1 /* ViewController.m */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		4E0414CC1CB2432B00A5B6B5 /* pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pic.png; path = ../../OneSliderApp/SimpleApp/pic.png; sourceTree = "<group>"; };
+		4E0414CE1CB253F700A5B6B5 /* mypic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mypic.png; sourceTree = "<group>"; };
 		4ED2673B1CB08377001ADFD1 /* BezierCurve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BezierCurve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED2673F1CB08377001ADFD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4ED267411CB08377001ADFD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				4ED267421CB08377001ADFD1 /* AppDelegate.m */,
 				4ED267441CB08377001ADFD1 /* ViewController.h */,
 				4ED267451CB08377001ADFD1 /* ViewController.m */,
+				4E0414CE1CB253F700A5B6B5 /* mypic.png */,
 				4E0414CC1CB2432B00A5B6B5 /* pic.png */,
 				4ED267471CB08377001ADFD1 /* Main.storyboard */,
 				4ED2674A1CB08377001ADFD1 /* Assets.xcassets */,
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E0414CF1CB253F700A5B6B5 /* mypic.png in Resources */,
 				4ED2674E1CB08377001ADFD1 /* LaunchScreen.storyboard in Resources */,
 				4ED2674B1CB08377001ADFD1 /* Assets.xcassets in Resources */,
 				4E0414CD1CB2432B00A5B6B5 /* pic.png in Resources */,
