@@ -1,6 +1,10 @@
 #import "Core.h"
 #import <UIKit/UIKit.h>
 
+#define NSLog(...)     //
+#define printf(...)    //
+
+
 @implementation Core
 
 +(CGPoint)middlePoint:(CGPoint)p0 p1:(CGPoint)p1{
@@ -35,6 +39,7 @@
     CGFloat len0       = [Core dist:p0 p1:p1];
     CGFloat len1       = [Core dist:p1 p1:p2];
     CGFloat diff       = len0 + len1 - anchorDist;
+    CGFloat scale_diff       = (len0 + len1) - scale*anchorDist;
 
     NSLog(@"scale            = [%.21g]", scale);
     NSLog(@"len0             = [%.21g]", len0);
@@ -43,6 +48,7 @@
     NSLog(@"anchorDist       = [%.21g]", anchorDist);
     NSLog(@"scale*anchorDist = [%.21g]", scale*anchorDist);
     NSLog(@"diff             = [%.21g]", diff);
+    NSLog(@"scale_diff       = [%.21g]", scale_diff);
     NSLog(@"---------------------------------");
 
     if(scale*anchorDist <= (len0 + len1)){
@@ -97,28 +103,27 @@
     return shapeLayer;
 }
 
-//+(void)printArrayPoint:(NSMutableArray*)array{
-//    for(int i=0; i<[array count]; i++){
-//        NSLog(@"[%@]", array[i]);
-//    }
-//}
-
 +(void)printArrayPoint:(NSMutableArray*)array{
-    NSLog(@"[");
     for(int i=0; i<[array count]; i++){
-        CGPoint p = [array[i] CGPointValue];
-        NSLog(@"%lf,", p.x);
+        NSLog(@"[%@]", array[i]);
     }
-    NSLog(@"]");
-
-    NSLog(@"[");
-    for(int i=0; i<[array count]; i++){
-        CGPoint p = [array[i] CGPointValue];
-        NSLog(@"%lf,", p.y);
-    }
-    NSLog(@"]");
-
 }
+
+//+(void)printArrayPoint:(NSMutableArray*)array{
+//    NSLog(@"[");
+//    for(int i=0; i<[array count]; i++){
+//        CGPoint p = [array[i] CGPointValue];
+//        NSLog(@"%lf,", p.x);
+//    }
+//    NSLog(@"]");
+//
+//    NSLog(@"[");
+//    for(int i=0; i<[array count]; i++){
+//        CGPoint p = [array[i] CGPointValue];
+//        NSLog(@"%lf,", p.y);
+//    }
+//    NSLog(@"]");
+//}
 
 
 @end

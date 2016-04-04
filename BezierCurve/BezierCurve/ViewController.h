@@ -20,8 +20,13 @@
     CGPoint _anchorPoint1;
     CGPoint _controlPoint;
     CGFloat _scale;
+    CAShapeLayer* _line0Layer;
     CAShapeLayer* _line1Layer;
-    CAShapeLayer* _line2Layer;
+
+    CAShapeLayer* _anchor0Layer;
+    CAShapeLayer* _anchor1Layer;
+
+    NSMutableArray* _arrayPoints;
 }
 @end
 
