@@ -41,6 +41,10 @@
         [self quatricBezierCurve:p0 p1:lp p2:midPoint scale:scale array:array];
         [array addObject:[NSValue valueWithCGPoint:midPoint]];
         [self quatricBezierCurve:midPoint p1:rp p2:p2 scale:scale array:array];
+    }else{
+        NSLog(@"anchorDist=[%lf]", anchorDist);
+        NSLog(@"len0        =[%lf]", len0);
+        NSLog(@"len1        =[%lf]", len1);
     }
 }
 +(CAShapeLayer*)drawCurve:(NSMutableArray*)array layer:(CAShapeLayer*)shapeLayer{

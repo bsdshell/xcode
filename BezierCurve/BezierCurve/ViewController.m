@@ -25,6 +25,7 @@
     _mySlider.minimumValue = 1.0f;
     _mySlider.maximumValue = 1000.0f;
     _mySlider.continuous = YES;
+    [_mySlider setThumbImage:[UIImage imageNamed:@"pic.png"] forState:UIControlStateNormal];
     [_mySlider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
     
     _anchorPoint0 = CGPointMake(10, 200);
@@ -94,11 +95,11 @@
 -(void)sliderChanged:(id)sender{
     NSLog(@"value=[%lf]", _mySlider.value);
         
-    for(CAShapeLayer* layer in [self.view.layer.sublayers copy]){
-        if([[layer name] isEqualToString:@"curve"]){
-            [layer removeFromSuperlayer];
-        }
-    }
+//    for(CAShapeLayer* layer in [self.view.layer.sublayers copy]){
+//        if([[layer name] isEqualToString:@"curve"]){
+//            [layer removeFromSuperlayer];
+//        }
+//    }
     
     
 //    _anchorPoint0 = CGPointMake(10, 200);
