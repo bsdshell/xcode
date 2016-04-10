@@ -9,24 +9,39 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController{
-    UISlider* _mySlider;
+    UISlider* _mySlider1;
+    UISlider* _mySlider2;
     CGFloat _minimum;
     CGFloat _maximum;
     CAShapeLayer* _curveLayer;
     CAShapeLayer* _rectLayer;
+
+    CAShapeLayer* _lineLayer;
+
     CGPoint _begPoint;
     CGPoint _center;
     CGPoint _anchorPoint0;
     CGPoint _anchorPoint1;
     CGPoint _controlPoint;
-    CGFloat _scale;
-    CAShapeLayer* _line0Layer;
-    CAShapeLayer* _line1Layer;
+
+    CGPoint _linearP0;
+    CGPoint _linearP1;
+    CGPoint _line;
+
+    CGFloat _scale1;
+    CGFloat _scale2;
+    CAShapeLayer* _qline0Layer;
+    CAShapeLayer* _qline1Layer;
 
     CAShapeLayer* _anchor0Layer;
     CAShapeLayer* _anchor1Layer;
 
-    NSMutableArray* _arrayPoints;
+    CAShapeLayer* _line0Layer;
+    CAShapeLayer* _line1Layer;
+
+
+    NSMutableArray* _arrayPoints1;
+    NSMutableArray* _arrayPoints2;
 }
 @end
 

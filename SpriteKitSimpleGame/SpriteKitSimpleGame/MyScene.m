@@ -60,7 +60,6 @@ static inline CGPoint rwNormalize(CGPoint a) {
       
         self.physicsWorld.gravity = CGVectorMake(0,0);
         self.physicsWorld.contactDelegate = self;
- 
     }
     return self;
 }
@@ -69,6 +68,7 @@ static inline CGPoint rwNormalize(CGPoint a) {
  
     // Create sprite
     SKSpriteNode * monster = [SKSpriteNode spriteNodeWithImageNamed:@"monster"];
+    
     monster.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:monster.size]; // 1
     monster.physicsBody.dynamic = YES; // 2
     monster.physicsBody.categoryBitMask = monsterCategory; // 3

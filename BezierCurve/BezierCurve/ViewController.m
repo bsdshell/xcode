@@ -19,21 +19,22 @@
 @implementation ViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _arrayPoints           = [[NSMutableArray alloc] initWithCapacity:10];
+    _arrayPoints1           = [[NSMutableArray alloc] initWithCapacity:10];
+    _arrayPoints2           = [[NSMutableArray alloc] initWithCapacity:10];
 
     _curveLayer            = [CAShapeLayer layer];
     _curveLayer.name       = @"curve";
     
-    _mySlider              = [[UISlider alloc] initWithFrame:CGRectMake(50, 600, 200, 23)];
-    _mySlider.minimumValue = 1.0f;
-    _mySlider.maximumValue = 1000.0f;
-    _mySlider.continuous   = YES;
-    [self.view addSubview:_mySlider];
+    _lineLayer = [CAShapeLayer layer];
+    _lineLayer.name       = @"line";
+
+    [self addSliders]; 
+
     [self scaleValue];
 
-    [_mySlider setThumbImage:[UIImage imageNamed:@"mypic.png"] forState:UIControlStateNormal];
-    [_mySlider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
-    
+    _linearP0 = CGPointMake(20, 20);
+    _linearP1 = CGPointMake(200, 30);
+
     _anchorPoint0 = CGPointMake(10, 200);
     _controlPoint = CGPointMake(200, 200);
     _anchorPoint1 = CGPointMake(200, 400);
@@ -47,61 +48,106 @@
     _anchor0Layer = [self createRect:_anchorPoint0 layer:_anchor0Layer];
     _anchor1Layer = [self createRect:_anchorPoint1 layer:_anchor1Layer];
 
+    
     [self.view.layer addSublayer:_rectLayer];
-    _line0Layer = [CAShapeLayer layer];
-    _line1Layer = [CAShapeLayer layer];
+    _qline0Layer = [CAShapeLayer layer];
+    _qline1Layer = [CAShapeLayer layer];
 
     [self.view.layer addSublayer:_anchor0Layer];
     [self.view.layer addSublayer:_anchor1Layer];
 
+
+    _line0Layer   = [CAShapeLayer layer];
+    _line1Layer   = [CAShapeLayer layer];
+
+    _line0Layer   = [self createRect:_linearP0 layer:_line0Layer];
+    _line1Layer   = [self createRect:_linearP1 layer:_line1Layer];
+
+    [self.view.layer addSublayer:_line0Layer];
+    [self.view.layer addSublayer:_line1Layer];
+
+
     [self updateLines];
 }
 
--(void)touchPoints{
+-(void)addSliders{
+    _mySlider1              = [[UISlider alloc] initWithFrame:CGRectMake(50, 600, 200, 23)];
+    _mySlider1.minimumValue = 1.0f;
+    _mySlider1.maximumValue = 1000.0f;
+    _mySlider1.continuous   = YES;
+    [self.view addSubview:_mySlider1];
 
+    _mySlider2              = [[UISlider alloc] initWithFrame:CGRectMake(50, 550, 200, 23)];
+    _mySlider2.minimumValue = 1.0f;
+    _mySlider2.maximumValue = 1000.0f;
+    _mySlider2.continuous   = YES;
+    [self.view addSubview:_mySlider2];
 }
 
 -(void)scaleValue{
-    _scale = 1.0 + (0.1/_mySlider.value);
+    _scale1 = 1.0 + (0.1/_mySlider1.value);
+    _scale2 = 0.0 + (0.1/_mySlider2.value); 
 }
 
 -(void)updateLines{
     UIBezierPath* path1 = [UIBezierPath bezierPath];
     [path1 moveToPoint:_anchorPoint0];
     [path1 addLineToPoint:_controlPoint];
-    _line0Layer.path = [path1 CGPath];
-    _line0Layer.strokeColor = [[UIColor blackColor] CGColor];
-    _line0Layer.lineWidth = 1.0f;
-    [self.view.layer addSublayer:_line0Layer];
+    _qline0Layer.path = [path1 CGPath];
+    _qline0Layer.strokeColor = [[UIColor blackColor] CGColor];
+    _qline0Layer.lineWidth = 1.0f;
+    [self.view.layer addSublayer:_qline0Layer];
 
     UIBezierPath* path2 = [UIBezierPath bezierPath];
     [path2 moveToPoint:_anchorPoint1];
     [path2 addLineToPoint:_controlPoint];
-    _line1Layer.path = [path2 CGPath];
-    _line1Layer.strokeColor = [[UIColor brownColor] CGColor];
-    _line1Layer.lineWidth = 1.0f;
-    [self.view.layer addSublayer:_line1Layer];
+    _qline1Layer.path = [path2 CGPath];
+    _qline1Layer.strokeColor = [[UIColor brownColor] CGColor];
+    _qline1Layer.lineWidth = 1.0f;
+    [self.view.layer addSublayer:_qline1Layer];
+
+    [_mySlider1 setThumbImage:[UIImage imageNamed:@"mypic.png"] forState:UIControlStateNormal];
+    [_mySlider1 addTarget:self action:@selector(sliderChanged1:) forControlEvents:UIControlEventValueChanged];
+
+    [_mySlider2 setThumbImage:[UIImage imageNamed:@"mypic.png"] forState:UIControlStateNormal];
+    [_mySlider2 addTarget:self action:@selector(sliderChanged1:) forControlEvents:UIControlEventValueChanged];
+
 }
 
--(void)sliderChanged:(id)sender{
-    NSLog(@"value=[%lf]", _mySlider.value);
+-(void)sliderChanged1:(id)sender{
+    NSLog(@"value=[%lf]", _mySlider1.value);
 
-    [_arrayPoints removeAllObjects]; 
+    [_arrayPoints1 removeAllObjects]; 
     [self scaleValue];
     
-    NSLog(@"value=[%lf] scale=[%lf]", _mySlider.value, _scale);
+    NSLog(@"value=[%lf] scale=[%lf]", _mySlider1.value, _scale1);
 
-    [Core quatricBezierCurve:_anchorPoint0 p1:_controlPoint p2:_anchorPoint1 scale:_scale array:_arrayPoints];
+    [Core quatricBezierCurve:_anchorPoint0 p1:_controlPoint p2:_anchorPoint1 scale:_scale1 array:_arrayPoints1];
     
     // insert to first
-    [_arrayPoints insertObject:[NSValue valueWithCGPoint:_anchorPoint0] atIndex:0];
+    [_arrayPoints1 insertObject:[NSValue valueWithCGPoint:_anchorPoint0] atIndex:0];
     // insert to end
-    [_arrayPoints addObject:[NSValue valueWithCGPoint:_anchorPoint1]];
+    [_arrayPoints1 addObject:[NSValue valueWithCGPoint:_anchorPoint1]];
     
-    [Core printArrayPoint:_arrayPoints];
-    _curveLayer = [Core drawCurve:_arrayPoints layer:_curveLayer];
+    [Core printArrayPoint:_arrayPoints1];
+    _curveLayer = [Core drawCurve:_arrayPoints1 layer:_curveLayer];
     [self.view.layer addSublayer:_curveLayer];
 }
+
+-(void)sliderChanged2:(id)sender{
+    NSLog(@"value=[%lf]", _mySlider2.value);
+    [Core linearBezierCurve:_linearP0 p1:_linearP1 scale:_scale2 array:_arrayPoints2];
+
+    // insert to first
+    [_arrayPoints2 insertObject:[NSValue valueWithCGPoint:_linearP0] atIndex:0];
+    // insert to end
+    [_arrayPoints2 addObject:[NSValue valueWithCGPoint:_linearP1]];
+
+    [Core printArrayPoint:_arrayPoints2];
+    _lineLayer = [Core drawCurve:_arrayPoints2 layer:_lineLayer];
+    [self.view.layer addSublayer:_lineLayer];
+}
+
 
 -(CAShapeLayer*)createRect:(CGPoint)center layer:(CAShapeLayer*)myLayer{
     CGFloat width = 20.0;
@@ -116,15 +162,15 @@
 }
 
 -(void)reDrawCurve{
-    [_arrayPoints removeAllObjects]; 
-    [Core quatricBezierCurve:_anchorPoint0 p1:_controlPoint p2:_anchorPoint1 scale:_scale array:_arrayPoints];
+    [_arrayPoints1 removeAllObjects]; 
+    [Core quatricBezierCurve:_anchorPoint0 p1:_controlPoint p2:_anchorPoint1 scale:_scale1 array:_arrayPoints1];
     // insert to first
-    [_arrayPoints insertObject:[NSValue valueWithCGPoint:_anchorPoint0] atIndex:0];
+    [_arrayPoints1 insertObject:[NSValue valueWithCGPoint:_anchorPoint0] atIndex:0];
     // insert to end
-    [_arrayPoints addObject:[NSValue valueWithCGPoint:_anchorPoint1]];
+    [_arrayPoints1 addObject:[NSValue valueWithCGPoint:_anchorPoint1]];
 
-    [Core printArrayPoint:_arrayPoints];
-    _curveLayer = [Core drawCurve:_arrayPoints layer:_curveLayer];
+    [Core printArrayPoint:_arrayPoints1];
+    _curveLayer = [Core drawCurve:_arrayPoints1 layer:_curveLayer];
     [self.view.layer addSublayer:_curveLayer];
 }
 

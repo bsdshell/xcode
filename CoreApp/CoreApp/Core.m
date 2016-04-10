@@ -31,6 +31,17 @@
     return p0.x == p1.x && p0.y == p1.y;
 }
 
++(void)linearBezierCurve:(CGPoint)p0 p1:(CGPoint)p1 scale:(CGFloat)scale array:(NSMutableArray*)array{
+    if([Core comparePoints:p0 p1:p1])
+        return;
+    CGPoint midPoint = [Core middlePoint:p0 p1:p1];
+    if([Core dist:p0 p1:midPoint] > scale){
+        [Core linearBezierCurve:p0 p1:midPoint scale:scale array:array];
+        [array addObject:[NSValue valueWithCGPoint:midPoint]];
+        [Core linearBezierCurve:midPoint p1:p1 scale:scale array:array];
+    }
+}
+
 +(void)quatricBezierCurve:(CGPoint)p0 p1:(CGPoint)p1 p2:(CGPoint)p2 scale:(CGFloat)scale array:(NSMutableArray*)array{
     if([Core comparePoints:p0 p1:p1] || [Core comparePoints:p1 p1:p2])
         return;

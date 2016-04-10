@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		4E0BDCD91CACA6B00051219D /* mymod.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E0BDCD81CACA6B00051219D /* mymod.dae */; };
+		4E64A5971CB89DDF0015E91E /* mod6.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A5961CB89DDF0015E91E /* mod6.dae */; };
+		4E64A5991CB89FD30015E91E /* mod7.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A5981CB89FD30015E91E /* mod7.dae */; };
+		4E64A59B1CB8A1EF0015E91E /* mod8.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A59A1CB8A1EF0015E91E /* mod8.dae */; };
+		4E64A59D1CB8A9770015E91E /* mod9.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A59C1CB8A9770015E91E /* mod9.dae */; };
+		4E64A59F1CB8A9E60015E91E /* mod10.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A59E1CB8A9E60015E91E /* mod10.dae */; };
+		4E64A5A11CB8CFB60015E91E /* mod11.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A5A01CB8CFB60015E91E /* mod11.dae */; };
+		4E64A5A31CB8D1620015E91E /* BrickLargeBlocks0026_1_S.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A5A21CB8D1620015E91E /* BrickLargeBlocks0026_1_S.jpg */; };
+		4E64A5A51CB8D5BA0015E91E /* mod12.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A5A41CB8D5BA0015E91E /* mod12.dae */; };
+		4E64A5A71CB8D5CE0015E91E /* Bones0024_1_S.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4E64A5A61CB8D5CE0015E91E /* Bones0024_1_S.jpg */; };
 		4E8B365F1CAC879500284130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B365E1CAC879500284130 /* main.m */; };
 		4E8B36621CAC879500284130 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B36611CAC879500284130 /* AppDelegate.m */; };
 		4E8B36641CAC879600284130 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B36631CAC879600284130 /* art.scnassets */; };
@@ -16,6 +25,11 @@
 		4E8B366C1CAC879600284130 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B366B1CAC879600284130 /* Images.xcassets */; };
 		4E8B366F1CAC879600284130 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8B366D1CAC879600284130 /* LaunchScreen.xib */; };
 		4E8B367B1CAC879600284130 /* OneGameFirstTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8B367A1CAC879600284130 /* OneGameFirstTests.m */; };
+		4EA34BF81CB64C35006C8137 /* mod1.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4EA34BF71CB64C35006C8137 /* mod1.dae */; };
+		4EA34BFA1CB64D86006C8137 /* mod2.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4EA34BF91CB64D86006C8137 /* mod2.dae */; };
+		4EA34BFC1CB6FE9B006C8137 /* cube1.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4EA34BFB1CB6FE9B006C8137 /* cube1.dae */; };
+		4EA34BFF1CB87F1E006C8137 /* mod3.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4EA34BFE1CB87F1E006C8137 /* mod3.dae */; };
+		4EA34C011CB881F0006C8137 /* mod4.dae in Resources */ = {isa = PBXBuildFile; fileRef = 4EA34C001CB881F0006C8137 /* mod4.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +44,15 @@
 
 /* Begin PBXFileReference section */
 		4E0BDCD81CACA6B00051219D /* mymod.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mymod.dae; sourceTree = "<group>"; };
+		4E64A5961CB89DDF0015E91E /* mod6.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod6.dae; sourceTree = "<group>"; };
+		4E64A5981CB89FD30015E91E /* mod7.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod7.dae; sourceTree = "<group>"; };
+		4E64A59A1CB8A1EF0015E91E /* mod8.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod8.dae; sourceTree = "<group>"; };
+		4E64A59C1CB8A9770015E91E /* mod9.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod9.dae; sourceTree = "<group>"; };
+		4E64A59E1CB8A9E60015E91E /* mod10.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod10.dae; sourceTree = "<group>"; };
+		4E64A5A01CB8CFB60015E91E /* mod11.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod11.dae; sourceTree = "<group>"; };
+		4E64A5A21CB8D1620015E91E /* BrickLargeBlocks0026_1_S.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BrickLargeBlocks0026_1_S.jpg; sourceTree = "<group>"; };
+		4E64A5A41CB8D5BA0015E91E /* mod12.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod12.dae; sourceTree = "<group>"; };
+		4E64A5A61CB8D5CE0015E91E /* Bones0024_1_S.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bones0024_1_S.jpg; sourceTree = "<group>"; };
 		4E8B36591CAC879500284130 /* OneGameFirst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneGameFirst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B365D1CAC879500284130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8B365E1CAC879500284130 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,6 +67,12 @@
 		4E8B36741CAC879600284130 /* OneGameFirstTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneGameFirstTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E8B36791CAC879600284130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E8B367A1CAC879600284130 /* OneGameFirstTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneGameFirstTests.m; sourceTree = "<group>"; };
+		4EA34BF71CB64C35006C8137 /* mod1.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod1.dae; sourceTree = "<group>"; };
+		4EA34BF91CB64D86006C8137 /* mod2.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod2.dae; sourceTree = "<group>"; };
+		4EA34BFB1CB6FE9B006C8137 /* cube1.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = cube1.dae; sourceTree = "<group>"; };
+		4EA34BFD1CB7001D006C8137 /* cube2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = cube2.fbx; sourceTree = "<group>"; };
+		4EA34BFE1CB87F1E006C8137 /* mod3.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod3.dae; sourceTree = "<group>"; };
+		4EA34C001CB881F0006C8137 /* mod4.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = mod4.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +117,21 @@
 				4E8B36601CAC879500284130 /* AppDelegate.h */,
 				4E8B36611CAC879500284130 /* AppDelegate.m */,
 				4E0BDCD81CACA6B00051219D /* mymod.dae */,
+				4E64A5A61CB8D5CE0015E91E /* Bones0024_1_S.jpg */,
+				4E64A5A41CB8D5BA0015E91E /* mod12.dae */,
+				4E64A5A01CB8CFB60015E91E /* mod11.dae */,
+				4E64A5A21CB8D1620015E91E /* BrickLargeBlocks0026_1_S.jpg */,
+				4E64A59E1CB8A9E60015E91E /* mod10.dae */,
+				4E64A59C1CB8A9770015E91E /* mod9.dae */,
+				4E64A59A1CB8A1EF0015E91E /* mod8.dae */,
+				4E64A5981CB89FD30015E91E /* mod7.dae */,
+				4E64A5961CB89DDF0015E91E /* mod6.dae */,
+				4EA34C001CB881F0006C8137 /* mod4.dae */,
+				4EA34BFE1CB87F1E006C8137 /* mod3.dae */,
+				4EA34BF91CB64D86006C8137 /* mod2.dae */,
+				4EA34BFB1CB6FE9B006C8137 /* cube1.dae */,
+				4EA34BF71CB64C35006C8137 /* mod1.dae */,
+				4EA34BFD1CB7001D006C8137 /* cube2.fbx */,
 				4E8B36631CAC879600284130 /* art.scnassets */,
 				4E8B36651CAC879600284130 /* GameViewController.h */,
 				4E8B36661CAC879600284130 /* GameViewController.m */,
@@ -206,10 +250,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E0BDCD91CACA6B00051219D /* mymod.dae in Resources */,
+				4EA34BFC1CB6FE9B006C8137 /* cube1.dae in Resources */,
+				4E64A5A51CB8D5BA0015E91E /* mod12.dae in Resources */,
 				4E8B366F1CAC879600284130 /* LaunchScreen.xib in Resources */,
+				4E64A5A11CB8CFB60015E91E /* mod11.dae in Resources */,
+				4E64A59D1CB8A9770015E91E /* mod9.dae in Resources */,
+				4E64A5991CB89FD30015E91E /* mod7.dae in Resources */,
+				4E64A59B1CB8A1EF0015E91E /* mod8.dae in Resources */,
+				4EA34BFF1CB87F1E006C8137 /* mod3.dae in Resources */,
+				4EA34C011CB881F0006C8137 /* mod4.dae in Resources */,
 				4E8B366C1CAC879600284130 /* Images.xcassets in Resources */,
+				4E64A5A31CB8D1620015E91E /* BrickLargeBlocks0026_1_S.jpg in Resources */,
+				4E64A5971CB89DDF0015E91E /* mod6.dae in Resources */,
+				4EA34BFA1CB64D86006C8137 /* mod2.dae in Resources */,
+				4EA34BF81CB64C35006C8137 /* mod1.dae in Resources */,
 				4E8B36641CAC879600284130 /* art.scnassets in Resources */,
 				4E8B366A1CAC879600284130 /* Main.storyboard in Resources */,
+				4E64A59F1CB8A9E60015E91E /* mod10.dae in Resources */,
+				4E64A5A71CB8D5CE0015E91E /* Bones0024_1_S.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

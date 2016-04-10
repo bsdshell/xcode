@@ -10,6 +10,8 @@
 #import <SceneKit/SceneKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameViewController : UIViewController
-
+@interface GameViewController : UIViewController{
+    CGFloat _lightX;
+    CGFloat _lightY;
+}
 @end

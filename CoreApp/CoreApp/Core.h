@@ -17,5 +17,6 @@
 +(CGPoint)addPoints:(CGPoint)p0 p1:(CGPoint)p1;
 +(BOOL)comparePoints:(CGPoint)p0 p1:(CGPoint)p1;
 +(CAShapeLayer*)drawCurve:(NSMutableArray*)array layer:(CAShapeLayer*)shapeLayer;
++(void)linearBezierCurve:(CGPoint)p0 p1:(CGPoint)p1 scale:(CGFloat)scale array:(NSMutableArray*)array;
 
 @end
