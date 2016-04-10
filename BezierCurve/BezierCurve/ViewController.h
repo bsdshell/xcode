@@ -14,7 +14,7 @@
     CGFloat _minimum;
     CGFloat _maximum;
     CAShapeLayer* _curveLayer;
-    CAShapeLayer* _rectLayer;
+    CAShapeLayer* _controlLayer;
 
     CAShapeLayer* _lineLayer;
 
@@ -38,6 +38,7 @@
 
     CAShapeLayer* _line0Layer;
     CAShapeLayer* _line1Layer;
+    CAShapeLayer* _connectedPointLayer;
 
 
     NSMutableArray* _arrayPoints1;

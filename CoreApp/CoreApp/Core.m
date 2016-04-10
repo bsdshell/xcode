@@ -1,8 +1,8 @@
 #import "Core.h"
 #import <UIKit/UIKit.h>
 
-#define NSLog(...)     //
-#define printf(...)    //
+//#define NSLog(...)     //
+//#define printf(...)    //
 
 
 @implementation Core
@@ -63,8 +63,8 @@
     NSLog(@"---------------------------------");
 
     if(scale*anchorDist <= (len0 + len1)){
-        CGPoint lp = [Core middlePoint:p0 p1:p1];
-        CGPoint rp = [Core middlePoint:p1 p1:p2];
+        CGPoint lp       = [Core middlePoint:p0 p1:p1];
+        CGPoint rp       = [Core middlePoint:p1 p1:p2];
         CGPoint midPoint = [Core middlePoint:lp p1:rp];
         
         [self quatricBezierCurve:p0 p1:lp p2:midPoint scale:scale array:array];
@@ -74,7 +74,7 @@
 }
 
 +(CAShapeLayer*)drawCurve:(NSMutableArray*)array layer:(CAShapeLayer*)shapeLayer{
-    CGSize size          = [UIScreen mainScreen].bounds.size;
+    CGSize size        = [UIScreen mainScreen].bounds.size;
     UIBezierPath* path = [UIBezierPath bezierPath];
 
     if([array count] > 1){
@@ -87,30 +87,30 @@
     }else{
         NSLog(@"Need two points or more"); 
     }
-    shapeLayer.path = [path CGPath];
+    shapeLayer.path        = [path CGPath];
     shapeLayer.strokeColor = [[UIColor blackColor] CGColor];
-    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
-    shapeLayer.lineWidth = 1.0f;
+    shapeLayer.fillColor   = [[UIColor brownColor] CGColor];
+    shapeLayer.lineWidth   = 1.0f;
     return shapeLayer;
 }
 
 +(CAShapeLayer*)drawRect{
-    CGSize size = [UIScreen mainScreen].bounds.size;
-    CGPoint center = CGPointMake(size.width/2, size.height/2);
-    float width = 100;
-    float height = 100;
+    CGSize size              = [UIScreen mainScreen].bounds.size;
+    CGPoint center           = CGPointMake(size.width/2, size.height/2);
+    float width              = 100;
+    float height             = 100;
     CAShapeLayer* shapeLayer = [CAShapeLayer layer];
-    UIBezierPath* path = [UIBezierPath bezierPath];
+    UIBezierPath* path       = [UIBezierPath bezierPath];
     [path moveToPoint:center];
     [path addLineToPoint:CGPointMake(center.x + width, center.y)];
     [path addLineToPoint:CGPointMake(center.x + width, center.y + height)];
     [path addLineToPoint:CGPointMake(center.x, center.y + height)];
     [path closePath];
-    shapeLayer.path = [path CGPath];
+    shapeLayer.path        = [path CGPath];
 
     shapeLayer.strokeColor = [[UIColor redColor] CGColor];
-    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
-    shapeLayer.lineWidth = 1.0f;
+    shapeLayer.fillColor   = [[UIColor brownColor] CGColor];
+    shapeLayer.lineWidth   = 1.0f;
     return shapeLayer;
 }
 
