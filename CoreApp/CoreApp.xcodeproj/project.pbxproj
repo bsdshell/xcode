@@ -17,6 +17,10 @@
 		4E40652C1C9A216500C90471 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E40652A1C9A216500C90471 /* LaunchScreen.xib */; };
 		4E4065381C9A216500C90471 /* CoreAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4065371C9A216500C90471 /* CoreAppTests.m */; };
 		4E4065431C9A21C500C90471 /* Core.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4065421C9A21C500C90471 /* Core.m */; };
+		4E5C3B861CBC8D83009D54B5 /* DDLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C3B851CBC8D83009D54B5 /* DDLinkedList.m */; };
+		4E5C3B891CBC8D9C009D54B5 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C3B881CBC8D9C009D54B5 /* Node.m */; };
+		4E5C3B8E1CBC8DBC009D54B5 /* BNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C3B8B1CBC8DBC009D54B5 /* BNode.m */; };
+		4E5C3B8F1CBC8DBC009D54B5 /* BST.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5C3B8D1CBC8DBC009D54B5 /* BST.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,14 @@
 		4E4065371C9A216500C90471 /* CoreAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAppTests.m; sourceTree = "<group>"; };
 		4E4065411C9A21C500C90471 /* Core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		4E4065421C9A21C500C90471 /* Core.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Core.m; sourceTree = "<group>"; };
+		4E5C3B841CBC8D83009D54B5 /* DDLinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLinkedList.h; sourceTree = "<group>"; };
+		4E5C3B851CBC8D83009D54B5 /* DDLinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLinkedList.m; sourceTree = "<group>"; };
+		4E5C3B871CBC8D9C009D54B5 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		4E5C3B881CBC8D9C009D54B5 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
+		4E5C3B8A1CBC8DBC009D54B5 /* BNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNode.h; sourceTree = "<group>"; };
+		4E5C3B8B1CBC8DBC009D54B5 /* BNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNode.m; sourceTree = "<group>"; };
+		4E5C3B8C1CBC8DBC009D54B5 /* BST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BST.h; sourceTree = "<group>"; };
+		4E5C3B8D1CBC8DBC009D54B5 /* BST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BST.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +104,14 @@
 			children = (
 				4E4065411C9A21C500C90471 /* Core.h */,
 				4E4065421C9A21C500C90471 /* Core.m */,
+				4E5C3B8A1CBC8DBC009D54B5 /* BNode.h */,
+				4E5C3B8B1CBC8DBC009D54B5 /* BNode.m */,
+				4E5C3B8C1CBC8DBC009D54B5 /* BST.h */,
+				4E5C3B8D1CBC8DBC009D54B5 /* BST.m */,
+				4E5C3B871CBC8D9C009D54B5 /* Node.h */,
+				4E5C3B881CBC8D9C009D54B5 /* Node.m */,
+				4E5C3B841CBC8D83009D54B5 /* DDLinkedList.h */,
+				4E5C3B851CBC8D83009D54B5 /* DDLinkedList.m */,
 				4E2F1CE21C9F60C10044B679 /* MyClass.h */,
 				4E2F1CE31C9F60C10044B679 /* MyClass.m */,
 				4E2F1CE51C9F62A40044B679 /* MyEncodeCATransform3D.h */,
@@ -235,11 +255,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E4065241C9A216500C90471 /* ViewController.m in Sources */,
+				4E5C3B8F1CBC8DBC009D54B5 /* BST.m in Sources */,
 				4E4065211C9A216500C90471 /* AppDelegate.m in Sources */,
 				4E2F1CE41C9F60C10044B679 /* MyClass.m in Sources */,
+				4E5C3B8E1CBC8DBC009D54B5 /* BNode.m in Sources */,
 				4E2F1CE71C9F62A40044B679 /* MyEncodeCATransform3D.m in Sources */,
+				4E5C3B861CBC8D83009D54B5 /* DDLinkedList.m in Sources */,
 				4E40651E1C9A216500C90471 /* main.m in Sources */,
 				4E4065431C9A21C500C90471 /* Core.m in Sources */,
+				4E5C3B891CBC8D9C009D54B5 /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
