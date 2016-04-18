@@ -29,12 +29,12 @@
     _connectedPointLayer = [CAShapeLayer layer];
 
     [self quadraticSelectedPoints]; 
-    [self linearSelectedPoints]; 
+    //[self linearSelectedPoints];
     //[self addLinearLines];
     
     [self.view.layer addSublayer:_controlLayer];
-    _qline0Layer = [CAShapeLayer layer];
-    _qline1Layer = [CAShapeLayer layer];
+    //_qline0Layer = [CAShapeLayer layer];
+    //_qline1Layer = [CAShapeLayer layer];
 
     [self.view.layer addSublayer:_anchor0Layer];
     [self.view.layer addSublayer:_anchor1Layer];
@@ -51,18 +51,18 @@
     [self.view addSubview:_mySlider1];
     [self scaleValue1];
 
-    _mySlider2              = [[UISlider alloc] initWithFrame:CGRectMake(50, 550, 200, 23)];
-    _mySlider2.minimumValue = 1.0f;
-    _mySlider2.maximumValue = 1000.0f;
-    _mySlider2.continuous   = YES;
-    [self.view addSubview:_mySlider2];
-    [_mySlider2 setThumbImage:[UIImage imageNamed:@"mypic.png"] forState:UIControlStateNormal];
-    [_mySlider2 addTarget:self action:@selector(sliderChanged2:) forControlEvents:UIControlEventValueChanged];
-    [self scaleValue2];
+//    _mySlider2              = [[UISlider alloc] initWithFrame:CGRectMake(50, 550, 200, 23)];
+//    _mySlider2.minimumValue = 1.0f;
+//    _mySlider2.maximumValue = 1000.0f;
+//    _mySlider2.continuous   = YES;
+//    [self.view addSubview:_mySlider2];
+//    [_mySlider2 setThumbImage:[UIImage imageNamed:@"mypic.png"] forState:UIControlStateNormal];
+//    [_mySlider2 addTarget:self action:@selector(sliderChanged2:) forControlEvents:UIControlEventValueChanged];
+//    [self scaleValue2];
 }
 
 -(void)quadraticSelectedPoints{
-    _anchorPoint0 = CGPointMake(10, 200);
+    _anchorPoint0 = CGPointMake(20, 200);
     _controlPoint = CGPointMake(200, 200);
     _anchorPoint1 = CGPointMake(200, 400);
 
@@ -159,20 +159,19 @@
     [_arrayPoints2 addObject:[NSValue valueWithCGPoint:_linearP1]];
 
     [Core printArrayPoint:_arrayPoints2];
-    _lineLayer = [Core drawCurve:_arrayPoints2 layer:_lineLayer];
-    [self.view.layer addSublayer:_lineLayer];
     [self scaleValue2];
 }
 
 
 -(CAShapeLayer*)createRect:(CGPoint)center layer:(CAShapeLayer*)myLayer{
-    CGFloat width = 20.0;
-    CGFloat height = 20.0;
-    
-    UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(center.x - width/2, center.y - height/2, width, height)];
-    myLayer.lineWidth = 10.0f;
+    CGFloat width = 40.0;
+    CGFloat height = 40.0;
+
+    UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(center.x - width/2, center.y - height/2, width, height)];
+    //UIBezierPath* path = [UIBezierPath bezierPathWithRect:CGRectMake(center.x - width/2, center.y - height/2, width, height)];
+    myLayer.lineWidth = 1.0f;
     myLayer.strokeColor = [[UIColor darkGrayColor] CGColor];
-    [myLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [myLayer setFillColor:[[UIColor brownColor] CGColor]];
     [myLayer setPath:[path CGPath]];
     return myLayer;
 }
@@ -187,8 +186,6 @@
     [_arrayPoints2 addObject:[NSValue valueWithCGPoint:_linearP1]];
 
     [Core printArrayPoint:_arrayPoints2];
-    _lineLayer = [Core drawCurve:_arrayPoints2 layer:_lineLayer];
-    [self.view.layer addSublayer:_lineLayer];
 }
 
 -(void)reDrawCurve{
@@ -225,8 +222,6 @@
 
         if(CGPathContainsPoint(_controlLayer.path, NULL, currXY, false)){
             NSLog(@"move[%@]", [NSValue valueWithCGPoint:currXY]);
-            // vector P0_P1
-            // P1 = P0 + P0_P1
             _controlPoint = [Core addPoints:_controlPoint p1:vect];
             [self createRect:_controlPoint layer:_controlLayer];
             [self addQuadLines];

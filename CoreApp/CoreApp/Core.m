@@ -1,8 +1,8 @@
 #import "Core.h"
 #import <UIKit/UIKit.h>
 
-//#define NSLog(...)     //
-//#define printf(...)    //
+#define NSLog(...)     //
+#define printf(...)    //
 
 
 @implementation Core
@@ -88,9 +88,9 @@
         NSLog(@"Need two points or more"); 
     }
     shapeLayer.path        = [path CGPath];
-    shapeLayer.strokeColor = [[UIColor blackColor] CGColor];
-    shapeLayer.fillColor   = [[UIColor brownColor] CGColor];
-    shapeLayer.lineWidth   = 1.0f;
+    shapeLayer.strokeColor = [[UIColor brownColor] CGColor];
+    shapeLayer.fillColor   = [[UIColor clearColor] CGColor];
+    shapeLayer.lineWidth   = 2.0f;
     return shapeLayer;
 }
 
