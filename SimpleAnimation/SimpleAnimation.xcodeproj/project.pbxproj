@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0FE0151CC4B76800E85E08 /* dance_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0FE00F1CC4B76800E85E08 /* dance_0.png */; };
+		4E0FE0161CC4B76800E85E08 /* dance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0FE0101CC4B76800E85E08 /* dance_1.png */; };
+		4E0FE0171CC4B76800E85E08 /* dance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0FE0111CC4B76800E85E08 /* dance_2.png */; };
+		4E0FE0181CC4B76800E85E08 /* dance_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0FE0121CC4B76800E85E08 /* dance_3.png */; };
+		4E0FE0191CC4B76800E85E08 /* dance_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0FE0131CC4B76800E85E08 /* dance_4.png */; };
+		4E0FE01A1CC4B76800E85E08 /* dance_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E0FE0141CC4B76800E85E08 /* dance_5.png */; };
 		F404BF861706C786002568F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404BF851706C786002568F1 /* UIKit.framework */; };
 		F404BF881706C786002568F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404BF871706C786002568F1 /* Foundation.framework */; };
 		F404BF8A1706C786002568F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F404BF891706C786002568F1 /* CoreGraphics.framework */; };
@@ -37,6 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E0FE00F1CC4B76800E85E08 /* dance_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_0.png; sourceTree = "<group>"; };
+		4E0FE0101CC4B76800E85E08 /* dance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_1.png; sourceTree = "<group>"; };
+		4E0FE0111CC4B76800E85E08 /* dance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_2.png; sourceTree = "<group>"; };
+		4E0FE0121CC4B76800E85E08 /* dance_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_3.png; sourceTree = "<group>"; };
+		4E0FE0131CC4B76800E85E08 /* dance_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_4.png; sourceTree = "<group>"; };
+		4E0FE0141CC4B76800E85E08 /* dance_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dance_5.png; sourceTree = "<group>"; };
 		F404BF821706C786002568F1 /* SimpleAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F404BF851706C786002568F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F404BF871706C786002568F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +97,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0FE00E1CC4B76800E85E08 /* myimg2 */ = {
+			isa = PBXGroup;
+			children = (
+				4E0FE00F1CC4B76800E85E08 /* dance_0.png */,
+				4E0FE0101CC4B76800E85E08 /* dance_1.png */,
+				4E0FE0111CC4B76800E85E08 /* dance_2.png */,
+				4E0FE0121CC4B76800E85E08 /* dance_3.png */,
+				4E0FE0131CC4B76800E85E08 /* dance_4.png */,
+				4E0FE0141CC4B76800E85E08 /* dance_5.png */,
+			);
+			path = myimg2;
+			sourceTree = "<group>";
+		};
 		F404BF791706C786002568F1 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +146,7 @@
 				F404BF9D1706C786002568F1 /* MainStoryboard.storyboard */,
 				F404BFA01706C786002568F1 /* ViewController.h */,
 				F404BFA11706C786002568F1 /* ViewController.m */,
+				4E0FE00E1CC4B76800E85E08 /* myimg2 */,
 				F404BF8C1706C786002568F1 /* Supporting Files */,
 			);
 			path = SimpleAnimation;
@@ -218,9 +244,12 @@
 				F404BF981706C786002568F1 /* Default.png in Resources */,
 				F404BF9A1706C786002568F1 /* Default@2x.png in Resources */,
 				F404BF9C1706C786002568F1 /* Default-568h@2x.png in Resources */,
+				4E0FE0161CC4B76800E85E08 /* dance_1.png in Resources */,
 				F404BF9F1706C786002568F1 /* MainStoryboard.storyboard in Resources */,
+				4E0FE01A1CC4B76800E85E08 /* dance_5.png in Resources */,
 				F404BFB91706E97A002568F1 /* win_1.png in Resources */,
 				F404BFBA1706E97A002568F1 /* win_2.png in Resources */,
+				4E0FE0181CC4B76800E85E08 /* dance_3.png in Resources */,
 				F404BFBB1706E97A002568F1 /* win_3.png in Resources */,
 				F404BFBC1706E97A002568F1 /* win_4.png in Resources */,
 				F404BFBD1706E97A002568F1 /* win_5.png in Resources */,
@@ -231,9 +260,12 @@
 				F404BFC21706E97A002568F1 /* win_10.png in Resources */,
 				F404BFC31706E97A002568F1 /* win_11.png in Resources */,
 				F404BFC41706E97A002568F1 /* win_12.png in Resources */,
+				4E0FE0171CC4B76800E85E08 /* dance_2.png in Resources */,
 				F404BFC51706E97A002568F1 /* win_13.png in Resources */,
 				F404BFC61706E97A002568F1 /* win_14.png in Resources */,
 				F404BFC71706E97A002568F1 /* win_15.png in Resources */,
+				4E0FE0151CC4B76800E85E08 /* dance_0.png in Resources */,
+				4E0FE0191CC4B76800E85E08 /* dance_4.png in Resources */,
 				F404BFC81706E97A002568F1 /* win_16.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
