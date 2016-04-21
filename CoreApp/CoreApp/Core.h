@@ -18,5 +18,5 @@
 +(BOOL)comparePoints:(CGPoint)p0 p1:(CGPoint)p1;
 +(CAShapeLayer*)drawCurve:(NSMutableArray*)array layer:(CAShapeLayer*)shapeLayer;
 +(void)linearBezierCurve:(CGPoint)p0 p1:(CGPoint)p1 scale:(CGFloat)scale array:(NSMutableArray*)array;
-
++(void)triangular:(CGPoint)p0 p1:(CGPoint)p1 p2:(CGPoint)p2 array:(NSMutableArray*)array step:(NSInteger)step;
 @end
