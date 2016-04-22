@@ -31,42 +31,48 @@
     return p0.x == p1.x && p0.y == p1.y;
 }
 
-+(void)triangular:(CGPoint)p0 p1:(CGPoint)p1 p2:(CGPoint)p2 array:(NSMutableArray*)array step:(NSInteger)step {
++(void)triangular:(CGPoint)p0 p1:(CGPoint)p1 p2:(CGPoint)p2 array:(NSMutableArray*)array pointArray:(NSMutableArray*)pointArray step:(NSInteger)step{
     if(step > 0){
         CGPoint m0 = [Core middlePoint:p0 p1:p1];
         CGPoint m1 = [Core middlePoint:p1 p1:p2];
         CGPoint m2 = [Core middlePoint:p2 p1:p0];
         
+        [pointArray addObject:[NSValue valueWithCGPoint:m0]];
+        [pointArray addObject:[NSValue valueWithCGPoint:m1]];
+        [pointArray addObject:[NSValue valueWithCGPoint:m2]];
+
         NSMutableArray* arr = [[NSMutableArray alloc] initWithCapacity:3];
-        [Core triangular:m0 p1:p1 p2:m1 array:array step:step-1];
+        [Core triangular:m0 p1:m1 p2:p1 array:array pointArray:pointArray step:step-1];
         arr = [[NSMutableArray alloc] initWithCapacity:3];
         [arr addObject:[NSValue valueWithCGPoint:m0]];
+        [arr addObject:[NSValue valueWithCGPoint:m1]];
         [arr addObject:[NSValue valueWithCGPoint:p1]];
-        [arr addObject:[NSValue valueWithCGPoint:m1]];
         [array addObject:arr];
+        NSLog(@"f %ld %ld %ld", 3*step + 1, 3*step + 2, 3*(step-1) + 2);
 
-        
-        [Core triangular:m1 p1:p2 p2:m2 array:array step:step-1];
+        [Core triangular:m0 p1:p0 p2:m2 array:array pointArray:pointArray step:step-1];
         arr = [[NSMutableArray alloc] initWithCapacity:3];
-        [arr addObject:[NSValue valueWithCGPoint:m1]];
-        [arr addObject:[NSValue valueWithCGPoint:p2]];
-        [arr addObject:[NSValue valueWithCGPoint:m2]];
-        [array addObject:arr];
-
-
-        [Core triangular:m2 p1:p0 p2:m0 array:array step:step-1];
-        arr = [[NSMutableArray alloc] initWithCapacity:3];
-        [arr addObject:[NSValue valueWithCGPoint:m2]];
+        [arr addObject:[NSValue valueWithCGPoint:m0]];
         [arr addObject:[NSValue valueWithCGPoint:p0]];
-        [arr addObject:[NSValue valueWithCGPoint:m0]];
-        [array addObject:arr];
-
-        [Core triangular:m0 p1:m1 p2:m2 array:array step:step-1];
-        arr = [[NSMutableArray alloc] initWithCapacity:3];
-        [arr addObject:[NSValue valueWithCGPoint:m0]];
-        [arr addObject:[NSValue valueWithCGPoint:m1]];
         [arr addObject:[NSValue valueWithCGPoint:m2]];
         [array addObject:arr];
+        NSLog(@"f %ld %ld %ld", 3*step + 1, 3*(step-1) + 1, 3*step + 3);
+
+        [Core triangular:m1 p1:m2 p2:p2 array:array pointArray:pointArray step:step-1];
+        arr = [[NSMutableArray alloc] initWithCapacity:3];
+        [arr addObject:[NSValue valueWithCGPoint:m1]];
+        [arr addObject:[NSValue valueWithCGPoint:m2]];
+        [arr addObject:[NSValue valueWithCGPoint:p2]];
+        [array addObject:arr];
+        NSLog(@"f %ld %ld %ld", 3*step + 2, 3*step + 3, 3*(step-1) + 3);
+
+        [Core triangular:m0 p1:m1 p2:m2 array:array pointArray:pointArray step:step-1];
+        arr = [[NSMutableArray alloc] initWithCapacity:3];
+        [arr addObject:[NSValue valueWithCGPoint:m0]];
+        [arr addObject:[NSValue valueWithCGPoint:m2]];
+        [arr addObject:[NSValue valueWithCGPoint:m1]];
+        [array addObject:arr];
+        NSLog(@"f %d %d %d", 3*step + 1, 3*step + 2, 3*step + 3);
     }
 }
 
@@ -158,6 +164,13 @@
         NSLog(@"[%@]", array[i]);
     }
 }
+
++(void)printSetPoint:(NSMutableSet*)set{
+    for(NSValue* point in set){
+        NSLog(@"[%@]", point);
+    }
+}
+
 
 //+(void)printArrayPoint:(NSMutableArray*)array{
 //    NSLog(@"[");

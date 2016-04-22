@@ -28,6 +28,28 @@
     [super tearDown];
 }
 
+-(void)testprintSetPoint{
+    NSMutableSet* set = [[NSMutableSet alloc]init];
+    [set addObject:@"cat"];
+    [set addObject:@"dog"];
+    [set addObject:@"cow"];
+    [Core printSetPoint:set];
+}
+
+
+-(void)testNSMutableSet{
+    NSMutableSet* set = [[NSMutableSet alloc]init];
+    [set addObject:@"cat"];
+    [set addObject:@"dog"];
+    [set addObject:@"cow"];
+    
+    for(NSString* str in set){
+        NSLog(@"[%@]", str);
+    }
+}
+
+
+
 -(void)testComparePoint{
   CGPoint p0 = CGPointMake(10.001, 20.0003); 
   CGPoint p1 = CGPointMake(10.001, 20.0003); 
