@@ -119,68 +119,28 @@
 -(CAShapeLayer*)drawHexagon:(CGPoint) location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight{
     CAShapeLayer* shapeLayer = [CAShapeLayer layer];
     UIBezierPath* path = [UIBezierPath bezierPath];
-
-    NSInteger dist = 4;
-    double radians = 100.0;
+    [path setLineJoinStyle:kCGLineJoinMiter];
+    CGFloat radians = 100.0;
     NSInteger num = 6;
-    double interval = 2*M_PI/num;
+    CGFloat interval = 2*M_PI/num;
     
-    NSInteger initX = radians*cosf(interval);
-    NSInteger initY = radians*sinf(interval);
+    CGFloat initX = radians*cosf(0*interval);
+    CGFloat initY = radians*sinf(0*interval);
     
     [path moveToPoint:CGPointMake(location.x - semiWidth + initX, location.y - semiHeight + initY)];
-    for(int i=2; i<=num+1; i++){
-        double x = radians*cosf(i*interval);
-        double y = radians*sinf(i*interval);
+    for(int i=1; i<num; i++){
+        CGFloat x = radians*cosf(i*interval);
+        CGFloat y = radians*sinf(i*interval);
         [path addLineToPoint:CGPointMake(location.x - semiWidth + x, location.y - semiHeight + y)];
     }
-
-    shapeLayer.path = [path CGPath];
-    shapeLayer.strokeColor = [[UIColor yellowColor] CGColor];
-    shapeLayer.fillColor = [[UIColor brownColor] CGColor];
-    shapeLayer.lineWidth = 0.5;
-    return shapeLayer;
-}
-
-// draw rectangle
--(CAShapeLayer*)drawRectangle:(CGPoint) location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight{
-    CAShapeLayer* shapeLayer = [CAShapeLayer layer];
-    UIBezierPath* path = [UIBezierPath bezierPath];
-    
-    // start point
-    //[path moveToPoint:CGPointMake(location.x - semiWidth, location.y - semiHeight)];
-    
-//    draw lines
-//    [path addLineToPoint:CGPointMake(location.x + semiWidth, location.y - semiHeight)];
-//    [path addLineToPoint:CGPointMake(location.x + semiWidth, location.y + semiHeight)];
-//    [path addLineToPoint:CGPointMake(location.x - semiWidth, location.y + semiHeight)];
-//    [path addLineToPoint:CGPointMake(location.x - semiWidth + 0.5, location.y - semiHeight + 0.5)];
-    
-    NSInteger dist = 4;
-    double radians = 50.0;
-    NSInteger num = 6;
-    double delta = M_2_PI/num;
-
-    NSInteger initX = radians*cosf(delta);
-    NSInteger initY = radians*sinf(delta);
-    
-    [path moveToPoint:CGPointMake(location.x - semiWidth + initX, location.y - semiHeight + initY)];
-    for(int i=2; i<=num+1; i++){
-        double x = radians*cosf(i*delta);
-        double y = radians*sinf(i*delta);
-        //[path moveToPoint:CGPointMake(location.x - semiWidth + x, location.y - semiHeight + y)];
-        [path addLineToPoint:CGPointMake(location.x - semiWidth + x, location.y - semiHeight + y)];
-    }
-    
     [path closePath];
-    
     shapeLayer.path = [path CGPath];
-    
     shapeLayer.strokeColor = [[UIColor yellowColor] CGColor];
     shapeLayer.fillColor = [[UIColor brownColor] CGColor];
-    shapeLayer.lineWidth = 0.5;
+    shapeLayer.lineWidth = 4.0f;
     return shapeLayer;
 }
+
 
 -(void) clickMe:(id)sender
 {
