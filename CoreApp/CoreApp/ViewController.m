@@ -20,9 +20,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSMutableArray* array = [[NSMutableArray alloc] initWithCapacity:20];
     self.view.backgroundColor = [UIColor whiteColor];
-    CGPoint p2 = CGPointMake(50, 50);
-    CGPoint p1 = CGPointMake(300, 50);
     CGPoint p0 = CGPointMake(350, 500);
+    CGPoint p1 = CGPointMake(300, 50);
+    CGPoint p2 = CGPointMake(50, 50);
     NSInteger step = 2;
 
     NSMutableArray* pointArray = [[NSMutableArray alloc] initWithCapacity:20];
@@ -31,7 +31,10 @@
     [pointArray addObject:[NSValue valueWithCGPoint:p1]];
     [pointArray addObject:[NSValue valueWithCGPoint:p2]];
 
-    [Core triangular:p0 p1:p1 p2:p2 array:array pointArray:pointArray step:step];
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
+    int carr[] = {0};
+    //[Core triangular:p0 p1:p1 p2:p2 array:array pointArray:pointArray dict:dict step:step count:arr];
+    [Core triangular:p0 p1:p1 p2:p2 array:array pointArray:pointArray dict:dict step:step];
     [Core printArrayPoint:array];
 
     for(NSValue* point in pointArray){
@@ -75,6 +78,28 @@
     }
     
 
+//    NSMutableArray* listPoints = [[NSMutableArray alloc]initWithObjects:
+//                            [NSValue valueWithCGPoint:CGPointMake(350.000000,   500.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(300.000000,   50.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(50.000000,    50.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(325.000000,   275.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(175.000000,   50.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(200.000000,   275.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(250.000000,   162.500000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(237.500000,   50.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(312.500000,   162.500000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(337.500000,   387.500000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(275.000000,   387.500000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(262.500000,   275.000000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(187.500000,   162.500000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(125.000000,   162.500000)],
+//                            [NSValue valueWithCGPoint:CGPointMake(112.500000,   50.000000)],
+////                            [NSValue valueWithCGPoint:CGPointMake(250.000000,   162.500000)],
+////                            [NSValue valueWithCGPoint:CGPointMake(187.500000,   162.500000)],
+////                            [NSValue valueWithCGPoint:CGPointMake(262.500000,   275.000000)],
+//                            nil];
+//
+    [self.view.layer addSublayer:[Core drawListCircles:pointArray]];
 }
 
 - (void)didReceiveMemoryWarning {

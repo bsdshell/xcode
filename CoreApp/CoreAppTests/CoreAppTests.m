@@ -28,6 +28,92 @@
     [super tearDown];
 }
 
+-(void)testarr{
+}
+
+-(void)testmynum{
+    int arr[] = {10};
+    [Core mynum:arr];
+    XCTAssertTrue(arr[0] == 11);
+}
+-(void)testmm{
+//    NSInteger num0 = [Core mm:@"m" index:0 step:1];
+//    NSInteger num1 = [Core mm:@"m" index:1 step:1];
+//    NSInteger num2 = [Core mm:@"m" index:2 step:1];
+//    XCTAssertTrue(num0 == 4);
+//    XCTAssertTrue(num1 == 5);
+//    XCTAssertTrue(num2 == 6);
+}
+
+-(void)testNumberWith{
+    NSMutableArray* array = [[NSMutableArray alloc]init];
+    [array addObject:[NSNumber numberWithChar:'c']];
+    char ch = [array[0] charValue];
+    XCTAssertTrue(ch == 'c');
+    
+    NSMutableArray* arr1 = [[NSMutableArray alloc]init];
+    [arr1 addObject:[NSNumber numberWithBool:false]];
+    BOOL isTrue = [arr1[0] boolValue];
+    XCTAssertTrue(isTrue == false);
+    
+    for(id ch in array){
+        NSLog(@"[%@] [%@]", ch, [NSString stringWithFormat:@"%c", 'a']);
+    }
+
+//    + (NSNumber *)numberWithChar:(char)value;
+//    + (NSNumber *)numberWithUnsignedChar:(unsigned char)value;
+//    + (NSNumber *)numberWithShort:(short)value;
+//    + (NSNumber *)numberWithUnsignedShort:(unsigned short)value;
+//    + (NSNumber *)numberWithInt:(int)value;
+//    + (NSNumber *)numberWithUnsignedInt:(unsigned int)value;
+//    + (NSNumber *)numberWithLong:(long)value;
+//    + (NSNumber *)numberWithUnsignedLong:(unsigned long)value;
+//    + (NSNumber *)numberWithLongLong:(long long)value;
+//    + (NSNumber *)numberWithUnsignedLongLong:(unsigned long long)value;
+//    + (NSNumber *)numberWithFloat:(float)value;
+//    + (NSNumber *)numberWithDouble:(double)value;
+//    + (NSNumber *)numberWithBool:(BOOL)value;
+//    + (NSNumber *)numberWithInteger:(NSInteger)value NS_AVAILABLE(10_5, 2_0);
+//    + (NSNumber *)numberWithUnsignedInteger:(NSUInteger)value NS_AVAILABLE(10_5, 2_0);
+
+    
+}
+
+-(void)testDictCGFloat{
+    CGFloat f0 = 0.33;
+    CGFloat f1 = 1.33;
+    CGFloat f2 = 4.4400;
+
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
+                                 @"obj0",          [NSNumber numberWithFloat:f0],
+                                 @"obj2",          [NSNumber numberWithFloat:f2],
+                                 @"obj1",          [NSNumber numberWithFloat:f1],
+                                 nil];
+    
+    NSArray* array = [dict keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        return [obj1 compare:obj2];
+    }];
+    
+    for(NSString* str in array){
+        NSLog(@"key=[%@] obj[%@]", str, dict[str]);
+    }
+}
+
+-(void)testSortKey{
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc]initWithObjectsAndKeys:
+                                                                        @"obj1",          @"1",
+                                                                        @"obj0",          @"0",
+                                                                        @"obj2",          @"2",
+                                                                        nil];
+    
+    NSArray* array = [dict keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        return [obj1 compare:obj2];
+    }];
+    
+    for(NSString* str in array){
+        NSLog(@"key=[%@] obj[%@]", str, dict[str]);
+    }
+}
 -(void)testprintSetPoint{
     NSMutableSet* set = [[NSMutableSet alloc]init];
     [set addObject:@"cat"];
@@ -57,7 +143,7 @@
 }
 
 
--(void)testCGFloat{
+-(void)testMyCGFloat{
     CGFloat f1 = 0.001;
     CGFloat f2 = 0.0001;
     XCTAssertTrue(f1 > f2);

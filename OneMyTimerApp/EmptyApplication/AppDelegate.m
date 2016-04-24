@@ -85,11 +85,7 @@
     [_resetButton.titleLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
     _resetButton.backgroundColor = [UIColor grayColor];
     [_resetButton setTitleColor:[UIColor whiteColor] forState:(UIControlState)UIControlStateNormal];
-
-
     [self.window addSubview:_resetButton];
-
-    
     _pause = YES;
 }
 
