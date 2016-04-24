@@ -1,58 +1,44 @@
-//
-//  ViewController.m
-//  tut1
-//
-//  Created by aa aa on 12-06-16.
-//  Copyright (c) 2012 asdfk. All rights reserved.
-//
 
 #import "ViewController.h"
 #import "QuartzCore/QuartzCore.h"
 
-@interface ViewController ()
-@end
-
-@implementation MyButton
-
-
-@end
-
 @implementation ViewController
-@synthesize shaperLayer = _shapeLayer;
 @synthesize rectLayer = _rectLayer;
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
     self.rectLayer = [self drawHexagon:CGPointMake(200, 300) semiWidth:50 semiHeight:80];
-    
-//    UIGraphicsBeginImageContextWithOptions(self.rectLayer.frame.size, NO, [UIScreen mainScreen].scale);
-//    
-//    [self.rectLayer renderInContext:UIGraphicsGetCurrentContext()];
-//    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
-//    
-//    UIGraphicsEndImageContext();
-    UIImage* outputImage = [self imageFromLayer:self.rectLayer];
-    
-    NSArray* path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString* documentsDirectory = [path objectAtIndex:0];
-    
-    
-    NSLog(@"documentsDirectory=%@", documentsDirectory);
-    
-    
-    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:@"image.png"];
-    NSLog(@"fullPath=%@", fullPath);
-    
-    [UIImagePNGRepresentation(outputImage) writeToFile:fullPath atomically:YES];
-    
-    
     [self.view.layer addSublayer:self.rectLayer];
+    
+    [self captureScreenImageToDirectory:self.view dir:@"/Users/cat/try" file:@"myimage.png"];
 }
 
-- (UIImage *)imageFromLayer:(CALayer *)layer
-{
+// searchkey: capture screen shot screenshot save image
+-(void)captureScreenImageToDirectory:(UIView*)myView dir:(NSString*)dir file:(NSString*)fileName{
+    NSString* fullPath = [dir stringByAppendingPathComponent:fileName];
+    NSLog(@"fullPath=%@", fullPath);
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    NSArray* path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [path objectAtIndex:0];
+    NSLog(@"documentsDirectory=%@", documentsDirectory);
+    NSString* screenShotImageFile = [documentsDirectory stringByAppendingPathComponent:@"image.png"];
     
+    UIImage* outputImage = [self imageFromLayer:myView.layer];
+    [UIImagePNGRepresentation(outputImage) writeToFile:screenShotImageFile atomically:YES];
+
+    if([fileManager fileExistsAtPath:screenShotImageFile] == YES){
+        NSError* error;
+        [fileManager copyItemAtPath:screenShotImageFile toPath:fullPath error:&error];
+    }
+    
+    NSLog(@"copy file from:[%@]", screenShotImageFile);
+    NSLog(@"to             [%@]", fullPath);
+}
+
+
+// save layer to UIImage
+- (UIImage *)imageFromLayer:(CALayer *)layer{
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
         UIGraphicsBeginImageContextWithOptions([layer frame].size, NO, [UIScreen mainScreen].scale);
     else
@@ -62,10 +48,8 @@
     UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
-    
     return outputImage;
 }
-
 
 -(CAShapeLayer*)drawHexagon:(CGPoint) location semiWidth:(CGFloat) semiWidth semiHeight:(CGFloat)semiHeight{
     CAShapeLayer* shapeLayer = [CAShapeLayer layer];
@@ -92,10 +76,7 @@
     return shapeLayer;
 }
 
-
-- (void)viewDidUnload
-{
+- (void)viewDidUnload{
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 @end
