@@ -1,12 +1,15 @@
 
 #import "ViewController.h"
 #import "QuartzCore/QuartzCore.h"
+#import "AppDelegate.h"
 
 @implementation ViewController
 @synthesize rectLayer = _rectLayer;
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+
     self.view.backgroundColor = [UIColor grayColor];
     self.rectLayer = [self drawHexagon:CGPointMake(200, 300) semiWidth:50 semiHeight:80];
     [self.view.layer addSublayer:self.rectLayer];
@@ -16,8 +19,11 @@
 
 // searchkey: capture screen shot screenshot save image
 -(void)captureScreenImageToDirectory:(UIView*)myView dir:(NSString*)dir file:(NSString*)fileName{
+    
+    
     NSString* fullPath = [dir stringByAppendingPathComponent:fileName];
     NSLog(@"fullPath=%@", fullPath);
+    
     NSFileManager* fileManager = [NSFileManager defaultManager];
     NSArray* path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString* documentsDirectory = [path objectAtIndex:0];
@@ -39,8 +45,10 @@
 
 // save layer to UIImage
 - (UIImage *)imageFromLayer:(CALayer *)layer{
+
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
-        UIGraphicsBeginImageContextWithOptions([layer frame].size, NO, [UIScreen mainScreen].scale);
+        //UIGraphicsBeginImageContextWithOptions([layer frame].size, NO, [UIScreen mainScreen].scale);
+        UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, [UIScreen mainScreen].scale);
     else
         UIGraphicsBeginImageContext([layer frame].size);
     

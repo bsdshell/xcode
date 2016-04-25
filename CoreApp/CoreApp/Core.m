@@ -36,7 +36,7 @@
 +(CAShapeLayer*)drawCircle:(CGPoint)center radius:(CGFloat)radius{
     CAShapeLayer* shapeLayer  = [CAShapeLayer layer];
     UIBezierPath* path        = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(center.x - radius,  center.y - radius, 2*radius, 2*radius)];
-    shapeLayer.strokeColor    = [[UIColor brownColor] CGColor];
+    shapeLayer.strokeColor    = [[UIColor redColor] CGColor];
     shapeLayer.fillColor      = [[UIColor clearColor] CGColor];
     shapeLayer.lineWidth      = 2.0f;
     [shapeLayer setPath:[path CGPath]];
@@ -44,7 +44,7 @@
 }
 
 +(CAShapeLayer*)drawListCircles:(NSMutableArray*)array{
-    CGFloat radius = 10;
+    CGFloat radius = 4;
     CAShapeLayer* mainLayer = [CAShapeLayer layer];
     int count = 1;
     for(NSValue* center in array){
