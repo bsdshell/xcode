@@ -217,15 +217,15 @@
     CGFloat diff       = len0 + len1 - anchorDist;
     CGFloat scale_diff       = (len0 + len1) - scale*anchorDist;
 
-    NSLog(@"scale            = [%.21g]", scale);
-    NSLog(@"len0             = [%.21g]", len0);
-    NSLog(@"len1             = [%.21g]", len1);
-    NSLog(@"len0+len1        = [%.21g]", len0+len1);
-    NSLog(@"anchorDist       = [%.21g]", anchorDist);
-    NSLog(@"scale*anchorDist = [%.21g]", scale*anchorDist);
-    NSLog(@"diff             = [%.21g]", diff);
-    NSLog(@"scale_diff       = [%.21g]", scale_diff);
-    NSLog(@"---------------------------------");
+//    NSLog(@"scale            = [%.21g]", scale);
+//    NSLog(@"len0             = [%.21g]", len0);
+//    NSLog(@"len1             = [%.21g]", len1);
+//    NSLog(@"len0+len1        = [%.21g]", len0+len1);
+//    NSLog(@"anchorDist       = [%.21g]", anchorDist);
+//    NSLog(@"scale*anchorDist = [%.21g]", scale*anchorDist);
+//    NSLog(@"diff             = [%.21g]", diff);
+//    NSLog(@"scale_diff       = [%.21g]", scale_diff);
+//    NSLog(@"---------------------------------");
 
     if(scale*anchorDist <= (len0 + len1)){
         CGPoint lp       = [Core middlePoint:p0 p1:p1];
