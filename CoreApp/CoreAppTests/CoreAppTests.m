@@ -28,7 +28,13 @@
     [super tearDown];
 }
 
--(void)testarr{
+-(void)testUniformNum{
+    NSMutableArray* array = [[NSMutableArray alloc]init];
+    int len = 10;
+    for(int i=0; i<len; i++){
+        NSInteger r = arc4random_uniform(len-i);
+        [array addObject:@(r)];
+    }
 }
 
 -(void)testmynum{

@@ -1,3 +1,3 @@
 ##Draw Quadratic Bezier Curve 
-###Use Divide conquer Algorithm 
+###Use DeCasteljau Subdivision/Divide and Conquer Algorithm 
 ###In Order traveral and store all the points in an array
