@@ -22,7 +22,7 @@
 +(CAShapeLayer*)drawListCircles:(NSMutableArray*)array;
 +(CAShapeLayer*)drawCircle:(CGPoint)center radius:(CGFloat)radius;
 +(NSInteger)map:(NSString*)str index:(NSInteger)index step:(NSInteger)step;
-+(void)triangular:(CGPoint)p0 p1:(CGPoint)p1 p2:(CGPoint)p2 array:(NSMutableArray*)array pointArray:(NSMutableArray*)pointArray dict:(NSMutableDictionary*)dict step:(NSInteger)step;
++(void)triangular:(CGPoint)p0 p1:(CGPoint)p1 p2:(CGPoint)p2 array:(NSMutableArray*)array pointArray:(NSMutableArray*)pointArray step:(NSInteger)step;
 
 +(void)mynum:(int[])arr;
 

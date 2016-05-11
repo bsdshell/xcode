@@ -28,6 +28,17 @@
     [super tearDown];
 }
 
+-(void)testUserDefaults{
+    NSUserDefaults* defaultUser = [NSUserDefaults standardUserDefaults];
+    [defaultUser setObject:@"1" forKey:@"key"];
+
+    NSUserDefaults* defaultUser1 = [NSUserDefaults standardUserDefaults];
+    [defaultUser1 setObject:@"2" forKey:@"key"];
+
+    NSString* value = [defaultUser objectForKey:@"key"];
+}
+
+
 -(void)testUniformNum{
     NSMutableArray* array = [[NSMutableArray alloc]init];
     int len = 10;

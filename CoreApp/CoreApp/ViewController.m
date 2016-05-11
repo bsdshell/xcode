@@ -23,7 +23,7 @@
     CGPoint p0 = CGPointMake(350, 500);
     CGPoint p1 = CGPointMake(300, 50);
     CGPoint p2 = CGPointMake(50, 50);
-    NSInteger step = 2;
+    NSInteger step = 3;
 
     NSMutableArray* pointArray = [[NSMutableArray alloc] initWithCapacity:20];
 
@@ -31,11 +31,12 @@
     [pointArray addObject:[NSValue valueWithCGPoint:p1]];
     [pointArray addObject:[NSValue valueWithCGPoint:p2]];
 
-    NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
     int carr[] = {0};
     //[Core triangular:p0 p1:p1 p2:p2 array:array pointArray:pointArray dict:dict step:step count:arr];
-    [Core triangular:p0 p1:p1 p2:p2 array:array pointArray:pointArray dict:dict step:step];
+    [Core triangular:p0 p1:p1 p2:p2 array:array pointArray:pointArray step:step];
     [Core printArrayPoint:array];
+    [self printVertices:array];
+    [self printFaces:array];
 
     for(NSValue* point in pointArray){
         NSLog(@"v %f %f %f", [point CGPointValue].x, [point CGPointValue].y, 0);
@@ -100,6 +101,66 @@
 //                            nil];
 //
     [self.view.layer addSublayer:[Core drawListCircles:pointArray]];
+}
+
+-(void)printFaces:(NSMutableArray*)array{
+    int k=0;
+    for(int i=0; i<[array count]; i++){
+        NSMutableArray* arr = array[i]; 
+        NSLog(@"f %ld %ld %ld", 3*k+0, 3*k+1, 3*k+2);
+
+//        NSLog(@"[%ld], [%@]", 3*k+0, arr[0]);
+//        NSLog(@"[%ld], [%@]", 3*k+1, arr[1]);
+//        NSLog(@"[%ld], [%@]", 3*k+2, arr[2]);
+
+//        CGPoint p0 = [arr[0] CGPointValue];
+//        NSLog(@"%ld %f %f %f", 3*k+0, p0.x, p0.y, 0);
+//
+//        CGPoint p1 = [arr[1] CGPointValue];
+//        NSLog(@"%ld %f %f %f", 3*k+1, p1.x, p1.y, 0);
+//
+//        CGPoint p2 = [arr[2] CGPointValue];
+//        NSLog(@"%ld %f %f %f", 3*k+2, p2.x, p2.y, 0);
+//
+        NSLog(@"\n");
+        k++;
+    }
+}
+
+
+
+-(void)printVertices:(NSMutableArray*)array{
+    int k=0;
+    for(int i=0; i<[array count]; i++){
+        NSMutableArray* arr = array[i]; 
+        //NSLog(@"%ld %ld %ld", 3*k+0, 3*k+1, 3*k+2);
+
+//        NSLog(@"[%ld], [%@]", 3*k+0, arr[0]);
+//        NSLog(@"[%ld], [%@]", 3*k+1, arr[1]);
+//        NSLog(@"[%ld], [%@]", 3*k+2, arr[2]);
+
+//        CGPoint p0 = [arr[0] CGPointValue];
+//        NSLog(@"v %ld %f %f %f", 3*k+0, p0.x, p0.y, 0);
+//
+//        CGPoint p1 = [arr[1] CGPointValue];
+//        NSLog(@"v %ld %f %f %f", 3*k+1, p1.x, p1.y, 0);
+//
+//        CGPoint p2 = [arr[2] CGPointValue];
+//        NSLog(@"v %ld %f %f %f", 3*k+2, p2.x, p2.y, 0);
+//
+
+        CGPoint p0 = [arr[0] CGPointValue];
+        NSLog(@"v %f %f %f",  p0.x, p0.y, 0);
+
+        CGPoint p1 = [arr[1] CGPointValue];
+        NSLog(@"v %f %f %f", p1.x, p1.y, 0);
+
+        CGPoint p2 = [arr[2] CGPointValue];
+        NSLog(@"v %f %f %f", p2.x, p2.y, 0);
+
+        NSLog(@"\n");
+        k++;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
