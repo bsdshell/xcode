@@ -9,7 +9,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     _rectLayer = [CAShapeLayer layer];
-    
+    _screenSize               = [UIScreen mainScreen].bounds.size;
+   
     UIButton* mybut = [UIButton buttonWithType:UIButtonTypeSystem];
     CGRect frame = CGRectMake(100, 250, 140, 50);
     mybut.frame = frame;
@@ -20,13 +21,9 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     [self myDrawRectangle];
-
-    
-    
     [self.view addSubview:mybut];
-    
-    
 }
+
 -(void) clickMe:(id) sender{
     NSLog(@"click me");
     CGRect rect = [self currentScreenBoundsDependOnOrientation];

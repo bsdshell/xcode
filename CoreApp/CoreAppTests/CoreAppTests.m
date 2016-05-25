@@ -28,6 +28,18 @@
     [super tearDown];
 }
 
+-(void)testCompareString{
+    NSString* s1 = @"foo";
+    NSString* s2 = @"foo";
+    NSString* s3 = [[NSString alloc]initWithString:@"foo"];
+    
+    NSLog(@"[%d]", s1 == s2);
+    NSLog(@"[%d]", s1 == s3);
+    NSLog(@"[%d]", [s1 isEqualToString:s2]);
+    NSLog(@"[%d]", [s1 isEqualToString:s3]);
+}
+
+
 -(void)testUserDefaults{
     NSUserDefaults* defaultUser = [NSUserDefaults standardUserDefaults];
     [defaultUser setObject:@"1" forKey:@"key"];

@@ -1,6 +1,6 @@
 //
-//  SimpleAppTests.m
-//  SimpleAppTests
+//  Tests.m
+//  Tests
 //
 //  Created by cat on 7/29/15.
 //  Copyright (c) 2015 myxcode. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface SimpleAppTests : XCTestCase
+@interface Tests : XCTestCase
 
 @end
 
-@implementation SimpleAppTests
+@implementation Tests
 
 - (void)setUp {
     [super setUp];
